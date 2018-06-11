@@ -164,8 +164,8 @@ Public Class SearchUser
             c.Menu = menu And c.Save_ = 1
             If ds1.Any Then
 
-                Response.Redirect(Request.Cookies("MainConfigPath").Value + "AddUser.aspx")
-                'Response.Redirect("AddUser.aspx")
+                'Response.Redirect(Request.Cookies("MainConfigPath").Value + "AddUser.aspx")
+                Response.Redirect("AddUser.aspx")
             Else
                 ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
             End If

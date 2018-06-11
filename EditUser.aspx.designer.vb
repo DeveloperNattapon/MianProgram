@@ -32,15 +32,6 @@ Partial Public Class EditUser
     Protected WithEvents txtUser As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''txtPassworde control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtPassworde As Global.System.Web.UI.HtmlControls.HtmlInputPassword
-
-    '''<summary>
     '''ddlPrefix control.
     '''</summary>
     '''<remarks>

@@ -13,7 +13,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="HomeMain.aspx"><i class="fa fa-home"></i>Home</a></li>
-                <li><a class="active"><i class="fa fa-file"></i>Fro File</a></li>
+                <li><a class="active">Pro File</a></li>
                 <li><a href="MasterCode.aspx">Edit User</a></li>
             </ol>
         </section>
@@ -27,7 +27,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Edit FroFile</h3>
+                            <h3 class="box-title">Edit ProFile</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="row">
@@ -40,13 +40,9 @@
                     <div class="col-xs-12">
                         <label class="control-label " for="txtUserId">UserId</label>
                         <div class="controls ">
-                            <input class="form-control" id="txtUser" runat="server" required="required" type="text" />
+                            <input class="form-control" id="txtUser" runat="server" required="required" type="text" disabled="disabled"/>
                         </div>
-                        <label class="control-label " for="txtPassword">รหัสผ่าน</label>
-                        <div class="controls ">
-                            <input class="form-control" id="txtPassworde" required="required" runat="server" type="password" />
-
-                        </div>
+                       
                     </div>
 
 
@@ -107,7 +103,7 @@
 
                     </div>
                     <div class="col-xs-12">
-                        <label class="control-label" for="txtEmail">อีเมล์</label>
+                        <label class="control-label" for="txtEmail">อีเมล</label>
                         <div class="controls ">
                             <input class="form-control" id="txtEmaile" runat="server" type="text" />
                         </div>
@@ -134,15 +130,15 @@
                                 
                             </asp:DropDownList>
                         </div>
-                        <label class="control-label" for="lbApprove1">ผู้อนุมัต 1</label>
+                        <label class="control-label" for="lbApprove1">ผู้อนุมัติ 1</label>
                         <div class="controls ">
 
-                            <input class="form-control" id="lbApprove1" required="required" runat="server" type="text" />
+                            <input class="form-control" id="lbApprove1" required="required" runat="server" type="text" disabled="disabled" />
                         </div>
-                        <label class="control-label" for="lbApprove2">ผู้อนุมัต 2</label>
+                        <label class="control-label" for="lbApprove2">ผู้อนุมัติ 2</label>
                         <div class="controls ">
 
-                            <input class="form-control" id="lbApprove2" required="required" runat="server" type="text" />
+                            <input class="form-control" id="lbApprove2" required="required" runat="server" type="text" disabled="disabled" />
                         </div>
                     </div>
                 </div>

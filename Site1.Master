@@ -101,7 +101,7 @@
                                         <a href="#" class="btn btn-default btn-flat">ProFile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <Button id="btlLogOut" class="btn btn-default btn-flat" runat="server">Sign out</Button>
+                                        <button id="btlLogOut" class="btn btn-default btn-flat" runat="server">Sign out</button>
                                     
                                     </div>
                                 </li>
@@ -170,14 +170,14 @@
                         </li>
                         <li>
                             <a href="Permission.aspx">
-                                <i class="fa fa fa-print"></i> 
+                                <i class="fa fa fa-check-square-o"></i> 
                                 <span>Permission</span>
                                 <span class="pull-right-container"></span>
                             </a>
                         </li>
                         <li>
                             <a href="Increase.aspx">
-                                <i class="fa fa fa-print"></i> 
+                                <i class="fa fa fa-plus"></i> 
                                 <span>Increase</span>
                                 <span class="pull-right-container"></span>
                             </a>
@@ -386,7 +386,7 @@
                       <div class="form-group">
                         <label class="control-sidebar-subheading">
                           Turn off notifications
-                          <input type="checkbox" class="pull-right">
+                          <input type="checkbox" class="pull-right"/>
                         </label>
                       </div>
                       <!-- /.form-group -->

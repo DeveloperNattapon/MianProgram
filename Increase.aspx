@@ -5,15 +5,35 @@
     <form id="form1" runat="server">
 
           <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-offset-2">
-                    <fieldset>
-                        <legend>Increase
-                        </legend>
-                        <div class="col-lg-12">
 
-                            <div class="form-group">
+           <section class="content-header">
+            <h1>Increase</h1>
+            <ol class="breadcrumb">
+                <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
+                <li>Increase</li>
+            </ol>
+        </section>
+      
+         <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+                <!-- left column -->
+                <div class="col-lg-12 col-md-12 ">
+
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Edit Increase</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="row">
+
+                            <from class="form-horizontal">
+                            <div class="col-lg-6 col-md-12 col-md-offset-3">
+                                 <div class="box-body">   
+
+                              <div class="form-group">
                                 <div class="col-xs-3">
                                     <label class="control-label">สาขา</label>
                                     <div class="controls ">
@@ -82,71 +102,125 @@
                                     </div>
                                 </div>
                             </div>
+                             
+               </div>
+                            </div>
+                             
+          </from>
+                                     
                         </div>
+                    
+                            <!--/.row-->
+                    </div>
 
-                    </fieldset>
 
+                    <!--/.row-->
                 </div>
-                </div>
-                <br />
-                <br />
-                <br />
-              
-                <div class="form-group col-md-12">
-                <asp:UpdatePanel ID="UpModal" runat="server">
-                    <ContentTemplate>
-                        <asp:GridView ID="myGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="BranchName" Width="1090px" ForeColor="Black"  HorizontalAlign="Center" Font-Size="Small" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
-                            <AlternatingRowStyle CssClass="altrowstyle" BackColor="#CCCCCC" />
-                            <FooterStyle BackColor="#CCCCCC" />
-                            <HeaderStyle CssClass="headerstyle" BackColor="Black" Font-Bold="True" ForeColor="White" Height="30px" />
-                            <PagerSettings Mode="NextPreviousFirstLast" FirstPageText="First " LastPageText=" Last" NextPageText="Next " PreviousPageText=" Previous " />
-                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" Height="20px" />
-                            <RowStyle CssClass="rowstyle" HorizontalAlign="Center" Height="20px" />
-                            <Columns>
-                                <asp:TemplateField HeaderText="สาขา" HeaderStyle-CssClass="text-center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("BranchName")%>'></asp:Label>
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Center" />
-                                    <ItemStyle Width="100px" />
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="ฝ่าย" HeaderStyle-CssClass="text-center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("SideName")%>'></asp:Label>
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
-                                    <ItemStyle Width="150px" />
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="แผนก" HeaderStyle-CssClass="text-center">
 
-                                    <ItemTemplate>
-                                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("DepartmentName")%>'></asp:Label>
-                                    </ItemTemplate>
-
-                                    <HeaderStyle CssClass="text-center"></HeaderStyle>
-
-                                    <ItemStyle Width="150px" />
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="ตำแหน่ง" HeaderStyle-CssClass="text-center">
-
-                                    <ItemTemplate>
-                                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("PositionName")%>'></asp:Label>
-                                    </ItemTemplate>
-                                    <HeaderStyle CssClass="text-center" />
-                                    <ItemStyle Width="250px" />
-                                </asp:TemplateField>
-                                
-                            </Columns>
-                            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                            <SortedAscendingHeaderStyle BackColor="#808080" />
-                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                            <SortedDescendingHeaderStyle BackColor="#383838" />
-                        </asp:GridView>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                <!--/.box box-primary-->
             </div>
-        </div>
+            <!--/.col-lg-12 -->
+     
+            <!--/.col (right) -->
 
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+
+         <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+                <!-- left column -->
+                <div class="col-lg-12 col-md-12 ">
+
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                  <%--      <div class="box-header with-border">
+                            <h3 class="box-title">Edit Permission</h3>
+                        </div>--%>
+                        <!-- /.box-header -->
+                        <div class="row">
+
+                            <from class="form-horizontal">
+                            <div class="col-lg-12 col-md-12">
+                                 <div class="box-body">   
+
+                          <div class="col-md-12">
+                <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                                <HeaderTemplate>
+                                    <table id="example1" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>สาขา</th>
+                                                <th>ฝ่าย</th>  
+                                                <th>แผนก</th> 
+                                                <th>ตำแหน่ง</th>
+                                                <th>Edit</th>
+                                            </tr>
+                                        </thead>
+                                </HeaderTemplate>
+
+                                <ItemTemplate>
+
+
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("BranchName")%>'></asp:Label></td>
+                                        <td>
+                                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("SideName")%>'></asp:Label></td>
+                                        <td>
+                                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("DepartmentName")%>'></asp:Label></td>
+                                        <td>
+                                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("PositionName")%>'></asp:Label></td>
+                                        
+                                        <td class="text-center">
+
+                                            <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="edituser" CommandArgument='<%# Eval("BranchName")%>'><i class="fa fa-pencil"></i></asp:LinkButton>
+                                        </td>
+
+                                    </tr>
+
+                                </ItemTemplate>
+
+                                <FooterTemplate>
+                                    <tfoot>
+                                        <tr>
+                                                <th>สาขา</th>
+                                                <th>ฝ่าย</th>  
+                                                <th>แผนก</th> 
+                                                <th>ตำแหน่ง</th>
+                                                 <th>Edit</th>
+                                        </tr>
+                                    </tfoot>
+                                    </table>
+                                </FooterTemplate>
+                            </asp:Repeater>
+              
+            </div>
+                             
+               </div>
+                            </div>
+                             
+          </from>
+                                     
+                        </div>
+                    
+                            <!--/.row-->
+                    </div>
+
+
+                    <!--/.row-->
+                </div>
+
+                <!--/.box box-primary-->
+            </div>
+            <!--/.col-lg-12 -->
+     
+            <!--/.col (right) -->
+
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
     </form>
 </asp:Content>

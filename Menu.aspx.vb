@@ -7,11 +7,11 @@ Public Class Menu
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            BindData("")
+            BindData()
         End If
     End Sub
-
-    Protected Sub BindData(SearchUser As String)
+    
+    Protected Sub BindData()
         Using db = New DB_EaglesInternalEntities
 
             Dim ds = (From c In db.tblMenu
@@ -24,17 +24,17 @@ Public Class Menu
 
             ' Assign to GridView
             If ds.Count > 0 Then
-                Me.GridView1.DataSource = ds
-                Me.GridView1.DataBind()
+                Me.Repeater1.DataSource = ds
+                Me.Repeater1.DataBind()
             Else
-                Me.GridView1.DataSource = Nothing
-                Me.GridView1.DataBind()
+                Me.Repeater1.DataSource = Nothing
+                Me.Repeater1.DataBind()
             End If
         End Using
     End Sub
 
     Protected Sub btnSaveChange_Click(sender As Object, e As EventArgs) Handles btnSaveChange.Click
-        If txtMenu.Text = "" Then
+        If String.IsNullOrEmpty(txtMenu.Text) Then
             lblMsg.Text = "* Menu is not empty"
             Exit Sub
         End If
@@ -48,11 +48,11 @@ Public Class Menu
             .UpdateDate = Now _
              })
             db.SaveChanges()
-            BindData("")
+            'BindData("")
             'ScriptManager.RegisterStartupScript(Me, Me.GetType(), "EditModalScript", "hideModal();", True)
             'ClientScript.RegisterStartupScript(Me.GetType, "PopupScript", "<script>alert('" + String.Format("Delete {0} Successfully.", "") + "');</script>")
-
-            Response.Redirect(Request.Cookies("MainConfigPath").Value + "menu.aspx")
+            Response.Redirect("menu.aspx")
+            'Response.Redirect(Request.Cookies("MainConfigPath").Value + "menu.aspx")
 
         End Using
     End Sub
@@ -77,71 +77,75 @@ Public Class Menu
 
     End Sub
 
-    Protected Sub GridView1_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GridView1.RowDeleting
+    'Protected Sub GridView1_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GridView1.RowDeleting
 
-        Dim strMenu As String = Me.GridView1.DataKeys(e.RowIndex).Value.ToString()
+    '    Dim strMenu As String = Me.GridView1.DataKeys(e.RowIndex).Value.ToString()
 
-        Using db = New DB_EaglesInternalEntities()
+    '    Using db = New DB_EaglesInternalEntities()
 
-            Dim menu As String = "User Management"
-            Dim id As String = Session("UserID").ToString
-            Dim ds1 = From c In db.tblUserMenu Where c.UserID = id And
-            c.Menu = menu And c.Save_ = 1
-            If Not ds1.Any Then
+    '        Dim menu As String = "User Management"
+    '        Dim id As String = Session("UserID").ToString
+    '        Dim ds1 = From c In db.tblUserMenu Where c.UserID = id And
+    '        c.Menu = menu And c.Save_ = 1
+    '        If Not ds1.Any Then
 
-                ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
-                Exit Sub
-            End If
+    '            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
+    '            Exit Sub
+    '        End If
 
 
-            Dim del = (From c In db.tblMenu
-                       Where c.Menu = strMenu
-                       Select c).FirstOrDefault()
-            If Not IsNothing(del) Then
-                db.tblMenu.Remove(del)
-            End If
+    '        Dim del = (From c In db.tblMenu
+    '                   Where c.Menu = strMenu
+    '                   Select c).FirstOrDefault()
+    '        If Not IsNothing(del) Then
+    '            db.tblMenu.Remove(del)
+    '        End If
 
-            db.SaveChanges()
-            BindData("")
-            ClientScript.RegisterStartupScript(Me.GetType, "PopupScript", "<script>alert('" + String.Format("Delete {0} Successfully.", strMenu) + "');</script>")
-        End Using
-    End Sub
+    '        db.SaveChanges()
+    '        BindData("")
+    '        ClientScript.RegisterStartupScript(Me.GetType, "PopupScript", "<script>alert('" + String.Format("Delete {0} Successfully.", strMenu) + "');</script>")
+    '    End Using
+    'End Sub
 
     Sub LinkButton_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Protected Sub GridView1_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GridView1.RowDataBound
-        If e.Row.RowType = DataControlRowType.DataRow And Not IsNothing(DataBinder.Eval(e.Row.DataItem, "Menu")) Then
+    'Protected Sub GridView1_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GridView1.RowDataBound
+    '    If e.Row.RowType = DataControlRowType.DataRow And Not IsNothing(DataBinder.Eval(e.Row.DataItem, "Menu")) Then
 
-            Dim lblMenu As Label = DirectCast(e.Row.FindControl("lblMenu"), Label)
-            If Not IsNothing(lblMenu) Then
-                lblMenu.Text = DataBinder.Eval(e.Row.DataItem, "Menu").ToString()
-            End If
+    '        Dim lblMenu As Label = DirectCast(e.Row.FindControl("lblMenu"), Label)
+    '        If Not IsNothing(lblMenu) Then
+    '            lblMenu.Text = DataBinder.Eval(e.Row.DataItem, "Menu").ToString()
+    '        End If
 
-            Dim lblDescription As Label = DirectCast(e.Row.FindControl("lblDescription"), Label)
-            If Not IsNothing(lblDescription) Then
-                lblDescription.Text = DataBinder.Eval(e.Row.DataItem, "Description").ToString()
-            End If
+    '        Dim lblDescription As Label = DirectCast(e.Row.FindControl("lblDescription"), Label)
+    '        If Not IsNothing(lblDescription) Then
+    '            lblDescription.Text = DataBinder.Eval(e.Row.DataItem, "Description").ToString()
+    '        End If
 
-            Dim lblUserBy As Label = DirectCast(e.Row.FindControl("lblUserBy"), Label)
-            If Not IsNothing(lblUserBy) Then
-                lblUserBy.Text = DataBinder.Eval(e.Row.DataItem, "UserBy").ToString()
-            End If
+    '        Dim lblUserBy As Label = DirectCast(e.Row.FindControl("lblUserBy"), Label)
+    '        If Not IsNothing(lblUserBy) Then
+    '            lblUserBy.Text = DataBinder.Eval(e.Row.DataItem, "UserBy").ToString()
+    '        End If
 
-            Dim lblUpdateDate As Label = DirectCast(e.Row.FindControl("lblUpdateDate"), Label)
-            If Not IsNothing(lblUpdateDate) Then
-                lblUpdateDate.Text = DataBinder.Eval(e.Row.DataItem, "UpdateDate").ToString()
-            End If
+    '        Dim lblUpdateDate As Label = DirectCast(e.Row.FindControl("lblUpdateDate"), Label)
+    '        If Not IsNothing(lblUpdateDate) Then
+    '            lblUpdateDate.Text = DataBinder.Eval(e.Row.DataItem, "UpdateDate").ToString()
+    '        End If
 
-            '*** Delete ***'
-            Dim lnkDelete As LinkButton = DirectCast(e.Row.FindControl("lnkDelete"), LinkButton)
-            If Not IsNothing(lnkDelete) Then
-         
-                lnkDelete.Attributes.Add("OnClick", "return confirm('Delete Record " + lblMenu.Text + " ?');")
+    '        '*** Delete ***'
+    '        Dim lnkDelete As LinkButton = DirectCast(e.Row.FindControl("lnkDelete"), LinkButton)
+    '        If Not IsNothing(lnkDelete) Then
 
-            End If
+    '            lnkDelete.Attributes.Add("OnClick", "return confirm('Delete Record " + lblMenu.Text + " ?');")
 
-        End If
+    '        End If
+
+    '    End If
+    'End Sub
+
+    Protected Sub Repeater1_ItemCommand(source As Object, e As RepeaterCommandEventArgs) Handles Repeater1.ItemCommand
+
     End Sub
 End Class

@@ -9,12 +9,11 @@
         </asp:ScriptManager>
 
         <section class="content-header">
-            <h1>Add User
-            </h1>
+            <h1>Permission</h1>
             <ol class="breadcrumb">
                 <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
-                <li><a class="active"><i class="fa fa-file"></i>Fro File</a></li>
-                <li><a href="MasterCode.aspx">Add User</a></li>
+                <li><a class="active">Pro File</a></li>
+                <li>Permission</li>
             </ol>
         </section>
         <!-- Main content -->
@@ -27,7 +26,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add User FroFile</h3>
+                            <h3 class="box-title">Edit Permission</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="row">

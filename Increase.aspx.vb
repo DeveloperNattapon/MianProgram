@@ -333,12 +333,16 @@
                     ).ToList
 
         If li.Count > 1 Then
-            Me.myGridView.DataSource = li
-            Me.myGridView.DataBind()
+            Me.Repeater1.DataSource = li
+            Me.Repeater1.DataBind()
         Else
-            Me.myGridView.DataSource = Nothing
-            Me.myGridView.DataBind()
+            Me.Repeater1.DataSource = Nothing
+            Me.Repeater1.DataBind()
         End If
+
+    End Sub
+
+    Protected Sub Repeater1_ItemCommand(source As Object, e As RepeaterCommandEventArgs) Handles Repeater1.ItemCommand
 
     End Sub
 End Class

@@ -13,7 +13,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
-                <li><a class="active"><i class="fa fa-file"></i>Fro File</a></li>
+                <li><a class="active"><i class="fa fa-file"></i>Pro File</a></li>
                 <li><a href="MasterCode.aspx">Add User</a></li>
             </ol>
         </section>
@@ -27,7 +27,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add User FroFile</h3>
+                            <h3 class="box-title">Add User ProFile</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="row">
@@ -103,7 +103,7 @@
 
                     </div>
                     <div class="col-xs-12">
-                        <label class="control-label" for="txtEmail">อีเมล์</label>
+                        <label class="control-label" for="txtEmail">อีเมล</label>
                         <div class="controls ">
                             <input class="form-control" id="txtEmaile" runat="server" type="text" />
                         </div>

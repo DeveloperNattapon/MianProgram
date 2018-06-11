@@ -25,7 +25,7 @@ Public Class EditUser
         Dim user = (From u In db.tblUser Where u.UserId = UserId).SingleOrDefault
         Dim pass As String = LoginCls.Decrypt(user.Password, key)
         txtUser.Value = user.UserId
-        txtPassworde.Value = pass
+        'txtPassworde.Value = pass
         ddlPrefix.Text = user.Prefix_thai
         ddlPrefix_Eng.Text = user.Prefix_eng
         txtNameThai.Value = user.Name_thai

@@ -140,20 +140,11 @@ Partial Public Class Increase
     Protected WithEvents btnPosition As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''UpModal control.
+    '''Repeater1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UpModal As Global.System.Web.UI.UpdatePanel
-
-    '''<summary>
-    '''myGridView control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents myGridView As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents Repeater1 As Global.System.Web.UI.WebControls.Repeater
 End Class
