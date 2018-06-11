@@ -97,3 +97,15 @@ D:\Asp.net\MainProgram\bin\EntityFramework.SqlServer.xml
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.dll
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.xml
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.pdb
+D:\ProjectDevelop\MainProgram\bin\MainProgram.dll.config
+D:\ProjectDevelop\MainProgram\bin\MainProgram.dll
+D:\ProjectDevelop\MainProgram\bin\MainProgram.pdb
+D:\ProjectDevelop\MainProgram\bin\MainProgram.xml
+D:\ProjectDevelop\MainProgram\bin\EntityFramework.xml
+D:\ProjectDevelop\MainProgram\bin\EntityFramework.SqlServer.xml
+D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
+D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.Resources.resources
+D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
+D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.dll
+D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.xml
+D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.pdb
