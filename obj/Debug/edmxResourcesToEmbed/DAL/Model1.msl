@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Quality_SystemModelStoreContainer" CdmEntityContainer="Quality_SystemEntities">
+    <EntitySetMapping Name="tblBookDoc">
+      <EntityTypeMapping TypeName="Quality_SystemModel.tblBookDoc">
+        <MappingFragment StoreEntitySet="tblBookDoc">
+          <ScalarProperty Name="BookNo" ColumnName="BookNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BookDate" ColumnName="BookDate" />
+          <ScalarProperty Name="Depart" ColumnName="Depart" />
+          <ScalarProperty Name="Sys" ColumnName="Sys" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="UseName" ColumnName="UseName" />
+          <ScalarProperty Name="StatusDoc" ColumnName="StatusDoc" />
+          <ScalarProperty Name="Userby" ColumnName="Userby" />
+          <ScalarProperty Name="UserDate" ColumnName="UserDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarPar">
+      <EntityTypeMapping TypeName="Quality_SystemModel.tblCarPar">
+        <MappingFragment StoreEntitySet="tblCarPar">
+          <ScalarProperty Name="carno" ColumnName="carno" />
+          <ScalarProperty Name="cartype" ColumnName="cartype" />
+          <ScalarProperty Name="depprob" ColumnName="depprob" />
+          <ScalarProperty Name="manager" ColumnName="manager" />
+          <ScalarProperty Name="carstate" ColumnName="carstate" />
+          <ScalarProperty Name="carstatus" ColumnName="carstatus" />
+          <ScalarProperty Name="cardetail" ColumnName="cardetail" />
+          <ScalarProperty Name="auditor" ColumnName="auditor" />
+          <ScalarProperty Name="recdate" ColumnName="recdate" />
+          <ScalarProperty Name="qmr" ColumnName="qmr" />
+          <ScalarProperty Name="qmrrecdate" ColumnName="qmrrecdate" />
+          <ScalarProperty Name="causeprob" ColumnName="causeprob" />
+          <ScalarProperty Name="protectprob" ColumnName="protectprob" />
+          <ScalarProperty Name="auditee" ColumnName="auditee" />
+          <ScalarProperty Name="managerrespon" ColumnName="managerrespon" />
+          <ScalarProperty Name="qmrrespon" ColumnName="qmrrespon" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="managerresdate" ColumnName="managerresdate" />
+          <ScalarProperty Name="qmrresdate" ColumnName="qmrresdate" />
+          <ScalarProperty Name="followstate" ColumnName="followstate" />
+          <ScalarProperty Name="followdetail" ColumnName="followdetail" />
+          <ScalarProperty Name="followby" ColumnName="followby" />
+          <ScalarProperty Name="followdate" ColumnName="followdate" />
+          <ScalarProperty Name="qmrclose" ColumnName="qmrclose" />
+          <ScalarProperty Name="closeremark" ColumnName="closeremark" />
+          <ScalarProperty Name="qmrclosedate" ColumnName="qmrclosedate" />
+          <ScalarProperty Name="approvestatus" ColumnName="approvestatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCause">
+      <EntityTypeMapping TypeName="Quality_SystemModel.tblCause">
+        <MappingFragment StoreEntitySet="tblCause">
+          <ScalarProperty Name="Cause_id" ColumnName="Cause_id" />
+          <ScalarProperty Name="Cause_name" ColumnName="Cause_name" />
+          <ScalarProperty Name="Userby" ColumnName="Userby" />
+          <ScalarProperty Name="Userdate" ColumnName="Userdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
