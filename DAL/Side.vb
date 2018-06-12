@@ -21,6 +21,6 @@ Partial Public Class Side
     Public Property BranchID As String
 
     Public Overridable Property Branch As Branch
-    Public Overridable Property Department As ICollection(Of Department) = New HashSet(Of Department)
+    Public Overridable Property Departments As ICollection(Of Department) = New HashSet(Of Department)
 
 End Class

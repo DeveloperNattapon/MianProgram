@@ -10,10 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblCause
-    Public Property Cause_id As String
-    Public Property Cause_name As String
-    Public Property Userby As String
-    Public Property Userdate As Nullable(Of Date)
+Partial Public Class tblRunningNumber
+    Public Property Name As String
+    Public Property RunNo As Nullable(Of Integer)
 
 End Class

@@ -110,23 +110,23 @@
 
                         <label class="control-label" for="ddlBranch">สาขา</label>
                         <div class="controls dropdown ">
-                            <asp:DropDownList ID="ddlBranch" runat="server" class="form-control" DataTextField = "BranchName" DataValueField = "BranchID" AutoPostBack="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlBranch" runat="server" Cssclass="form-control" DataTextField = "BranchName" DataValueField = "BranchID" AutoPostBack="true"></asp:DropDownList>
                         </div>
                         <label class="control-label" for="txtDept">ฝ่าย</label>
                         <div class="controls ">
-                            <asp:DropDownList ID="ddlSection" runat="server" class="form-control"  DataTextField = "SideName" DataValueField = "SideID" AutoPostBack="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlSection" runat="server" Cssclass="form-control"  DataTextField = "SideName" DataValueField = "SideID" AutoPostBack="true"></asp:DropDownList>
                         </div>
 
                         <label class="control-label" for="txtDept">แผนก</label>
                         <div class="controls ">
-                            <asp:DropDownList ID="ddlDept" runat="server" class="form-control" DataTextField = "DepartmentName" DataValueField = "DepartmentID" AutoPostBack="true">
+                            <asp:DropDownList ID="ddlDept" runat="server" Cssclass="form-control" DataTextField = "DepartmentName" DataValueField = "DepartmentID" AutoPostBack="true">
                                
                             </asp:DropDownList>
                         </div>
 
                         <label class="control-label" for="txtPosition">ตำแหน่ง</label>
                         <div class="controls ">
-                            <asp:DropDownList ID="ddlPosition" runat="server" class="form-control" DataTextField = "PositionName" DataValueField = "PositionID">
+                            <asp:DropDownList ID="ddlPosition" runat="server" Cssclass="form-control" DataTextField = "PositionName" DataValueField = "PositionID">
                                 
                             </asp:DropDownList>
                         </div>

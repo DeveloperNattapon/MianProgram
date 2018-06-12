@@ -20,9 +20,7 @@ Partial Public Class Department
     Public Property Status As String
     Public Property SideID As String
 
-    Public Overridable Property Department1 As Department
-    Public Overridable Property Department2 As Department
-    Public Overridable Property Position As ICollection(Of Position) = New HashSet(Of Position)
     Public Overridable Property Side As Side
+    Public Overridable Property Positions As ICollection(Of Position) = New HashSet(Of Position)
 
 End Class

@@ -4,6 +4,8 @@ Option Explicit On
 Imports System.Linq
 Public Class Menu
     Inherits System.Web.UI.Page
+    Dim db As New DB_EaglesInternalTestEntities
+
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -12,9 +14,8 @@ Public Class Menu
     End Sub
     
     Protected Sub BindData()
-        Using db = New DB_EaglesInternalEntities
-
-            Dim ds = (From c In db.tblMenu
+     
+        Dim ds = (From c In db.tblMenus
                        Select New With {
                          c.Menu,
                          c.Description,
@@ -30,7 +31,6 @@ Public Class Menu
                 Me.Repeater1.DataSource = Nothing
                 Me.Repeater1.DataBind()
             End If
-        End Using
     End Sub
 
     Protected Sub btnSaveChange_Click(sender As Object, e As EventArgs) Handles btnSaveChange.Click
@@ -39,9 +39,8 @@ Public Class Menu
             Exit Sub
         End If
 
-        Using db = New DB_EaglesInternalEntities
-
-            db.tblMenu.Add(New tblMenu() With { _
+     
+        db.tblMenus.Add(New tblMenu() With { _
             .Menu = txtMenu.Text.Trim, _
             .Description = txtDescription.Text.Trim, _
             .UserBy = Session("Name_eng").ToString, _
@@ -54,7 +53,7 @@ Public Class Menu
             Response.Redirect("menu.aspx")
             'Response.Redirect(Request.Cookies("MainConfigPath").Value + "menu.aspx")
 
-        End Using
+
     End Sub
 
     Protected Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -62,19 +61,17 @@ Public Class Menu
         txtMenu.Text = ""
         txtDescription.Text = ""
 
-        Using db = New DB_EaglesInternalEntities
-            Dim menu As String = "User Management"
-            Dim id As String = Session("UserID").ToString
-            Dim ds1 = From c In db.tblUserMenu Where c.UserID = id And
-            c.Menu = menu And c.Save_ = 1
-            If ds1.Any Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType(), "EditModalScript", "openModal();", True)
-            Else
-                ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
-            End If
-        End Using
 
-
+        Dim menu As String = "User Management"
+        Dim id As String = Session("UserID").ToString
+        Dim ds1 = From c In db.tblUserMenus Where c.UserID = id And
+        c.Menu = menu And c.Save_ = 1
+        If ds1.Any Then
+            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "EditModalScript", "openModal();", True)
+        Else
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
+        End If
+       
     End Sub
 
     'Protected Sub GridView1_RowDeleting(sender As Object, e As GridViewDeleteEventArgs) Handles GridView1.RowDeleting

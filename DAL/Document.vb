@@ -10,13 +10,15 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Branch
-    Public Property BranchID As String
-    Public Property BranchName As String
-    Public Property Status As String
-    Public Property UserId As String
+Partial Public Class Document
+    Public Property Name As String
+    Public Property Store As String
+    Public Property Category As String
+    Public Property Keyword As String
+    Public Property UserBy As String
+    Public Property UserDate As Nullable(Of Date)
 
-    Public Overridable Property tblUser As tblUser
-    Public Overridable Property Sides As ICollection(Of Side) = New HashSet(Of Side)
+    Public Overridable Property Document1 As Document
+    Public Overridable Property Document2 As Document
 
 End Class

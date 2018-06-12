@@ -10,7 +10,7 @@ Imports System.Security.Cryptography
 
 Public Class AddUser
     Inherits System.Web.UI.Page
-    Dim db As New DB_EaglesInternalEntities
+    Dim db As New DB_EaglesInternalTestEntities
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
@@ -23,7 +23,7 @@ Public Class AddUser
         ddlBranch.Items.Add(New ListItem("--select Branch--", ""))
         ddlBranch.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Branch
+        Dim d = From ug In db.Branches
                 Order By ug.BranchName Ascending
                 Select ug.BranchID, ug.BranchName
         Try
@@ -48,7 +48,7 @@ Public Class AddUser
         ddlSection.Items.Add(New ListItem("--select Side--", ""))
         ddlSection.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Side
+        Dim d = From ug In db.Sides
                 Where ug.BranchID = BranchID
                 Order By ug.SideName Ascending
                 Select ug.SideID, ug.SideName
@@ -73,7 +73,7 @@ Public Class AddUser
         ddlDept.Items.Add(New ListItem("--select Position--", ""))
         ddlDept.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Department
+        Dim d = From ug In db.Departments
                 Where ug.SideID = SideID
                 Order By ug.DepartmentName Ascending
                 Select ug.DepartmentID, ug.DepartmentName
@@ -98,7 +98,7 @@ Public Class AddUser
         ddlPosition.Items.Add(New ListItem("--select Position--", ""))
         ddlPosition.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Position
+        Dim d = From ug In db.Positions
                 Where ug.DepartmentID = dept
                 Order By ug.PositionName Ascending
                 Select ug.PositionID, ug.PositionName
@@ -121,14 +121,14 @@ Public Class AddUser
     Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
       
         Try
-            Using db = New DB_EaglesInternalEntities
-                Dim user = (From u In db.tblUser Where u.UserId = txtUser.Value
+            Using db = New DB_EaglesInternalTestEntities
+                Dim user = (From u In db.tblUsers Where u.UserId = txtUser.Value
                 Select u).FirstOrDefault
 
                 If Not user Is Nothing Then
                     ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertMessage", "alert('ชื่อ user ซ้ำ กรุณาเปลี่ยนใหม่');", True)
                 Else
-                  AddUser()
+                    AddUser()
                 End If
             End Using
         Catch ex As Exception
@@ -147,7 +147,7 @@ Public Class AddUser
         PassEncrypt = LoginCls.Encrypt(txtPassworde.Value.Trim, Key)
 
         ' Insert 
-        db.tblUser.Add(New tblUser() With { _
+        db.tblUsers.Add(New tblUser() With { _
                  .UserId = txtUser.Value.Trim, _
                  .Password = PassEncrypt, _
                  .Prefix_thai = ddlPrefix.Text.Trim, _

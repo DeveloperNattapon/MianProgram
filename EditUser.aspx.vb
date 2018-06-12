@@ -3,8 +3,8 @@ Option Explicit On
 
 Public Class EditUser
     Inherits System.Web.UI.Page
-    Dim db As New DB_EaglesInternalEntities
-
+    'Dim db As New DB_EaglesInternalEntities
+    Dim db As New DB_EaglesInternalTestEntities
     Dim Branch As String
     Dim Dept As String
     Dim Position As String
@@ -22,7 +22,7 @@ Public Class EditUser
         Dim UserId As String = Request.QueryString("UserID")
         Dim key As String = ""
 
-        Dim user = (From u In db.tblUser Where u.UserId = UserId).SingleOrDefault
+        Dim user = (From u In db.tblUsers Where u.UserId = UserId).SingleOrDefault
         Dim pass As String = LoginCls.Decrypt(user.Password, key)
         txtUser.Value = user.UserId
         'txtPassworde.Value = pass
@@ -52,7 +52,7 @@ Public Class EditUser
         ddlBranch.Items.Add(New ListItem("--select Branch--", ""))
         ddlBranch.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Branch
+        Dim d = From ug In db.Branches
                 Order By ug.BranchName Ascending
                 Select ug.BranchID, ug.BranchName
         Try
@@ -77,7 +77,7 @@ Public Class EditUser
         ddlSection.Items.Add(New ListItem("--select Side--", ""))
         ddlSection.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Side
+        Dim d = From ug In db.Sides
                 Where ug.BranchID = BranchID
                 Order By ug.SideName Ascending
                 Select ug.SideID, ug.SideName
@@ -102,7 +102,7 @@ Public Class EditUser
         ddlDept.Items.Add(New ListItem("--select Position--", ""))
         ddlDept.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Department
+        Dim d = From ug In db.Departments
                 Where ug.SideID = SideID
                 Order By ug.DepartmentName Ascending
                 Select ug.DepartmentID, ug.DepartmentName
@@ -127,7 +127,7 @@ Public Class EditUser
         ddlPosition.Items.Add(New ListItem("--select Position--", ""))
         ddlPosition.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Position
+        Dim d = From ug In db.Positions
                 Where ug.DepartmentID = dept
                 Order By ug.PositionName Ascending
                 Select ug.PositionID, ug.PositionName

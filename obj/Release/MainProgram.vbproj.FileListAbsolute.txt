@@ -1,0 +1,12 @@
+D:\ProjectDevelop\MainProgram\obj\Release\MainProgram.vbprojResolveAssemblyReference.cache
+D:\ProjectDevelop\MainProgram\obj\Release\MainProgram.Resources.resources
+D:\ProjectDevelop\MainProgram\obj\Release\MainProgram.vbproj.GenerateResource.Cache
+D:\ProjectDevelop\MainProgram\bin\MainProgram.dll.config
+D:\ProjectDevelop\MainProgram\bin\MainProgram.dll
+D:\ProjectDevelop\MainProgram\bin\MainProgram.pdb
+D:\ProjectDevelop\MainProgram\bin\MainProgram.xml
+D:\ProjectDevelop\MainProgram\bin\EntityFramework.xml
+D:\ProjectDevelop\MainProgram\bin\EntityFramework.SqlServer.xml
+D:\ProjectDevelop\MainProgram\obj\Release\MainProgram.dll
+D:\ProjectDevelop\MainProgram\obj\Release\MainProgram.xml
+D:\ProjectDevelop\MainProgram\obj\Release\MainProgram.pdb

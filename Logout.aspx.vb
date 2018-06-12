@@ -8,7 +8,8 @@
             Session.Clear()
             Session.Abandon()
             Session.RemoveAll()
-            Response.Redirect(Request.Cookies("MainConfigPath").Value + "Default.aspx")
+            'Response.Redirect(Request.Cookies("MainConfigPath").Value + "Default.aspx")
+            Response.Redirect(Request.Cookies("Default.aspx")
             Response.End()
 
         End If

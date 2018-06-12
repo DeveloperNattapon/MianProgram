@@ -5,7 +5,8 @@ Imports System.Linq
 
 Public Class SearchUser
     Inherits System.Web.UI.Page
-    Private db As New DB_EaglesInternalEntities
+    'Private db As New DB_EaglesInternalEntities
+    Dim db As New DB_EaglesInternalTestEntities
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -13,32 +14,32 @@ Public Class SearchUser
         End If
     End Sub
     Protected Sub BindData()
-        Using db = New DB_EaglesInternalEntities
-            ' Get data from CUSTOMER
-            Dim user = (From c In db.tblUser Join b In db.Branch On b.BranchID Equals c.Branch
-                     Join s In db.Side On c.Section Equals s.SideID
-                     Join d In db.Department On d.DepartmentID Equals c.Dept
-                     Join p In db.Position On p.PositionID Equals c.Position
-                                    Select New With {
-                         c.UserId,
-                         c.Name_thai,
-                         c.Surname_thai,
-                         c.Email,
-                         s.SideName,
-                         d.DepartmentName,
-                         b.BranchName,
-                         p.PositionName
-                        }).ToList()
 
-            ' Assign to GridView
-            If user.Count > 0 Then
-                Me.Repeater1.DataSource = user
-                Me.Repeater1.DataBind()
-            Else
-                Me.Repeater1.DataSource = Nothing
-                Me.Repeater1.DataBind()
-            End If
-        End Using
+        ' Get data from CUSTOMER
+        Dim user = (From c In db.tblUsers Join b In db.Branches On b.BranchID Equals c.Branch
+                 Join s In db.Sides On c.Section Equals s.SideID
+                 Join d In db.Departments On d.DepartmentID Equals c.Dept
+                 Join p In db.Positions On p.PositionID Equals c.Position
+                                Select New With {
+                     c.UserId,
+                     c.Name_thai,
+                     c.Surname_thai,
+                     c.Email,
+                     s.SideName,
+                     d.DepartmentName,
+                     b.BranchName,
+                     p.PositionName
+                    }).ToList()
+
+        ' Assign to GridView
+        If user.Count > 0 Then
+            Me.Repeater1.DataSource = user
+            Me.Repeater1.DataBind()
+        Else
+            Me.Repeater1.DataSource = Nothing
+            Me.Repeater1.DataBind()
+        End If
+
     End Sub
 
     'Protected Sub BindDataSearch(SearchUser As String)
@@ -160,20 +161,19 @@ Public Class SearchUser
 
 
     Protected Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        Using db = New DB_EaglesInternalEntities
-            Dim menu As String = "User Management"
-            Dim id As String = Session("UserID").ToString
-            Dim ds1 = From c In db.tblUserMenu Where c.UserID = ID And
-            c.Menu = menu And c.Save_ = 1
-            If ds1.Any Then
 
-                'Response.Redirect(Request.Cookies("MainConfigPath").Value + "AddUser.aspx")
-                Response.Redirect("AddUser.aspx")
-            Else
-                ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
-            End If
-        End Using
+        Dim menu As String = "User Management"
+        Dim id As String = Session("UserID").ToString
+        Dim ds1 = From c In db.tblUserMenus Where c.UserID = id And
+        c.Menu = menu And c.Save_ = 1
+        If ds1.Any Then
 
+            'Response.Redirect(Request.Cookies("MainConfigPath").Value + "AddUser.aspx")
+            Response.Redirect("AddUser.aspx")
+        Else
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
+        End If
+       
 
     End Sub
 
@@ -216,8 +216,8 @@ Public Class SearchUser
         Dim menu As String = "User Management"
         Dim EditU As String = CStr(e.CommandArgument)
         If e.CommandName.Equals("edituser") Then
-            Dim ds1 = From c In db.tblUserMenu Where c.UserID = ID And
-           c.Menu = Menu And c.Edit_ = 1
+            Dim ds1 = From c In db.tblUserMenus Where c.UserID = id And
+           c.Menu = menu And c.Edit_ = 1
             If ds1.Any Then
                 Response.Write("<script>window.open('EditUser.aspx?UserID=" & EditU & "',target='_self');</script>")
             Else

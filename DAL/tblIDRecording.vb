@@ -10,13 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Branch
-    Public Property BranchID As String
-    Public Property BranchName As String
-    Public Property Status As String
-    Public Property UserId As String
-
-    Public Overridable Property tblUser As tblUser
-    Public Overridable Property Sides As ICollection(Of Side) = New HashSet(Of Side)
+Partial Public Class tblIDRecording
+    Public Property recordingID As Integer
+    Public Property recordingDate As Nullable(Of Date)
+    Public Property recordingTime As Nullable(Of System.TimeSpan)
+    Public Property problems As String
+    Public Property reason As String
+    Public Property branch As String
+    Public Property recording_Time As String
 
 End Class

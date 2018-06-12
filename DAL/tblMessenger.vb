@@ -10,13 +10,16 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Branch
-    Public Property BranchID As String
-    Public Property BranchName As String
-    Public Property Status As String
-    Public Property UserId As String
-
-    Public Overridable Property tblUser As tblUser
-    Public Overridable Property Sides As ICollection(Of Side) = New HashSet(Of Side)
+Partial Public Class tblMessenger
+    Public Property MessDate As Date
+    Public Property Name As String
+    Public Property TimeOut As String
+    Public Property MileOut As Nullable(Of Decimal)
+    Public Property TimeIn As String
+    Public Property MileIn As Nullable(Of Decimal)
+    Public Property UpdateBy As String
+    Public Property UpdateDate As Nullable(Of Date)
+    Public Property CreateBy As String
+    Public Property CreateDate As Nullable(Of Date)
 
 End Class

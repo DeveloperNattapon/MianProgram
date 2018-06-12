@@ -10,17 +10,17 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblBookDoc
-    Public Property BookNo As String
+Partial Public Class tblUsername
+    Public Property UserName As String
+    Public Property Password As String
     Public Property Name As String
-    Public Property BookDate As Nullable(Of Date)
-    Public Property Depart As String
-    Public Property Sys As String
-    Public Property Type As String
-    Public Property UseName As String
-    Public Property StatusDoc As String
-    Public Property Userby As String
-    Public Property UserDate As Nullable(Of Date)
-    Public Property Status As Nullable(Of Integer)
+    Public Property CustomerCode As String
+    Public Property UserGroup As String
+    Public Property GroupName As String
+    Public Property UserStatus As String
+    Public Property CreateBy As String
+    Public Property CreateDate As Nullable(Of Date)
+    Public Property EditBy As String
+    Public Property EditDate As Nullable(Of Date)
 
 End Class

@@ -10,13 +10,13 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Branch
-    Public Property BranchID As String
-    Public Property BranchName As String
-    Public Property Status As String
-    Public Property UserId As String
-
-    Public Overridable Property tblUser As tblUser
-    Public Overridable Property Sides As ICollection(Of Side) = New HashSet(Of Side)
+Partial Public Class tblFileIT
+    Public Property FileID As Integer
+    Public Property Filename As String
+    Public Property Title As String
+    Public Property Createby As String
+    Public Property Createdate As Nullable(Of Date)
+    Public Property Updateby As String
+    Public Property Updatedate As Nullable(Of Date)
 
 End Class

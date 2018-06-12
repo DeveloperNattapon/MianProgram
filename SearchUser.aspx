@@ -72,11 +72,11 @@
                                         <td>
                                             <asp:Label ID="Label5" runat="server" Text='<%# Bind("PositionName")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Labelsec" runat="server" Text='<%# Bind("DeptName")%>'></asp:Label></td>
+                                            <asp:Label ID="Labelsec" runat="server" Text='<%# Bind("DepartmentName")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("SectionName")%>'></asp:Label></td>
+                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("SideName")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("BranchName") %>'></asp:Label></td>
+                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("BranchName")%>'></asp:Label></td>
                                         <td class="text-center">
 
                                             <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="edituser" CommandArgument='<%# Eval("UserID")%>'><i class="fa fa-pencil"></i></asp:LinkButton>
