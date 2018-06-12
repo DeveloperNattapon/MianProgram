@@ -98,6 +98,7 @@ D:\Asp.net\MainProgram\bin\EntityFramework.SqlServer.xml
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.xml
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\MianProgram\obj\Debug\MainProgram.Resources.resources
 D:\MianProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
 D:\MianProgram\obj\Debug\MainProgram.xml
@@ -114,6 +115,8 @@ D:\MianProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
 D:\MianProgram\obj\Debug\MainProgram.dll
 D:\MianProgram\obj\Debug\MainProgram.pdb
 =======
+=======
+>>>>>>> b476419db03412452b30404763105a1d617d964f
 D:\ProjectDevelop\MainProgram\bin\MainProgram.dll.config
 D:\ProjectDevelop\MainProgram\bin\MainProgram.dll
 D:\ProjectDevelop\MainProgram\bin\MainProgram.pdb
@@ -126,4 +129,7 @@ D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cach
 D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.dll
 D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.xml
 D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.pdb
+<<<<<<< HEAD
+>>>>>>> b476419db03412452b30404763105a1d617d964f
+=======
 >>>>>>> b476419db03412452b30404763105a1d617d964f
