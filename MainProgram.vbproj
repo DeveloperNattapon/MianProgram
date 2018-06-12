@@ -6708,6 +6708,8 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="App_Data\LoginCls.vb" />
+    <Compile Include="App_Data\SelectData.vb" />
+    <Compile Include="Class\showData.vb" />
     <Compile Include="DAL\Branch.vb">
       <DependentUpon>ConnectDB.tt</DependentUpon>
     </Compile>
