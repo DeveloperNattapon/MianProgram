@@ -70,7 +70,7 @@ Public Class AddUser
     End Sub
     Private Sub showDepartment(SideID As String)
         ddlDept.Items.Clear()
-        ddlDept.Items.Add(New ListItem("--select Position--", ""))
+        ddlDept.Items.Add(New ListItem("--select Department--", ""))
         ddlDept.AppendDataBoundItems = True
 
         Dim d = From ug In db.Departments
@@ -167,7 +167,7 @@ Public Class AddUser
         db.SaveChanges()
 
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('บันทึกข้อมูล เรียบร้อยแล้วครับ')", True)
-        Response.Redirect(Request.Cookies("MainConfigPath").Value & "SearchUser.aspx")
+        'Response.Redirect(Request.Cookies("MainConfigPath").Value & "SearchUser.aspx")
         'Response.Redirect("SearchUser.aspx")
     End Sub
 
@@ -183,6 +183,7 @@ Public Class AddUser
         ddlPosition.Text = ""
         ddlDept.Text = ""
         ddlBranch.Text = ""
+        ddlSection.Text = ""
 
     End Sub
 

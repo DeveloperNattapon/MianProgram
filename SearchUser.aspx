@@ -12,11 +12,11 @@
         <section class="content-header">
             <h1>User 
        
-                <small>ProFile</small>
+                <small>Profile</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#">ProFile</a></li>
+                <li><a href="#">Profile</a></li>
             </ol>
         </section>
            <div class="col-lg-12 col-md-12">
