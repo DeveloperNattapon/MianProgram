@@ -70,13 +70,13 @@
                                         <td>
                                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("Email") %>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Position") %>'></asp:Label></td>
+                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("PositionName")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Labelsec" runat="server" Text='<%# Bind("Dept")%>'></asp:Label></td>
+                                            <asp:Label ID="Labelsec" runat="server" Text='<%# Bind("DeptName")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("Section") %>'></asp:Label></td>
+                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("SectionName")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("Branch") %>'></asp:Label></td>
+                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("BranchName") %>'></asp:Label></td>
                                         <td class="text-center">
 
                                             <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="edituser" CommandArgument='<%# Eval("UserID")%>'><i class="fa fa-pencil"></i></asp:LinkButton>

@@ -15,21 +15,24 @@ Public Class SearchUser
     Protected Sub BindData()
         Using db = New DB_EaglesInternalEntities
             ' Get data from CUSTOMER
-            Dim d = (From c In db.tblUser
+            Dim user = (From c In db.tblUser Join b In db.Branch On b.BranchID Equals c.Branch
+                     Join s In db.Side On c.Section Equals s.SideID
+                     Join d In db.Department On d.DepartmentID Equals c.Dept
+                     Join p In db.Position On p.PositionID Equals c.Position
                                     Select New With {
                          c.UserId,
                          c.Name_thai,
                          c.Surname_thai,
                          c.Email,
-                         c.Section,
-                         c.Dept,
-                         c.Branch,
-                         c.Position
+                         s.SideName,
+                         d.DepartmentName,
+                         b.BranchName,
+                         p.PositionName
                         }).ToList()
 
             ' Assign to GridView
-            If d.Count > 0 Then
-                Me.Repeater1.DataSource = d
+            If user.Count > 0 Then
+                Me.Repeater1.DataSource = user
                 Me.Repeater1.DataBind()
             Else
                 Me.Repeater1.DataSource = Nothing
