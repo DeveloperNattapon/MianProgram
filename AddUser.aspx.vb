@@ -166,8 +166,13 @@ Public Class AddUser
             })
         db.SaveChanges()
 
+<<<<<<< HEAD
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('บันทึกข้อมูล เรียบร้อยแล้วครับ')", True)
         'Response.Redirect(Request.Cookies("MainConfigPath").Value & "SearchUser.aspx")
+=======
+        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('บันทึกข้อมูล เรียบร้อย')", True)
+        Response.Redirect(Request.Cookies("MainConfigPath").Value & "SearchUser.aspx")
+>>>>>>> 3f8023ab275d7c70ddae41cce914e8fda4c11373
         'Response.Redirect("SearchUser.aspx")
     End Sub
 

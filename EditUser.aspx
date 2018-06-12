@@ -82,7 +82,7 @@
 
                         <label class="control-label" for="txtName_eng">First name</label>
                         <div class="controls ">
-                            <input class="form-control" id="txtNameEng" required="required" runat="server" type="text" />
+                            <input class="form-control" id="txtNameEng" runat="server" type="text" />
                         </div>
 
                     </div>
@@ -90,15 +90,12 @@
 
                         <label class="control-label" for="txtSurname_thai">นามสกุล</label>
                         <div class="controls ">
-
                             <input class="form-control" id="txtSurnameThai" required="required" runat="server" type="text" />
                         </div>
 
-
                         <label class="control-label" for="txtSurname_eng">Surname</label>
-                        <div class="controls ">
-
-                            <input class="form-control" id="txtSurnameEng" required="required" runat="server" type="text" />
+                        <div class="controls">
+                            <input class="form-control" id="txtSurnameEng"  runat="server" type="text" />
                         </div>
 
                     </div>
