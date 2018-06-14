@@ -17,6 +17,8 @@ Public Class EditUser
             showSide()
             showDepartment()
             showPosition()
+            showStatus()
+
         End If
 
     End Sub
@@ -24,24 +26,29 @@ Public Class EditUser
 
         Dim UserId As String = Request.QueryString("UserID")
         Dim key As String = "Eagles"
+        Try
+            Dim user = (From u In db.tblUsers Join s In db.Status On s.StatusID Equals u.StatusID Where u.UserId = UserId).First
+            'Dim pass As String = LoginCls.Decrypt(user.u.Password, key)
+            txtUser.Value = user.u.UserId
+            'txtPassworde.Value = pass
+            ddlPrefix.Text = user.u.Prefix_thai
+            ddlPrefix_Eng.Text = user.u.Prefix_eng
+            txtNameThai.Value = user.u.Name_thai
+            txtSurnameThai.Value = user.u.Surname_thai
+            txtNameEng.Value = user.u.Name_eng
+            txtSurnameEng.Value = user.u.Surname_eng
+            txtEmaile.Value = user.u.Email
+            ddlBranch.Text = user.u.Branch
+            ddlDept.Text = user.u.Dept
+            ddlPosition.Text = user.u.Position
+            ddlSection.Text = user.u.Section
+            lbApprove1.Value = user.u.Approve1
+            lbApprove2.Value = user.u.Approve2
+            ddlStatus.Text = user.s.StatusName
+        Catch ex As Exception
 
-        Dim user = (From u In db.tblUsers Where u.UserId = UserId).SingleOrDefault
-        Dim pass As String = LoginCls.Decrypt(user.Password, key)
-        txtUser.Value = user.UserId
-        'txtPassworde.Value = pass
-        ddlPrefix.Text = user.Prefix_thai
-        ddlPrefix_Eng.Text = user.Prefix_eng
-        txtNameThai.Value = user.Name_thai
-        txtSurnameThai.Value = user.Surname_thai
-        txtNameEng.Value = user.Name_eng
-        txtSurnameEng.Value = user.Surname_eng
-        txtEmaile.Value = user.Email
-        ddlBranch.Text = user.Branch
-        ddlDept.Text = user.Dept
-        ddlPosition.Text = user.Position
-        ddlSection.Text = user.Section
-        lbApprove1.Value = user.Approve1
-        lbApprove2.Value = user.Approve2
+        End Try
+       
        
 
     End Sub
@@ -224,6 +231,30 @@ Public Class EditUser
         End Try
 
     End Sub
+    Private Sub showStatus()
+        'ddlStatus.Items.Clear()
+        'ddlStatus.Items.Add(New ListItem("--select Status--", ""))
+        'ddlStatus.AppendDataBoundItems = True
+
+        Dim d = From ug In db.Status
+                Order By ug.StatusName Ascending
+                Select ug.StatusID, ug.StatusName
+        Try
+            ddlStatus.DataSource = d.ToList
+            ddlStatus.DataTextField = "StatusName"
+            ddlStatus.DataValueField = "StatusID"
+            ddlStatus.DataBind()
+            If ddlStatus.Items.Count > 1 Then
+                ddlStatus.Enabled = True
+            Else
+                ddlStatus.Enabled = False
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 
     Protected Sub ddlBranch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlBranch.SelectedIndexChanged
         Dim BranchId As String = ddlBranch.Text
@@ -260,6 +291,9 @@ Public Class EditUser
             User.Position = ddlPosition.Text
             User.UserBy = Session("Name_eng").ToString
             User.UserDate = Now
+            User.StatusID = CType(ddlStatus.Text, Integer?)
+
+
 
             db.SaveChanges()
             'Response.Redirect(Request.Cookies("MainConfigPath").Value + "SearchUser.aspx")
@@ -284,6 +318,7 @@ Public Class EditUser
         ddlPosition.Text = ""
         ddlDept.Text = ""
         ddlBranch.Text = ""
+        ddlStatus.Text = ""
 
     End Sub
 End Class

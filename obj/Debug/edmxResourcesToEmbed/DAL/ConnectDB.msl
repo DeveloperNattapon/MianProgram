@@ -289,6 +289,7 @@
     <EntitySetMapping Name="tblUsers">
       <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUser">
         <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Prefix_thai" ColumnName="Prefix_thai" />
@@ -427,6 +428,14 @@
           <ScalarProperty Name="reason" ColumnName="reason" />
           <ScalarProperty Name="branch" ColumnName="branch" />
           <ScalarProperty Name="recording_Time" ColumnName="recording_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

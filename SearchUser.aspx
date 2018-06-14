@@ -19,23 +19,82 @@
                 <li><a href="#">Profile</a></li>
             </ol>
         </section>
-           <div class="col-lg-12 col-md-12">
-                   
+      
+          <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class=" col-xs-12">
+               <!-- general form elements -->
+                        <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Edit Increase</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="row">
+
+                            <from class="form-horizontal">
+                            <div class="col-lg-6 col-md-12 col-md-offset-3">
+                                 <div class="box-body">   
+
+                              <div class="form-group">
+                                <div class="col-xs-3">
+                                    <label class="control-label">สาขา</label>
+                                    <div class="controls ">
+                                    <input class="form-control" runat="server" id="Text1" disabled="disabled"/>
+                                          </div>
+
+                                </div>
+
+                                <div class="col-xs-6">
+
+                                    <label class="control-label" for="txtBranch">สาขา</label>
+                                    <div class="controls ">
+                                        <input class="form-control" runat="server" id="txtBranch" />
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-3">
+
+                                    <label class="control-label" for="txttest">'</label>
+                                    <div class="controls ">
+                                        <asp:Button ID="btnTest"    CssClass="btn btn-primary" runat="server" Text="Test" OnClick="btnAdd_Click" />
+                                    </div>
+                                </div>
+                            </div>
+                             
+               </div>
+                            </div>
+                             
+          </from>
+                                     
+                        </div>
+                    
+                            <!--/.row-->
+                    </div>
+
+                    </div>
+                    <!-- /.box -->
                 </div>
+          
+        </section>
+
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <div class="col-xs-12">
+                <div class=" col-xs-12">
                     <div class="box">
                         <div class="box-header">        
                        <div class="form-group">
                        <div class="col-xs-3 col-sm-1">
                             <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add User" />
-
                         </div> 
-                        </div>
-                          
+                       <div style="text-align:right;" ">
+                                <label>Search:<input type="search" class="form-control input-sm" placeholder="UserID" aria-controls="example1"/></label>
+                           </div>
+                          </div>
                     </div>
+
+                       
                         <!-- /.box-header -->
                         <div class="box-body">
                             <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">

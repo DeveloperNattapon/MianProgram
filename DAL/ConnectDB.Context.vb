@@ -47,5 +47,6 @@ Partial Public Class DB_EaglesInternalTestEntities
     Public Overridable Property tblAccessListDetails() As DbSet(Of tblAccessListDetail)
     Public Overridable Property tblDivisions() As DbSet(Of tblDivision)
     Public Overridable Property tblIDRecordings() As DbSet(Of tblIDRecording)
+    Public Overridable Property Status() As DbSet(Of Status)
 
 End Class

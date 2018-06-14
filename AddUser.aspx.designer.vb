@@ -131,6 +131,15 @@ Partial Public Class AddUser
     Protected WithEvents ddlPosition As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''ddlStatus control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlStatus As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''txtPassworde control.
     '''</summary>
     '''<remarks>

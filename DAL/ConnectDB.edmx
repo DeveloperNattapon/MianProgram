@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_EaglesInternalTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_EaglesInternalTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Branch">
           <Key>
             <PropertyRef Name="BranchID" />
@@ -108,6 +108,13 @@
           <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
           <Property Name="Status" Type="varchar" MaxLength="50" />
           <Property Name="BranchID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="StatusName" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -391,6 +398,7 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
           <Property Name="NickName" Type="varchar" MaxLength="20" />
           <Property Name="Approve1" Type="varchar" MaxLength="10" />
           <Property Name="Approve2" Type="varchar" MaxLength="10" />
+          <Property Name="StatusID" Type="int" />
         </EntityType>
         <EntityType Name="tblUserGroup">
           <Key>
@@ -492,15 +500,15 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblUser_tblUser">
-          <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
-          <End Role="tblUser1" Type="Self.tblUser" Multiplicity="0..1" />
+        <Association Name="FK_tblUser_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tblUser">
-              <PropertyRef Name="UserId" />
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
             </Principal>
-            <Dependent Role="tblUser1">
-              <PropertyRef Name="UserId" />
+            <Dependent Role="tblUser">
+              <PropertyRef Name="StatusID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -513,6 +521,7 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
           <EntitySet Name="Referal_Doc" EntityType="Self.Referal_Doc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RunNo" EntityType="Self.RunNo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Side" EntityType="Self.Side" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAbsent" EntityType="Self.tblAbsent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblBookingMessenger" EntityType="Self.tblBookingMessenger" Schema="dbo" store:Type="Tables" />
@@ -614,13 +623,12 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
             <End Role="Branch" EntitySet="Branch" />
             <End Role="Side" EntitySet="Side" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblUser_tblUser" Association="Self.FK_tblUser_tblUser">
+          <AssociationSet Name="FK_tblUser_Status" Association="Self.FK_tblUser_Status">
+            <End Role="Status" EntitySet="Status" />
             <End Role="tblUser" EntitySet="tblUser" />
-            <End Role="tblUser1" EntitySet="tblUser" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_EaglesInternalTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -929,6 +937,8 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
           <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_tblUser" FromRole="tblUser" ToRole="Branch" />
           <NavigationProperty Name="tblUser1" Relationship="Self.FK_tblUser_tblUser" FromRole="tblUser" ToRole="tblUser1" />
           <NavigationProperty Name="tblUser2" Relationship="Self.FK_tblUser_tblUser" FromRole="tblUser1" ToRole="tblUser" />
+          <Property Name="StatusID" Type="Int32" />
+          <NavigationProperty Name="Status" Relationship="DB_EaglesInternalTestModel.FK_tblUser_Status" FromRole="tblUser" ToRole="Status" />
         </EntityType>
         <EntityType Name="tblUserGroup">
           <Key>
@@ -1168,7 +1178,32 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblUser1" EntitySet="tblUsers" />
           </AssociationSet>
+          <EntitySet Name="Status" EntityType="DB_EaglesInternalTestModel.Status" />
+          <AssociationSet Name="FK_tblUser_Status" Association="DB_EaglesInternalTestModel.FK_tblUser_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="tblUser" EntitySet="tblUsers" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblUsers" Relationship="DB_EaglesInternalTestModel.FK_tblUser_Status" FromRole="Status" ToRole="tblUser" />
+        </EntityType>
+        <Association Name="FK_tblUser_Status">
+          <End Type="DB_EaglesInternalTestModel.Status" Role="Status" Multiplicity="0..1" />
+          <End Type="DB_EaglesInternalTestModel.tblUser" Role="tblUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="tblUser">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1463,6 +1498,7 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
           <EntitySetMapping Name="tblUsers">
             <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUser">
               <MappingFragment StoreEntitySet="tblUser">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Prefix_thai" ColumnName="Prefix_thai" />
@@ -1601,6 +1637,14 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
                 <ScalarProperty Name="reason" ColumnName="reason" />
                 <ScalarProperty Name="branch" ColumnName="branch" />
                 <ScalarProperty Name="recording_Time" ColumnName="recording_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

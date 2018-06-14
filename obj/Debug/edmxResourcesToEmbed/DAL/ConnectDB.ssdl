@@ -104,6 +104,13 @@
     <Property Name="Status" Type="varchar" MaxLength="50" />
     <Property Name="BranchID" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="StatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -386,6 +393,7 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
     <Property Name="NickName" Type="varchar" MaxLength="20" />
     <Property Name="Approve1" Type="varchar" MaxLength="10" />
     <Property Name="Approve2" Type="varchar" MaxLength="10" />
+    <Property Name="StatusID" Type="int" />
   </EntityType>
   <EntityType Name="tblUserGroup">
     <Key>
@@ -487,15 +495,15 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblUser_tblUser">
-    <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
-    <End Role="tblUser1" Type="Self.tblUser" Multiplicity="0..1" />
+  <Association Name="FK_tblUser_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblUser">
-        <PropertyRef Name="UserId" />
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
       </Principal>
-      <Dependent Role="tblUser1">
-        <PropertyRef Name="UserId" />
+      <Dependent Role="tblUser">
+        <PropertyRef Name="StatusID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -508,6 +516,7 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
     <EntitySet Name="Referal_Doc" EntityType="Self.Referal_Doc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RunNo" EntityType="Self.RunNo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Side" EntityType="Self.Side" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblAbsent" EntityType="Self.tblAbsent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblBookingMessenger" EntityType="Self.tblBookingMessenger" Schema="dbo" store:Type="Tables" />
@@ -609,9 +618,9 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
       <End Role="Branch" EntitySet="Branch" />
       <End Role="Side" EntitySet="Side" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblUser_tblUser" Association="Self.FK_tblUser_tblUser">
+    <AssociationSet Name="FK_tblUser_Status" Association="Self.FK_tblUser_Status">
+      <End Role="Status" EntitySet="Status" />
       <End Role="tblUser" EntitySet="tblUser" />
-      <End Role="tblUser1" EntitySet="tblUser" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -14,7 +14,7 @@
             <ol class="breadcrumb">
                 <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
                 <li><a class="active"><i class="fa fa-file"></i>Pro File</a></li>
-                <li><a href="MasterCode.aspx">Add User</a></li>
+                <li><a href="AddUser.aspx">Add User</a></li>
             </ol>
         </section>
         <!-- Main content -->
@@ -40,6 +40,7 @@
                     <div class="col-xs-12">
                         <label class="control-label " for="txtUserId">UserId</label>
                         <div class="controls ">
+
                             <input class="form-control" id="txtUser" runat="server" required="required" type="text" />
                         </div>
                      
@@ -126,15 +127,19 @@
 
                         <label class="control-label" for="txtPosition">ตำแหน่ง</label>
                         <div class="controls ">
-                            <asp:DropDownList ID="ddlPosition" runat="server" Cssclass="form-control" DataTextField = "PositionName" DataValueField = "PositionID">
-                                
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlPosition" runat="server" Cssclass="form-control" DataTextField = "PositionName" DataValueField = "PositionID"></asp:DropDownList>
                         </div>
+                        
+                         <label class="control-label" for="txtStatus">สถานะ</label>
+                        <div class="controls ">
+                            <asp:DropDownList ID="ddlStatus" runat="server" Cssclass="form-control" DataTextField = "StatusName" DataValueField = "StatusID"></asp:DropDownList>
+                        </div>
+
                           <label class="control-label " for="txtPassword">รหัสผ่าน</label>
                         <div class="controls ">
                             <input class="form-control" id="txtPassworde" required="required" runat="server" type="password" />
-
                         </div>
+
                     </div>
                 </div>
 

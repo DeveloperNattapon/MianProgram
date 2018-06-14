@@ -14,7 +14,7 @@
             <ol class="breadcrumb">
                 <li><a href="HomeMain.aspx"><i class="fa fa-home"></i>Home</a></li>
                 <li><a class="active">Pro File</a></li>
-                <li><a href="MasterCode.aspx">Edit User</a></li>
+                <li><a href="EditUser.aspx"><i class="fa fa-edit"></i>Edit User</a></li>
             </ol>
         </section>
         <!-- Main content -->
@@ -123,20 +123,27 @@
 
                         <label class="control-label" for="txtPosition">ตำแหน่ง</label>
                         <div class="controls ">
-                            <asp:DropDownList ID="ddlPosition" runat="server" class="form-control" DataTextField = "PositionName" DataValueField = "PositionID">
-                                
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlPosition" runat="server" class="form-control" DataTextField = "PositionName" DataValueField = "PositionID"> </asp:DropDownList>
                         </div>
+                        <%--<div class="col-xs-12">--%>
                         <label class="control-label" for="lbApprove1">ผู้อนุมัติ 1</label>
                         <div class="controls ">
-
                             <input class="form-control" id="lbApprove1" required="required" runat="server" type="text" disabled="disabled" />
                         </div>
+                    <%--    </div>--%>
+
+                        <%--<div class="col-xs-6">--%>
                         <label class="control-label" for="lbApprove2">ผู้อนุมัติ 2</label>
                         <div class="controls ">
-
                             <input class="form-control" id="lbApprove2" required="required" runat="server" type="text" disabled="disabled" />
                         </div>
+                   <%--     </div>--%>
+
+                        <label class="control-label" for="txtPosition">สถานะ</label>
+                        <div class="controls ">
+                            <asp:DropDownList ID="ddlStatus" runat="server" class="form-control" DataTextField = "StatusName" DataValueField = "StatusID"> </asp:DropDownList>
+                        </div>
+
                     </div>
                 </div>
 

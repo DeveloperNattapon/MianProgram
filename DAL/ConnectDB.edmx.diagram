@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ec91fbdfcc49477b8dfb2fb8bb886fb9" Name="Diagram1">
+      <Diagram DiagramId="ec91fbdfcc49477b8dfb2fb8bb886fb9" Name="Diagram1" ZoomLevel="78">
         <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Branch" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Department" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Document" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
@@ -36,6 +36,8 @@
         <AssociationConnector Association="DB_EaglesInternalTestModel.FK_Position_Department" ManuallyRouted="false" />
         <AssociationConnector Association="DB_EaglesInternalTestModel.FK_Document_Document" ManuallyRouted="false" />
         <AssociationConnector Association="DB_EaglesInternalTestModel.FK_tblUser_tblUser" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Status" Width="1.5" PointX="0.75" PointY="22.25" />
+        <AssociationConnector Association="DB_EaglesInternalTestModel.FK_tblUser_Status" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

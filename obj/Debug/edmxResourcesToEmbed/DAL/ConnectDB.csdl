@@ -305,6 +305,8 @@
     <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_tblUser" FromRole="tblUser" ToRole="Branch" />
     <NavigationProperty Name="tblUser1" Relationship="Self.FK_tblUser_tblUser" FromRole="tblUser" ToRole="tblUser1" />
     <NavigationProperty Name="tblUser2" Relationship="Self.FK_tblUser_tblUser" FromRole="tblUser1" ToRole="tblUser" />
+    <Property Name="StatusID" Type="Int32" />
+    <NavigationProperty Name="Status" Relationship="DB_EaglesInternalTestModel.FK_tblUser_Status" FromRole="tblUser" ToRole="Status" />
   </EntityType>
   <EntityType Name="tblUserGroup">
     <Key>
@@ -544,5 +546,30 @@
       <End Role="tblUser" EntitySet="tblUsers" />
       <End Role="tblUser1" EntitySet="tblUsers" />
     </AssociationSet>
+    <EntitySet Name="Status" EntityType="DB_EaglesInternalTestModel.Status" />
+    <AssociationSet Name="FK_tblUser_Status" Association="DB_EaglesInternalTestModel.FK_tblUser_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="tblUser" EntitySet="tblUsers" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblUsers" Relationship="DB_EaglesInternalTestModel.FK_tblUser_Status" FromRole="Status" ToRole="tblUser" />
+  </EntityType>
+  <Association Name="FK_tblUser_Status">
+    <End Type="DB_EaglesInternalTestModel.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="DB_EaglesInternalTestModel.tblUser" Role="tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

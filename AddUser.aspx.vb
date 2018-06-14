@@ -15,7 +15,8 @@ Public Class AddUser
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
             showBranch()
-          
+            showStatus()
+
         End If
     End Sub
     Private Sub showBranch()
@@ -118,6 +119,30 @@ Public Class AddUser
         End Try
 
     End Sub
+    Private Sub showStatus()
+        ddlStatus.Items.Clear()
+        ddlStatus.Items.Add(New ListItem("--select Status--", ""))
+        ddlStatus.AppendDataBoundItems = True
+
+        Dim d = From ug In db.Status
+                Order By ug.StatusName Ascending
+                Select ug.StatusID, ug.StatusName
+        Try
+            ddlStatus.DataSource = d.ToList
+            ddlStatus.DataTextField = "StatusName"
+            ddlStatus.DataValueField = "StatusID"
+            ddlStatus.DataBind()
+            If ddlStatus.Items.Count > 1 Then
+                ddlStatus.Enabled = True
+            Else
+                ddlStatus.Enabled = False
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
     Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
         Try
@@ -162,6 +187,7 @@ Public Class AddUser
                  .Dept = ddlDept.Text.Trim, _
                  .Branch = ddlBranch.Text.Trim, _
                  .CreateBy = Session("Name_eng").ToString, _
+                 .StatusID = CType(ddlStatus.Text.Trim.Trim, Integer?), _
                  .CreateDate = Now _
             })
         db.SaveChanges()
@@ -184,6 +210,7 @@ Public Class AddUser
         ddlDept.Text = ""
         ddlBranch.Text = ""
         ddlSection.Text = ""
+        ddlStatus.Text = ""
 
     End Sub
 

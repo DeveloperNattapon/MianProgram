@@ -153,12 +153,19 @@
                                 <span class="pull-right-container">
                                 </span></a>
                            </li>
-                        <li>
+                        <li class="treeview">
                             <a href="SearchUser.aspx">
-                                <i class="fa fa-user-plus"></i> 
+                                <i class="fa fa-user"></i> 
                                 <span>Profile</span>
-                                <span class="pull-right-container"></span>
+                                 <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                 </span>
                             </a>
+                             <ul class="treeview-menu">
+                                 <li><a href="SearchUser.aspx"><i class="fa fa-search"></i> SearchUser</a></li>
+                                 <li><a href="AddUser.aspx"><i class="fa fa-user-plus"></i> AddUser</a></li>
+           
+                             </ul>
                         </li>
 
                         <li>

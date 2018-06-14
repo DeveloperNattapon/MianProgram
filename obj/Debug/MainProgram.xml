@@ -502,6 +502,14 @@ lbApprove2 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:MainProgram.EditUser.ddlStatus">
+	<summary>
+ddlStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:MainProgram.EditUser.btnSave">
 	<summary>
 btnSave control.
@@ -770,6 +778,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:MainProgram.AddUser.ddlPosition">
 	<summary>
 ddlPosition control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.AddUser.ddlStatus">
+	<summary>
+ddlStatus control.
 </summary>
 	<remarks>
 Auto-generated field.

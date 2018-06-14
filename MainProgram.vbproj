@@ -6749,6 +6749,9 @@
     <Compile Include="DAL\Side.vb">
       <DependentUpon>ConnectDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Status.vb">
+      <DependentUpon>ConnectDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\sysdiagram.vb">
       <DependentUpon>ConnectDB.tt</DependentUpon>
     </Compile>
