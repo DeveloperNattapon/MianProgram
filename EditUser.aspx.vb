@@ -26,11 +26,12 @@ Public Class EditUser
 
         Dim UserId As String = Request.QueryString("UserID")
         Dim key As String = "Eagles"
+
         Try
-            Dim user = (From u In db.tblUsers Join s In db.Status On s.StatusID Equals u.StatusID Where u.UserId = UserId).First
+
+            Dim user = (From u In db.tblUsers Join s In db.Status On s.StatusID Equals u.StatusID Where u.UserId = UserId).FirstOrDefault
             'Dim pass As String = LoginCls.Decrypt(user.u.Password, key)
             txtUser.Value = user.u.UserId
-            'txtPassworde.Value = pass
             ddlPrefix.Text = user.u.Prefix_thai
             ddlPrefix_Eng.Text = user.u.Prefix_eng
             txtNameThai.Value = user.u.Name_thai
@@ -46,7 +47,7 @@ Public Class EditUser
             lbApprove2.Value = user.u.Approve2
             ddlStatus.Text = user.s.StatusName
         Catch ex As Exception
-
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('เกิดข้อผิดพลาด !!!')", True)
         End Try
        
        

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DB_EaglesInternalModelStoreContainer" CdmEntityContainer="DB_EaglesInternalEntities">
+  <EntityContainerMapping StorageEntityContainer="DB_EaglesInternalTestModelStoreContainer" CdmEntityContainer="DB_EaglesInternalTestEntities">
     <EntitySetMapping Name="Branches">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Branch">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Branch">
         <MappingFragment StoreEntitySet="Branch">
           <ScalarProperty Name="BranchID" ColumnName="BranchID" />
           <ScalarProperty Name="BranchName" ColumnName="BranchName" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Departments">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Department">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Department">
         <MappingFragment StoreEntitySet="Department">
           <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
           <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
@@ -26,7 +26,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Documents">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Document">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Document">
         <MappingFragment StoreEntitySet="Document">
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Store" ColumnName="Store" />
@@ -38,7 +38,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="M_Document">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.M_Document">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.M_Document">
         <MappingFragment StoreEntitySet="M_Document">
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Type" ColumnName="Type" />
@@ -48,7 +48,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Positions">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Position">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Position">
         <MappingFragment StoreEntitySet="Position">
           <ScalarProperty Name="PositionID" ColumnName="PositionID" />
           <ScalarProperty Name="PositionName" ColumnName="PositionName" />
@@ -62,7 +62,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Referal_Doc">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Referal_Doc">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Referal_Doc">
         <MappingFragment StoreEntitySet="Referal_Doc">
           <ScalarProperty Name="ReflID" ColumnName="ReflID" />
           <ScalarProperty Name="Firstname" ColumnName="Firstname" />
@@ -91,7 +91,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="RunNoes">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.RunNo">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.RunNo">
         <MappingFragment StoreEntitySet="RunNo">
           <ScalarProperty Name="NO" ColumnName="NO" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -100,7 +100,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Sides">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Side">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Side">
         <MappingFragment StoreEntitySet="Side">
           <ScalarProperty Name="SideID" ColumnName="SideID" />
           <ScalarProperty Name="SideName" ColumnName="SideName" />
@@ -113,8 +113,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.sysdiagram">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -125,7 +133,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblAbsents">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblAbsent">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblAbsent">
         <MappingFragment StoreEntitySet="tblAbsent">
           <ScalarProperty Name="IDAbsent" ColumnName="IDAbsent" />
           <ScalarProperty Name="CodeID" ColumnName="CodeID" />
@@ -178,7 +186,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblBookingMessengers">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblBookingMessenger">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblBookingMessenger">
         <MappingFragment StoreEntitySet="tblBookingMessenger">
           <ScalarProperty Name="RecNo" ColumnName="RecNo" />
           <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
@@ -208,7 +216,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblCaseJobs">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblCaseJob">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblCaseJob">
         <MappingFragment StoreEntitySet="tblCaseJob">
           <ScalarProperty Name="CaseJobID" ColumnName="CaseJobID" />
           <ScalarProperty Name="CaseName" ColumnName="CaseName" />
@@ -216,7 +224,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblFileITs">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblFileIT">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblFileIT">
         <MappingFragment StoreEntitySet="tblFileIT">
           <ScalarProperty Name="FileID" ColumnName="FileID" />
           <ScalarProperty Name="Filename" ColumnName="Filename" />
@@ -229,7 +237,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblItJobDocs">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblItJobDoc">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblItJobDoc">
         <MappingFragment StoreEntitySet="tblItJobDoc">
           <ScalarProperty Name="ItJobDocID" ColumnName="ItJobDocID" />
           <ScalarProperty Name="RequestFrom" ColumnName="RequestFrom" />
@@ -253,7 +261,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblMenus">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblMenu">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblMenu">
         <MappingFragment StoreEntitySet="tblMenu">
           <ScalarProperty Name="Menu" ColumnName="Menu" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -263,7 +271,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblMessengers">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblMessenger">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblMessenger">
         <MappingFragment StoreEntitySet="tblMessenger">
           <ScalarProperty Name="MessDate" ColumnName="MessDate" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -279,7 +287,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblRunningNumbers">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblRunningNumber">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblRunningNumber">
         <MappingFragment StoreEntitySet="tblRunningNumber">
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="RunNo" ColumnName="RunNo" />
@@ -287,9 +295,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblUsers">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUser">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUser">
         <MappingFragment StoreEntitySet="tblUser">
-          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Prefix_thai" ColumnName="Prefix_thai" />
@@ -310,11 +317,12 @@
           <ScalarProperty Name="NickName" ColumnName="NickName" />
           <ScalarProperty Name="Approve1" ColumnName="Approve1" />
           <ScalarProperty Name="Approve2" ColumnName="Approve2" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblUserGroups">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUserGroup">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUserGroup">
         <MappingFragment StoreEntitySet="tblUserGroup">
           <ScalarProperty Name="UserGroupCode" ColumnName="UserGroupCode" />
           <ScalarProperty Name="UserGroupName" ColumnName="UserGroupName" />
@@ -324,7 +332,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblUserMenus">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUserMenu">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUserMenu">
         <MappingFragment StoreEntitySet="tblUserMenu">
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Menu" ColumnName="Menu" />
@@ -339,7 +347,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblUsernames">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUsername">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUsername">
         <MappingFragment StoreEntitySet="tblUsername">
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
@@ -356,7 +364,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblAccessLists">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblAccessList">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblAccessList">
         <MappingFragment StoreEntitySet="tblAccessList">
           <ScalarProperty Name="AccessNo" ColumnName="AccessNo" />
           <ScalarProperty Name="AccessName" ColumnName="AccessName" />
@@ -388,7 +396,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblAccessListDetails">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblAccessListDetail">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblAccessListDetail">
         <MappingFragment StoreEntitySet="tblAccessListDetail">
           <ScalarProperty Name="AccessNo" ColumnName="AccessNo" />
           <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
@@ -411,7 +419,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblDivisions">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblDivision">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblDivision">
         <MappingFragment StoreEntitySet="tblDivision">
           <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
           <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
@@ -419,7 +427,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblIDRecordings">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblIDRecording">
+      <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblIDRecording">
         <MappingFragment StoreEntitySet="tblIDRecording">
           <ScalarProperty Name="recordingID" ColumnName="recordingID" />
           <ScalarProperty Name="recordingDate" ColumnName="recordingDate" />
@@ -428,14 +436,6 @@
           <ScalarProperty Name="reason" ColumnName="reason" />
           <ScalarProperty Name="branch" ColumnName="branch" />
           <ScalarProperty Name="recording_Time" ColumnName="recording_Time" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Status">
-      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Status">
-        <MappingFragment StoreEntitySet="Status">
-          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
-          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

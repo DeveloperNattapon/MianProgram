@@ -431,6 +431,30 @@ ScriptManager1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:MainProgram.SearchUser.Text1">
+	<summary>
+Text1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.SearchUser.txtBranch">
+	<summary>
+txtBranch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.SearchUser.btnTest">
+	<summary>
+btnTest control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:MainProgram.SearchUser.btnAdd">
 	<summary>
 btnAdd control.
@@ -546,6 +570,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:MainProgram.AddUser.ddlPosition">
 	<summary>
 ddlPosition control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.AddUser.ddlStatus">
+	<summary>
+ddlStatus control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -682,6 +714,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:MainProgram.EditUser.lbApprove2">
 	<summary>
 lbApprove2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.EditUser.ddlStatus">
+	<summary>
+ddlStatus control.
 </summary>
 	<remarks>
 Auto-generated field.

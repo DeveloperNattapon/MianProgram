@@ -5,6 +5,7 @@ Imports System.Linq
 Public Class Menu
     Inherits System.Web.UI.Page
     Dim db As New DB_EaglesInternalTestEntities
+    'Private db As New DB_EaglesInternalEntities
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

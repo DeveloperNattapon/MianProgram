@@ -11,11 +11,11 @@ Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
 
-Partial Public Class DB_EaglesInternalEntities
+Partial Public Class DB_EaglesInternalTestEntities
     Inherits DbContext
 
     Public Sub New()
-        MyBase.New("name=DB_EaglesInternalEntities")
+        MyBase.New("name=DB_EaglesInternalTestEntities")
     End Sub
 
     Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)
@@ -30,6 +30,7 @@ Partial Public Class DB_EaglesInternalEntities
     Public Overridable Property Referal_Doc() As DbSet(Of Referal_Doc)
     Public Overridable Property RunNoes() As DbSet(Of RunNo)
     Public Overridable Property Sides() As DbSet(Of Side)
+    Public Overridable Property Status() As DbSet(Of Status)
     Public Overridable Property sysdiagrams() As DbSet(Of sysdiagram)
     Public Overridable Property tblAbsents() As DbSet(Of tblAbsent)
     Public Overridable Property tblBookingMessengers() As DbSet(Of tblBookingMessenger)
@@ -47,6 +48,5 @@ Partial Public Class DB_EaglesInternalEntities
     Public Overridable Property tblAccessListDetails() As DbSet(Of tblAccessListDetail)
     Public Overridable Property tblDivisions() As DbSet(Of tblDivision)
     Public Overridable Property tblIDRecordings() As DbSet(Of tblIDRecording)
-    Public Overridable Property Status() As DbSet(Of Status)
 
 End Class

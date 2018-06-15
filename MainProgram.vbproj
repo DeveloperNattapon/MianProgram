@@ -6711,7 +6711,7 @@
     <Compile Include="App_Data\SelectData.vb" />
     <Compile Include="Class\showData.vb" />
     <Compile Include="DAL\Branch.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ConnectDB.Context.vb">
       <AutoGen>True</AutoGen>
@@ -6728,80 +6728,95 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConnectDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ConnectTest.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConnectTest.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ConnectTest.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConnectTest.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ConnectTest.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Department.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Document.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\M_Document.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Position.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Referal_Doc.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\RunNo.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Side.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Status.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\sysdiagram.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblAbsent.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblAccessList.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblAccessListDetail.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblBookingMessenger.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblCaseJob.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblDivision.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblFileIT.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblIDRecording.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblItJobDoc.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblMenu.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblMessenger.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblRunningNumber.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblUser.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblUserGroup.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblUserMenu.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\tblUsername.vb">
-      <DependentUpon>ConnectDB.tt</DependentUpon>
+      <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -6919,6 +6934,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ConnectDB.edmx</DependentUpon>
       <LastGenOutput>ConnectDB.vb</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="DAL\ConnectTest.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ConnectTest.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\ConnectTest.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ConnectTest.edmx</DependentUpon>
+      <LastGenOutput>ConnectTest.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="DAL\ConnectTest.edmx.diagram">
+      <DependentUpon>ConnectTest.edmx</DependentUpon>
+    </Content>
+    <Content Include="DAL\ConnectTest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ConnectTest.edmx</DependentUpon>
+      <LastGenOutput>ConnectTest.vb</LastGenOutput>
     </Content>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

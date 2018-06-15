@@ -15,7 +15,7 @@
                 <small>Profile</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
                 <li><a href="#">Profile</a></li>
             </ol>
         </section>
@@ -88,9 +88,7 @@
                        <div class="col-xs-3 col-sm-1">
                             <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add User" />
                         </div> 
-                       <div style="text-align:right;" ">
-                                <label>Search:<input type="search" class="form-control input-sm" placeholder="UserID" aria-controls="example1"/></label>
-                           </div>
+                 
                           </div>
                     </div>
 
@@ -118,8 +116,8 @@
 
                                 <ItemTemplate>
 
-
                                     <tr>
+                                   
                                         <td>
                                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("UserId") %>'></asp:Label></td>
                                         <td>
@@ -142,6 +140,7 @@
                                         </td>
 
                                     </tr>
+                                  
 
                                 </ItemTemplate>
 

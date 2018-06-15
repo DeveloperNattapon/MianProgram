@@ -34,8 +34,6 @@ Partial Public Class tblUser
     Public Property StatusID As Nullable(Of Integer)
 
     Public Overridable Property Branches As ICollection(Of Branch) = New HashSet(Of Branch)
-    Public Overridable Property tblUser1 As tblUser
-    Public Overridable Property tblUser2 As tblUser
     Public Overridable Property Status As Status
 
 End Class

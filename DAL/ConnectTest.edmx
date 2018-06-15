@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DB_EaglesInternalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DB_EaglesInternalTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Branch">
           <Key>
             <PropertyRef Name="BranchID" />
@@ -109,8 +109,6 @@
           <Property Name="Status" Type="varchar" MaxLength="50" />
           <Property Name="BranchID" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.Status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Status">
           <Key>
             <PropertyRef Name="StatusID" />
@@ -181,7 +179,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.Status' does not have a prim
           <Property Name="Docsta" Type="varchar" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.tblAccessList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblAccessList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblAccessList">
           <Key>
             <PropertyRef Name="AccessNo" />
@@ -215,7 +213,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblAccessList' does not have
           <Property Name="ReceiveDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.tblAccessListDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblAccessListDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblAccessListDetail">
           <Key>
             <PropertyRef Name="AccessNo" />
@@ -278,7 +276,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblAccessListDetail' does no
           <Property Name="CaseName" Type="varchar" MaxLength="70" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.tblDivision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblDivision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblDivision">
           <Key>
             <PropertyRef Name="DivisionId" />
@@ -299,7 +297,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblDivision' does not have a
           <Property Name="Updatedate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.tblIDRecording' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblIDRecording' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblIDRecording">
           <Key>
             <PropertyRef Name="recordingID" />
@@ -368,7 +366,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblIDRecording' does not hav
           <Property Name="RunNo" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="tbltimeuser">
           <Property Name="CodeID" Type="nvarchar" MaxLength="255" />
           <Property Name="Typenotcome" Type="nvarchar" MaxLength="255" />
@@ -502,19 +500,19 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblUser_tblUser">
-          <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
-          <End Role="tblUser1" Type="Self.tblUser" Multiplicity="0..1" />
+        <Association Name="FK_tblUser_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tblUser">
-              <PropertyRef Name="UserId" />
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
             </Principal>
-            <Dependent Role="tblUser1">
-              <PropertyRef Name="UserId" />
+            <Dependent Role="tblUser">
+              <PropertyRef Name="StatusID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DB_EaglesInternalModelStoreContainer">
+        <EntityContainer Name="DB_EaglesInternalTestModelStoreContainer">
           <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
@@ -523,6 +521,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
           <EntitySet Name="Referal_Doc" EntityType="Self.Referal_Doc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RunNo" EntityType="Self.RunNo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Side" EntityType="Self.Side" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAbsent" EntityType="Self.tblAbsent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblBookingMessenger" EntityType="Self.tblBookingMessenger" Schema="dbo" store:Type="Tables" />
@@ -536,12 +535,6 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
           <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUserMenu" EntityType="Self.tblUserMenu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUsername" EntityType="Self.tblUsername" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Status" EntityType="Self.Status" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Status].[StatusID] AS [StatusID], 
-    [Status].[StatusName] AS [StatusName]
-    FROM [dbo].[Status] AS [Status]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="tblAccessList" EntityType="Self.tblAccessList" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [tblAccessList].[AccessNo] AS [AccessNo], 
@@ -630,15 +623,16 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             <End Role="Branch" EntitySet="Branch" />
             <End Role="Side" EntitySet="Side" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblUser_tblUser" Association="Self.FK_tblUser_tblUser">
+          <AssociationSet Name="FK_tblUser_Status" Association="Self.FK_tblUser_Status">
+            <End Role="Status" EntitySet="Status" />
             <End Role="tblUser" EntitySet="tblUser" />
-            <End Role="tblUser1" EntitySet="tblUser" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DB_EaglesInternalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DB_EaglesInternalTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Branch">
           <Key>
             <PropertyRef Name="BranchID" />
@@ -751,6 +745,14 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
           <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Branch" Relationship="Self.FK_Side_Branch" FromRole="Side" ToRole="Branch" />
           <NavigationProperty Name="Departments" Relationship="Self.FK_Department_Side" FromRole="Side" ToRole="Department" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblUser_Status" FromRole="Status" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -941,10 +943,9 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
           <Property Name="NickName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Approve1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Approve2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_tblUser" FromRole="tblUser" ToRole="Branch" />
-          <NavigationProperty Name="tblUser1" Relationship="Self.FK_tblUser_tblUser" FromRole="tblUser" ToRole="tblUser1" />
-          <NavigationProperty Name="tblUser2" Relationship="Self.FK_tblUser_tblUser" FromRole="tblUser1" ToRole="tblUser" />
           <Property Name="StatusID" Type="Int32" />
+          <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_tblUser" FromRole="tblUser" ToRole="Branch" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_tblUser_Status" FromRole="tblUser" ToRole="Status" />
         </EntityType>
         <EntityType Name="tblUserGroup">
           <Key>
@@ -1122,19 +1123,19 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblUser_tblUser">
-          <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
-          <End Role="tblUser1" Type="Self.tblUser" Multiplicity="0..1" />
+        <Association Name="FK_tblUser_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tblUser">
-              <PropertyRef Name="UserId" />
+            <Principal Role="Status">
+              <PropertyRef Name="StatusID" />
             </Principal>
-            <Dependent Role="tblUser1">
-              <PropertyRef Name="UserId" />
+            <Dependent Role="tblUser">
+              <PropertyRef Name="StatusID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DB_EaglesInternalEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB_EaglesInternalTestEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Branches" EntityType="Self.Branch" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Documents" EntityType="Self.Document" />
@@ -1143,6 +1144,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
           <EntitySet Name="Referal_Doc" EntityType="Self.Referal_Doc" />
           <EntitySet Name="RunNoes" EntityType="Self.RunNo" />
           <EntitySet Name="Sides" EntityType="Self.Side" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="tblAbsents" EntityType="Self.tblAbsent" />
           <EntitySet Name="tblBookingMessengers" EntityType="Self.tblBookingMessenger" />
@@ -1180,27 +1182,19 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             <End Role="Document" EntitySet="Documents" />
             <End Role="Document1" EntitySet="Documents" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblUser_tblUser" Association="Self.FK_tblUser_tblUser">
+          <AssociationSet Name="FK_tblUser_Status" Association="Self.FK_tblUser_Status">
+            <End Role="Status" EntitySet="Status" />
             <End Role="tblUser" EntitySet="tblUsers" />
-            <End Role="tblUser1" EntitySet="tblUsers" />
           </AssociationSet>
-          <EntitySet Name="Status" EntityType="DB_EaglesInternalModel.Status" />
         </EntityContainer>
-        <EntityType Name="Status">
-          <Key>
-            <PropertyRef Name="StatusID" />
-          </Key>
-          <Property Name="StatusID" Type="Int32" Nullable="false" />
-          <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DB_EaglesInternalModelStoreContainer" CdmEntityContainer="DB_EaglesInternalEntities">
+        <EntityContainerMapping StorageEntityContainer="DB_EaglesInternalTestModelStoreContainer" CdmEntityContainer="DB_EaglesInternalTestEntities">
           <EntitySetMapping Name="Branches">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.Branch">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Branch">
               <MappingFragment StoreEntitySet="Branch">
                 <ScalarProperty Name="BranchID" ColumnName="BranchID" />
                 <ScalarProperty Name="BranchName" ColumnName="BranchName" />
@@ -1210,7 +1204,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Departments">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.Department">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
@@ -1224,7 +1218,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Documents">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.Document">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Document">
               <MappingFragment StoreEntitySet="Document">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Store" ColumnName="Store" />
@@ -1236,7 +1230,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="M_Document">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.M_Document">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.M_Document">
               <MappingFragment StoreEntitySet="M_Document">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
@@ -1246,7 +1240,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Positions">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.Position">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Position">
               <MappingFragment StoreEntitySet="Position">
                 <ScalarProperty Name="PositionID" ColumnName="PositionID" />
                 <ScalarProperty Name="PositionName" ColumnName="PositionName" />
@@ -1260,7 +1254,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Referal_Doc">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.Referal_Doc">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Referal_Doc">
               <MappingFragment StoreEntitySet="Referal_Doc">
                 <ScalarProperty Name="ReflID" ColumnName="ReflID" />
                 <ScalarProperty Name="Firstname" ColumnName="Firstname" />
@@ -1289,7 +1283,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RunNoes">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.RunNo">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.RunNo">
               <MappingFragment StoreEntitySet="RunNo">
                 <ScalarProperty Name="NO" ColumnName="NO" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1298,7 +1292,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sides">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.Side">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Side">
               <MappingFragment StoreEntitySet="Side">
                 <ScalarProperty Name="SideID" ColumnName="SideID" />
                 <ScalarProperty Name="SideName" ColumnName="SideName" />
@@ -1311,8 +1305,16 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.sysdiagram">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1323,7 +1325,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblAbsents">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblAbsent">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblAbsent">
               <MappingFragment StoreEntitySet="tblAbsent">
                 <ScalarProperty Name="IDAbsent" ColumnName="IDAbsent" />
                 <ScalarProperty Name="CodeID" ColumnName="CodeID" />
@@ -1376,7 +1378,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblBookingMessengers">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblBookingMessenger">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblBookingMessenger">
               <MappingFragment StoreEntitySet="tblBookingMessenger">
                 <ScalarProperty Name="RecNo" ColumnName="RecNo" />
                 <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
@@ -1406,7 +1408,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblCaseJobs">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblCaseJob">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblCaseJob">
               <MappingFragment StoreEntitySet="tblCaseJob">
                 <ScalarProperty Name="CaseJobID" ColumnName="CaseJobID" />
                 <ScalarProperty Name="CaseName" ColumnName="CaseName" />
@@ -1414,7 +1416,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblFileITs">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblFileIT">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblFileIT">
               <MappingFragment StoreEntitySet="tblFileIT">
                 <ScalarProperty Name="FileID" ColumnName="FileID" />
                 <ScalarProperty Name="Filename" ColumnName="Filename" />
@@ -1427,7 +1429,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblItJobDocs">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblItJobDoc">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblItJobDoc">
               <MappingFragment StoreEntitySet="tblItJobDoc">
                 <ScalarProperty Name="ItJobDocID" ColumnName="ItJobDocID" />
                 <ScalarProperty Name="RequestFrom" ColumnName="RequestFrom" />
@@ -1451,7 +1453,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMenus">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblMenu">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblMenu">
               <MappingFragment StoreEntitySet="tblMenu">
                 <ScalarProperty Name="Menu" ColumnName="Menu" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -1461,7 +1463,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMessengers">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblMessenger">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblMessenger">
               <MappingFragment StoreEntitySet="tblMessenger">
                 <ScalarProperty Name="MessDate" ColumnName="MessDate" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1477,7 +1479,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblRunningNumbers">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblRunningNumber">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblRunningNumber">
               <MappingFragment StoreEntitySet="tblRunningNumber">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="RunNo" ColumnName="RunNo" />
@@ -1485,9 +1487,8 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblUsers">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUser">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUser">
               <MappingFragment StoreEntitySet="tblUser">
-                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Prefix_thai" ColumnName="Prefix_thai" />
@@ -1508,11 +1509,12 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
                 <ScalarProperty Name="NickName" ColumnName="NickName" />
                 <ScalarProperty Name="Approve1" ColumnName="Approve1" />
                 <ScalarProperty Name="Approve2" ColumnName="Approve2" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblUserGroups">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUserGroup">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUserGroup">
               <MappingFragment StoreEntitySet="tblUserGroup">
                 <ScalarProperty Name="UserGroupCode" ColumnName="UserGroupCode" />
                 <ScalarProperty Name="UserGroupName" ColumnName="UserGroupName" />
@@ -1522,7 +1524,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblUserMenus">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUserMenu">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUserMenu">
               <MappingFragment StoreEntitySet="tblUserMenu">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Menu" ColumnName="Menu" />
@@ -1537,7 +1539,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblUsernames">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUsername">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblUsername">
               <MappingFragment StoreEntitySet="tblUsername">
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -1554,7 +1556,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblAccessLists">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblAccessList">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblAccessList">
               <MappingFragment StoreEntitySet="tblAccessList">
                 <ScalarProperty Name="AccessNo" ColumnName="AccessNo" />
                 <ScalarProperty Name="AccessName" ColumnName="AccessName" />
@@ -1586,7 +1588,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblAccessListDetails">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblAccessListDetail">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblAccessListDetail">
               <MappingFragment StoreEntitySet="tblAccessListDetail">
                 <ScalarProperty Name="AccessNo" ColumnName="AccessNo" />
                 <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
@@ -1609,7 +1611,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblDivisions">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblDivision">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblDivision">
               <MappingFragment StoreEntitySet="tblDivision">
                 <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
                 <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
@@ -1617,7 +1619,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblIDRecordings">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblIDRecording">
+            <EntityTypeMapping TypeName="DB_EaglesInternalTestModel.tblIDRecording">
               <MappingFragment StoreEntitySet="tblIDRecording">
                 <ScalarProperty Name="recordingID" ColumnName="recordingID" />
                 <ScalarProperty Name="recordingDate" ColumnName="recordingDate" />
@@ -1626,14 +1628,6 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
                 <ScalarProperty Name="reason" ColumnName="reason" />
                 <ScalarProperty Name="branch" ColumnName="branch" />
                 <ScalarProperty Name="recording_Time" ColumnName="recording_Time" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Status">
-            <EntityTypeMapping TypeName="DB_EaglesInternalModel.Status">
-              <MappingFragment StoreEntitySet="Status">
-                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
-                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

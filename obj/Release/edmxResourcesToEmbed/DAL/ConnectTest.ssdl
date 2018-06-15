@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DB_EaglesInternalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="DB_EaglesInternalTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Branch">
     <Key>
       <PropertyRef Name="BranchID" />
@@ -104,8 +104,6 @@
     <Property Name="Status" Type="varchar" MaxLength="50" />
     <Property Name="BranchID" Type="varchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.Status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Status">
     <Key>
       <PropertyRef Name="StatusID" />
@@ -176,7 +174,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.Status' does not have a prim
     <Property Name="Docsta" Type="varchar" MaxLength="30" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.tblAccessList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblAccessList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tblAccessList">
     <Key>
       <PropertyRef Name="AccessNo" />
@@ -210,7 +208,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblAccessList' does not have
     <Property Name="ReceiveDate" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.tblAccessListDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblAccessListDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tblAccessListDetail">
     <Key>
       <PropertyRef Name="AccessNo" />
@@ -273,7 +271,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblAccessListDetail' does no
     <Property Name="CaseName" Type="varchar" MaxLength="70" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.tblDivision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblDivision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tblDivision">
     <Key>
       <PropertyRef Name="DivisionId" />
@@ -294,7 +292,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblDivision' does not have a
     <Property Name="Updatedate" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_EaglesInternal.dbo.tblIDRecording' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblIDRecording' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tblIDRecording">
     <Key>
       <PropertyRef Name="recordingID" />
@@ -363,7 +361,7 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblIDRecording' does not hav
     <Property Name="RunNo" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="tbltimeuser">
           <Property Name="CodeID" Type="nvarchar" MaxLength="255" />
           <Property Name="Typenotcome" Type="nvarchar" MaxLength="255" />
@@ -497,19 +495,19 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblUser_tblUser">
-    <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
-    <End Role="tblUser1" Type="Self.tblUser" Multiplicity="0..1" />
+  <Association Name="FK_tblUser_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblUser">
-        <PropertyRef Name="UserId" />
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
       </Principal>
-      <Dependent Role="tblUser1">
-        <PropertyRef Name="UserId" />
+      <Dependent Role="tblUser">
+        <PropertyRef Name="StatusID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DB_EaglesInternalModelStoreContainer">
+  <EntityContainer Name="DB_EaglesInternalTestModelStoreContainer">
     <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
@@ -518,6 +516,7 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
     <EntitySet Name="Referal_Doc" EntityType="Self.Referal_Doc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RunNo" EntityType="Self.RunNo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Side" EntityType="Self.Side" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblAbsent" EntityType="Self.tblAbsent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblBookingMessenger" EntityType="Self.tblBookingMessenger" Schema="dbo" store:Type="Tables" />
@@ -531,12 +530,6 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
     <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblUserMenu" EntityType="Self.tblUserMenu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblUsername" EntityType="Self.tblUsername" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Status" EntityType="Self.Status" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Status].[StatusID] AS [StatusID], 
-    [Status].[StatusName] AS [StatusName]
-    FROM [dbo].[Status] AS [Status]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="tblAccessList" EntityType="Self.tblAccessList" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [tblAccessList].[AccessNo] AS [AccessNo], 
@@ -625,9 +618,9 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
       <End Role="Branch" EntitySet="Branch" />
       <End Role="Side" EntitySet="Side" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblUser_tblUser" Association="Self.FK_tblUser_tblUser">
+    <AssociationSet Name="FK_tblUser_Status" Association="Self.FK_tblUser_Status">
+      <End Role="Status" EntitySet="Status" />
       <End Role="tblUser" EntitySet="tblUser" />
-      <End Role="tblUser1" EntitySet="tblUser" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

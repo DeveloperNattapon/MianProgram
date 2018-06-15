@@ -11,7 +11,7 @@ Imports System.Security.Cryptography
 Public Class AddUser
     Inherits System.Web.UI.Page
     Dim db As New DB_EaglesInternalTestEntities
-
+    'Dim db As New DB_EaglesInternalEntities
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
             showBranch()
@@ -146,7 +146,7 @@ Public Class AddUser
     Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
         Try
-            Using db = New DB_EaglesInternalTestEntities
+            Using db = New DB_EaglesInternalEntities
                 Dim user = (From u In db.tblUsers Where u.UserId = txtUser.Value
                 Select u).FirstOrDefault
 

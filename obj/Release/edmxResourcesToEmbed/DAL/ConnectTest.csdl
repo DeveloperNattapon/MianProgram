@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DB_EaglesInternalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="DB_EaglesInternalTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Branch">
     <Key>
       <PropertyRef Name="BranchID" />
@@ -112,6 +112,14 @@
     <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Branch" Relationship="Self.FK_Side_Branch" FromRole="Side" ToRole="Branch" />
     <NavigationProperty Name="Departments" Relationship="Self.FK_Department_Side" FromRole="Side" ToRole="Department" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblUser_Status" FromRole="Status" ToRole="tblUser" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -302,10 +310,9 @@
     <Property Name="NickName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Approve1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Approve2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_tblUser" FromRole="tblUser" ToRole="Branch" />
-    <NavigationProperty Name="tblUser1" Relationship="Self.FK_tblUser_tblUser" FromRole="tblUser" ToRole="tblUser1" />
-    <NavigationProperty Name="tblUser2" Relationship="Self.FK_tblUser_tblUser" FromRole="tblUser1" ToRole="tblUser" />
     <Property Name="StatusID" Type="Int32" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_tblUser" FromRole="tblUser" ToRole="Branch" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_tblUser_Status" FromRole="tblUser" ToRole="Status" />
   </EntityType>
   <EntityType Name="tblUserGroup">
     <Key>
@@ -483,19 +490,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblUser_tblUser">
-    <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
-    <End Role="tblUser1" Type="Self.tblUser" Multiplicity="0..1" />
+  <Association Name="FK_tblUser_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblUser">
-        <PropertyRef Name="UserId" />
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
       </Principal>
-      <Dependent Role="tblUser1">
-        <PropertyRef Name="UserId" />
+      <Dependent Role="tblUser">
+        <PropertyRef Name="StatusID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DB_EaglesInternalEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DB_EaglesInternalTestEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Branches" EntityType="Self.Branch" />
     <EntitySet Name="Departments" EntityType="Self.Department" />
     <EntitySet Name="Documents" EntityType="Self.Document" />
@@ -504,6 +511,7 @@
     <EntitySet Name="Referal_Doc" EntityType="Self.Referal_Doc" />
     <EntitySet Name="RunNoes" EntityType="Self.RunNo" />
     <EntitySet Name="Sides" EntityType="Self.Side" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="tblAbsents" EntityType="Self.tblAbsent" />
     <EntitySet Name="tblBookingMessengers" EntityType="Self.tblBookingMessenger" />
@@ -541,17 +549,9 @@
       <End Role="Document" EntitySet="Documents" />
       <End Role="Document1" EntitySet="Documents" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblUser_tblUser" Association="Self.FK_tblUser_tblUser">
+    <AssociationSet Name="FK_tblUser_Status" Association="Self.FK_tblUser_Status">
+      <End Role="Status" EntitySet="Status" />
       <End Role="tblUser" EntitySet="tblUsers" />
-      <End Role="tblUser1" EntitySet="tblUsers" />
     </AssociationSet>
-    <EntitySet Name="Status" EntityType="DB_EaglesInternalModel.Status" />
   </EntityContainer>
-  <EntityType Name="Status">
-    <Key>
-      <PropertyRef Name="StatusID" />
-    </Key>
-    <Property Name="StatusID" Type="Int32" Nullable="false" />
-    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
 </Schema>

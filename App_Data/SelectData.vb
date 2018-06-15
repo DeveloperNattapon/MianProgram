@@ -4,7 +4,7 @@ Option Strict On
 Public Class SelectData
 
 
-    Private db As New DB_EaglesInternalTestEntities
+    'Private db As New DB_EaglesInternalTestEntities
 
     Public Sub showList()
 

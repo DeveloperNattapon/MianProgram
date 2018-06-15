@@ -12,7 +12,7 @@
             <h1>Edit User
             </h1>
             <ol class="breadcrumb">
-                <li><a href="HomeMain.aspx"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
                 <li><a class="active">Pro File</a></li>
                 <li><a href="EditUser.aspx"><i class="fa fa-edit"></i>Edit User</a></li>
             </ol>
