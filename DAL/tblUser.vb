@@ -36,4 +36,8 @@ Partial Public Class tblUser
     Public Overridable Property Branches As ICollection(Of Branch) = New HashSet(Of Branch)
     Public Overridable Property Status As Status
 
+    Function Count() As Integer
+        Throw New NotImplementedException
+    End Function
+
 End Class
