@@ -26,38 +26,43 @@
                 <div class=" col-xs-12">
                <!-- general form elements -->
                         <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Edit Increase</h3>
-                        </div>
                         <!-- /.box-header -->
                         <div class="row">
 
-                            <from class="form-horizontal">
-                            <div class="col-lg-6 col-md-12 col-md-offset-3">
+                
+               <section class="content">
+            <div class="row">
+                <div class=" col-xs-12">
+                    
+                        <div class="box-header">        
+                       <div class="form-group">
+                       <div class="col-xs-3 col-sm-1">
+                            <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add User" />
+                        </div> 
+                       <%--<div style="text-align:right;" ">
+                                <   label>Search:<input type="search" class="form-control input-sm" placeholder="UserID" aria-controls="example1"/></label>
+                           </div>--%>            <from class="form-horizontal">
+                            <div class="col-lg-6 col-md-12 col-md-offset-2">
                                  <div class="box-body">   
 
                               <div class="form-group">
                                 <div class="col-xs-3">
-                                    <label class="control-label">สาขา</label>
                                     <div class="controls ">
-                                    <input class="form-control" runat="server" id="Text1" disabled="disabled"/>
+                                    <input class="form-control" placeholder="Searchfrom" runat="server" id="Text1"/>
                                           </div>
 
                                 </div>
 
                                 <div class="col-xs-6">
-
-                                    <label class="control-label" for="txtBranch">สาขา</label>
                                     <div class="controls ">
-                                        <input class="form-control" runat="server" id="txtBranch" />
+                                        <%--<input id="txtSearch" class="form-control" placeholder="InputData" runat="server"  />--%>
+                                        <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" placeholder="InputData" autocomplete="off"></asp:TextBox>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-3">
-
-                                    <label class="control-label" for="txttest">'</label>
                                     <div class="controls ">
-                                        <asp:Button ID="btnTest"    CssClass="btn btn-primary" runat="server" Text="Test" OnClick="btnAdd_Click" />
+                                        <asp:Button ID="btnSearch" CssClass="btn btn-primary" runat="server" Text="Search" OnClick="btnSearch_Data" />
                                     </div>
                                 </div>
                             </div>
@@ -66,31 +71,6 @@
                             </div>
                              
           </from>
-                                     
-                        </div>
-                    
-                            <!--/.row-->
-                    </div>
-
-                    </div>
-                    <!-- /.box -->
-                </div>
-          
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-            <div class="row">
-                <div class=" col-xs-12">
-                    <div class="box">
-                        <div class="box-header">        
-                       <div class="form-group">
-                       <div class="col-xs-3 col-sm-1">
-                            <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add User" />
-                        </div> 
-                       <div style="text-align:right;" ">
-                                <label>Search:<input type="search" class="form-control input-sm" placeholder="UserID" aria-controls="example1"/></label>
-                           </div>
                           </div>
                     </div>
 
@@ -129,13 +109,13 @@
                                         <td>
                                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("Email") %>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("PositionName")%>'></asp:Label></td>
+                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Position")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Labelsec" runat="server" Text='<%# Bind("DepartmentName")%>'></asp:Label></td>
+                                            <asp:Label ID="Labelsec" runat="server" Text='<%# Bind("Dept")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("SideName")%>'></asp:Label></td>
+                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("Section")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("BranchName")%>'></asp:Label></td>
+                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("Branch")%>'></asp:Label></td>
                                         <td class="text-center">
 
                                             <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="edituser" CommandArgument='<%# Eval("UserID")%>'><i class="fa fa-pencil"></i></asp:LinkButton>
@@ -164,12 +144,26 @@
                             </asp:Repeater>
                         </div>
                         <!-- /.box-body -->
-                    </div>
+                    
                     <!-- /.box -->
                 </div>
             </div>
 
+        </section> 
+                        </div>
+                    
+                            <!--/.row-->
+           
+                    </div>
+
+                    </div>
+                    <!-- /.box -->
+                </div>
+          
         </section>
+
+        <!-- Main content -->
+        
 
     </form>
     <script type='text/javascript'>

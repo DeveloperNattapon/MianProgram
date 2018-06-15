@@ -38,4 +38,8 @@ Partial Public Class tblUser
     Public Overridable Property tblUser2 As tblUser
     Public Overridable Property Status As Status
 
+    Function Count() As Integer
+        Throw New NotImplementedException
+    End Function
+
 End Class
