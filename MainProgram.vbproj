@@ -6709,7 +6709,7 @@
     </Compile>
     <Compile Include="App_Data\LoginCls.vb" />
     <Compile Include="App_Data\SelectData.vb" />
-    <Compile Include="Class\showData.vb" />
+    <Compile Include="Class\User.vb" />
     <Compile Include="DAL\Branch.vb">
       <DependentUpon>ConnectTest.tt</DependentUpon>
     </Compile>

@@ -5,10 +5,10 @@ Public Class EditUser
     Inherits System.Web.UI.Page
     'Dim db As New DB_EaglesInternalEntities
     Dim db As New DB_EaglesInternalTestEntities
-    Dim Branch As String
-    Dim Dept As String
-    Dim Position As String
-    Dim Section As String
+
+    Private userClass As New User
+
+
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
@@ -39,13 +39,23 @@ Public Class EditUser
             txtNameEng.Value = user.u.Name_eng
             txtSurnameEng.Value = user.u.Surname_eng
             txtEmaile.Value = user.u.Email
-            ddlBranch.Text = user.u.Branch
-            ddlDept.Text = user.u.Dept
-            ddlPosition.Text = user.u.Position
-            ddlSection.Text = user.u.Section
+
+            userClass.setBranch = user.u.Branch
+            ddlBranch.Text = userClass.setBranch
+
+            userClass.setSection = user.u.Section
+            ddlSection.Text = userClass.setSection
+
+            userClass.setDept = user.u.Dept
+            ddlDept.Text = userClass.setDept
+
+            userClass.setPosition = user.u.Position
+            ddlPosition.Text = userClass.setPosition
+     
             lbApprove1.Value = user.u.Approve1
             lbApprove2.Value = user.u.Approve2
             ddlStatus.Text = user.s.StatusName
+
         Catch ex As Exception
             ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('เกิดข้อผิดพลาด !!!')", True)
         End Try
@@ -55,7 +65,7 @@ Public Class EditUser
     End Sub
 
     Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        EditUser()
+        EditUser(ddlBranch.Text)
     End Sub
 
     Private Sub showBranch()
@@ -238,7 +248,6 @@ Public Class EditUser
         'ddlStatus.AppendDataBoundItems = True
 
         Dim d = From ug In db.Status
-                Order By ug.StatusName Ascending
                 Select ug.StatusID, ug.StatusName
         Try
             ddlStatus.DataSource = d.ToList
@@ -272,9 +281,13 @@ Public Class EditUser
         showPositionList(dept)
     End Sub
 
-    Private Sub EditUser()
+    Private Sub EditUser(Branch As String)
         Try
-
+            'If userClass.setBranch <> Branch Then
+            '    MsgBox(Branch)
+            'ElseIf ddlBranch.Text = Branch Then
+            '    MsgBox("เท่ากับ")
+            'End If
 
             Dim User As tblUser = (From c In db.tblUsers Where c.UserId = txtUser.Value _
                            Select c).First()
@@ -286,25 +299,23 @@ Public Class EditUser
             User.Name_eng = txtNameEng.Value
             User.Surname_eng = txtSurnameEng.Value
             User.Email = txtEmaile.Value
+            User.Branch = ddlBranch.Text
             User.Section = ddlSection.Text
             User.Dept = ddlDept.Text
-            User.Branch = ddlBranch.Text
             User.Position = ddlPosition.Text
             User.UserBy = Session("Name_eng").ToString
             User.UserDate = Now
             User.StatusID = CType(ddlStatus.Text, Integer?)
 
-
-
             db.SaveChanges()
             'Response.Redirect(Request.Cookies("MainConfigPath").Value + "SearchUser.aspx")
             ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('แก้ไขข้อมูล เรียบร้อย')", True)
-            Clear()
+            'Clear()
             Response.Redirect("SearchUser.aspx")
         Catch ex As Exception
             ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('เกิดข้อผิดพลาด !!!')", True)
         End Try
-       
+
     End Sub
 
     Private Sub Clear()
@@ -316,10 +327,13 @@ Public Class EditUser
         txtNameEng.Value = ""
         txtSurnameEng.Value = ""
         txtEmaile.Value = ""
-        ddlPosition.Text = ""
-        ddlDept.Text = ""
         ddlBranch.Text = ""
+        ddlSection.Text = ""
+        ddlDept.Text = ""
+        ddlPosition.Text = ""
         ddlStatus.Text = ""
-
+        
     End Sub
+
+    
 End Class

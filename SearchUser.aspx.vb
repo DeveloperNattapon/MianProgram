@@ -30,7 +30,7 @@ Public Class SearchUser
                      s.SideName,
                      d.DepartmentName,
                      b.BranchName,
-                     p.PositionName()
+                     p.PositionName
                     }).ToList()
 
         ' Assign to GridView
@@ -48,15 +48,15 @@ Public Class SearchUser
         'Dim user = (From c In DB_EaglesInternalTestEntities Where db.tblUsers = txtSearch.tex)
         Dim user = (From c In db.tblUsers Where c.UserId = txtSearch.Text.Trim
         Select New With {
-        c.UserId,
-        c.Name_thai,
-        c.Surname_thai,
-        c.Email,
-        c.Section,
-        c.Dept,
-        c.Branch,
-        c.Position
-        }).ToList
+                            c.UserId,
+                            c.Name_thai,
+                            c.Surname_thai,
+                            c.Email,
+                            c.Branch,
+                            c.Section,
+                            c.Dept,
+                            c.Position
+                               }).ToList
 
 
 

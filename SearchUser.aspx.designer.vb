@@ -32,33 +32,6 @@ Partial Public Class SearchUser
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''Text1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Text1 As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
-    '''txtBranch control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtBranch As Global.System.Web.UI.HtmlControls.HtmlInputText
-
-    '''<summary>
-    '''btnTest control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnTest As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''btnAdd control.
     '''</summary>
     '''<remarks>

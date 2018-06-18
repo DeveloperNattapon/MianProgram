@@ -8,7 +8,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-         <!-- Content Header (Page header) -->
+        <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>User 
        
@@ -19,29 +19,25 @@
                 <li><a href="#">Profile</a></li>
             </ol>
         </section>
-      
-          <!-- Main content -->
+
+        <!-- Main content -->
         <section class="content">
             <div class="row">
                 <div class=" col-xs-12">
-               <!-- general form elements -->
-                        <div class="box box-primary">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
                         <!-- /.box-header -->
-                        <div class="row">
-
-                
-               <section class="content">
-            <div class="row">
-                <div class=" col-xs-12">
                     
-                        <div class="box-header">        
-                       <div class="form-group">
-                       <div class="col-xs-3 col-sm-1">
-                            <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add User" />
-                        </div> 
-                       <%--<div style="text-align:right;" ">
+                            <div class="box-header">
+                                <div class="form-group">
+                                    <div class="col-xs-3 col-sm-1">
+                                        <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add User" />
+                                    </div>
+                                </div>
+                                <%--<div style="text-align:right;" ">
                                 <   label>Search:<input type="search" class="form-control input-sm" placeholder="UserID" aria-controls="example1"/></label>
-                           </div>--%>            <from class="form-horizontal">
+                           </div>--%>
+                                <from class="form-horizontal">
                             <div class="col-lg-6 col-md-12 col-md-offset-2">
                                  <div class="box-body">   
 
@@ -67,40 +63,32 @@
                                 </div>
                             </div>
                              
-               </div>
-                            </div>
+                       </div>
+                    </div>
                              
           </from>
-<<<<<<< HEAD
-                                     
+
+
+                                <!--/.row-->
+                            </div>
+
+
+                            <!-- /.box -->
+
                         </div>
-                    
-                            <!--/.row-->
-                    </div>
 
-                    </div>
-                    <!-- /.box -->
+                        <!--/.row-->
                 </div>
-          
-        </section>
+                <!-- /.box -->
+            </div>
 
+        </section>
         <!-- Main content -->
         <section class="content">
             <div class="row">
                 <div class=" col-xs-12">
                     <div class="box">
-                        <div class="box-header">        
-                       <div class="form-group">
-                       <div class="col-xs-3 col-sm-1">
-                            <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add User" />
-                        </div> 
-                 
-=======
->>>>>>> 86462cd1a081db3b69173782b77ad733c95a6191
-                          </div>
-                    </div>
 
-                       
                         <!-- /.box-header -->
                         <div class="box-body">
                             <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
@@ -112,10 +100,10 @@
                                                 <th>ชื่อ</th>
                                                 <th>นามสกุล</th>
                                                 <th>อีเมล์</th>
-                                                <th>ตำแหน่ง</th>
-                                                <th>แผนก</th>
-                                                <th>ฝ่าย</th>
                                                 <th>สาขา</th>
+                                                <th>ฝ่าย</th>
+                                                <th>แผนก</th>
+                                                <th>ตำแหน่ง</th>
                                                 <th>Edit</th>
 
                                             </tr>
@@ -125,7 +113,7 @@
                                 <ItemTemplate>
 
                                     <tr>
-                                   
+
                                         <td>
                                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("UserId") %>'></asp:Label></td>
                                         <td>
@@ -135,35 +123,36 @@
                                         <td>
                                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("Email") %>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Position")%>'></asp:Label></td>
-                                        <td>
+                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("Branch")%>'></asp:Label></td>
+                                         <td>
+                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("Section")%>'></asp:Label></td>
+                                          <td>
                                             <asp:Label ID="Labelsec" runat="server" Text='<%# Bind("Dept")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("Section")%>'></asp:Label></td>
-                                        <td>
-                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("Branch")%>'></asp:Label></td>
+                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Position")%>'></asp:Label></td>
+                                      
                                         <td class="text-center">
 
                                             <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="edituser" CommandArgument='<%# Eval("UserID")%>'><i class="fa fa-pencil"></i></asp:LinkButton>
                                         </td>
 
                                     </tr>
-                                  
+
 
                                 </ItemTemplate>
 
                                 <FooterTemplate>
                                     <tfoot>
                                         <tr>
-                                            <th>รหัสพนักงาน</th>
-                                            <th>ชื่อ</th>
-                                            <th>นามสกุล</th>
-                                            <th>อีเมล์</th>
-                                            <th>ตำแหน่ง</th>
-                                            <th>แผนก</th>
-                                            <th>ฝ่าย</th>
-                                            <th>สาขา</th>
-                                            <th>Edit</th>
+                                               <th>รหัสพนักงาน</th>
+                                                <th>ชื่อ</th>
+                                                <th>นามสกุล</th>
+                                                <th>อีเมล์</th>
+                                                <th>สาขา</th>
+                                                <th>ฝ่าย</th>
+                                                <th>แผนก</th>
+                                                <th>ตำแหน่ง</th>
+                                                <th>Edit</th>
                                         </tr>
                                     </tfoot>
                                     </table>
@@ -171,26 +160,16 @@
                             </asp:Repeater>
                         </div>
                         <!-- /.box-body -->
-                    
-                    <!-- /.box -->
+
+                        <!-- /.box -->
+                    </div>
                 </div>
             </div>
-
-        </section> 
-                        </div>
-                    
-                            <!--/.row-->
-           
-                    </div>
-
-                    </div>
-                    <!-- /.box -->
-                </div>
-          
         </section>
 
+
         <!-- Main content -->
-        
+
 
     </form>
     <script type='text/javascript'>

@@ -431,6 +431,14 @@ ScriptManager1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:MainProgram.SearchUser.btnAdd">
+	<summary>
+btnAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:MainProgram.SearchUser.Text1">
 	<summary>
 Text1 control.
@@ -439,25 +447,17 @@ Text1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.SearchUser.txtBranch">
+</member><member name="F:MainProgram.SearchUser.txtSearch">
 	<summary>
-txtBranch control.
+txtSearch control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.SearchUser.btnTest">
+</member><member name="F:MainProgram.SearchUser.btnSearch">
 	<summary>
-btnTest control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:MainProgram.SearchUser.btnAdd">
-	<summary>
-btnAdd control.
+btnSearch control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -567,35 +567,7 @@ ddlDept control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-<<<<<<< HEAD
 </member><member name="F:MainProgram.AddUser.ddlPosition">
-=======
-</member><member name="F:MainProgram.SearchUser.Text1">
-	<summary>
-Text1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:MainProgram.SearchUser.txtSearch">
-	<summary>
-txtSearch control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:MainProgram.SearchUser.btnSearch">
-	<summary>
-btnSearch control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:MainProgram.SearchUser.Repeater1">
->>>>>>> 86462cd1a081db3b69173782b77ad733c95a6191
 	<summary>
 ddlPosition control.
 </summary>

@@ -431,6 +431,14 @@ ScriptManager1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:MainProgram.SearchUser.btnAdd">
+	<summary>
+btnAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:MainProgram.SearchUser.Text1">
 	<summary>
 Text1 control.
@@ -439,25 +447,17 @@ Text1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.SearchUser.txtBranch">
+</member><member name="F:MainProgram.SearchUser.txtSearch">
 	<summary>
-txtBranch control.
+txtSearch control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.SearchUser.btnTest">
+</member><member name="F:MainProgram.SearchUser.btnSearch">
 	<summary>
-btnTest control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:MainProgram.SearchUser.btnAdd">
-	<summary>
-btnAdd control.
+btnSearch control.
 </summary>
 	<remarks>
 Auto-generated field.
