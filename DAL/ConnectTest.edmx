@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_EaglesInternalTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_EaglesInternalTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Branch">
           <Key>
             <PropertyRef Name="BranchID" />
@@ -365,15 +365,6 @@ warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblIDRecording' does not
           <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="RunNo" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tbltimeuser">
-          <Property Name="CodeID" Type="nvarchar" MaxLength="255" />
-          <Property Name="Typenotcome" Type="nvarchar" MaxLength="255" />
-          <Property Name="day" Type="int" />
-          <Property Name="hr" Type="int" />
-          <Property Name="mi" Type="int" />
-        </EntityType>-->
         <EntityType Name="tblUser">
           <Key>
             <PropertyRef Name="UserId" />
@@ -628,8 +619,7 @@ warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not ha
             <End Role="tblUser" EntitySet="tblUser" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_EaglesInternalTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

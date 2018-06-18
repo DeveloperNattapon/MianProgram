@@ -39,7 +39,6 @@ Partial Public Class DB_EaglesInternalEntities
     Public Overridable Property tblMenus() As DbSet(Of tblMenu)
     Public Overridable Property tblMessengers() As DbSet(Of tblMessenger)
     Public Overridable Property tblRunningNumbers() As DbSet(Of tblRunningNumber)
-    Public Overridable Property tblUsers() As DbSet(Of tblUser)
     Public Overridable Property tblUserGroups() As DbSet(Of tblUserGroup)
     Public Overridable Property tblUserMenus() As DbSet(Of tblUserMenu)
     Public Overridable Property tblUsernames() As DbSet(Of tblUsername)
@@ -48,5 +47,6 @@ Partial Public Class DB_EaglesInternalEntities
     Public Overridable Property tblDivisions() As DbSet(Of tblDivision)
     Public Overridable Property tblIDRecordings() As DbSet(Of tblIDRecording)
     Public Overridable Property Status() As DbSet(Of Status)
+    Public Overridable Property tblUsers() As DbSet(Of tblUser)
 
 End Class

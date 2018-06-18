@@ -362,15 +362,6 @@ warning 6002: The table/view 'DB_EaglesInternal.dbo.tblIDRecording' does not hav
     <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="RunNo" Type="int" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tbltimeuser">
-          <Property Name="CodeID" Type="nvarchar" MaxLength="255" />
-          <Property Name="Typenotcome" Type="nvarchar" MaxLength="255" />
-          <Property Name="day" Type="int" />
-          <Property Name="hr" Type="int" />
-          <Property Name="mi" Type="int" />
-        </EntityType>-->
   <EntityType Name="tblUser">
     <Key>
       <PropertyRef Name="UserId" />
@@ -497,18 +488,6 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblUser_tblUser">
-    <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
-    <End Role="tblUser1" Type="Self.tblUser" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tblUser">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="tblUser1">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="DB_EaglesInternalModelStoreContainer">
     <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
@@ -624,10 +603,6 @@ warning 6013: The table/view 'DB_EaglesInternal.dbo.tbltimeuser' does not have a
     <AssociationSet Name="FK_Side_Branch" Association="Self.FK_Side_Branch">
       <End Role="Branch" EntitySet="Branch" />
       <End Role="Side" EntitySet="Side" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblUser_tblUser" Association="Self.FK_tblUser_tblUser">
-      <End Role="tblUser" EntitySet="tblUser" />
-      <End Role="tblUser1" EntitySet="tblUser" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

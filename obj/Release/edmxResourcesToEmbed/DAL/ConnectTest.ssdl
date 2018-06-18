@@ -360,15 +360,6 @@ warning 6002: The table/view 'DB_EaglesInternalTest.dbo.tblIDRecording' does not
     <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="RunNo" Type="int" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'DB_EaglesInternalTest.dbo.tbltimeuser' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tbltimeuser">
-          <Property Name="CodeID" Type="nvarchar" MaxLength="255" />
-          <Property Name="Typenotcome" Type="nvarchar" MaxLength="255" />
-          <Property Name="day" Type="int" />
-          <Property Name="hr" Type="int" />
-          <Property Name="mi" Type="int" />
-        </EntityType>-->
   <EntityType Name="tblUser">
     <Key>
       <PropertyRef Name="UserId" />
