@@ -66,14 +66,14 @@
                             
                          
                         </div>
-
+                        <div class="form-group text-center ">
+                <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
+            </div>
                     </div>
                     </div>              
             </div>
   
-            <div class="form-group text-center ">
-                <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
-            </div>
+            
             <div class="form-group col-md-12">
 
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="3" ForeColor="Black" Font-Size="Small" HorizontalAlign="Center" Width="673px" DataKeyNames="Menu"
@@ -133,7 +133,7 @@
                 <!--/.box box-primary-->
             </div>
             <!--/.col-lg-12 -->
-     
+
             <!--/.col (right) -->
 
             <!-- /.row -->
