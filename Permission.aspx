@@ -31,7 +31,7 @@
                         <!-- /.box-header -->
                         <div class="row">
 
-                            <from class="form-horizontal">
+                            <form class="form-horizontal">
                             <div class="col-lg-6 col-md-12 col-md-offset-3">
                                  <div class="box-body">   
 
@@ -121,7 +121,7 @@
                 </asp:GridView>
             </div>
                         </div>
-                        </from>
+                        </form>
 
                             <!--/.row-->
                     </div>

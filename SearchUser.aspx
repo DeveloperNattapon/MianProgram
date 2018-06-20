@@ -37,7 +37,7 @@
                                 <%--<div style="text-align:right;" ">
                                 <   label>Search:<input type="search" class="form-control input-sm" placeholder="UserID" aria-controls="example1"/></label>
                            </div>--%>
-                                <from class="form-horizontal">
+                                <form class="form-horizontal">
                             <div class="col-lg-6 col-md-12 col-md-offset-2">
                                  <div class="box-body">   
 
@@ -66,7 +66,7 @@
                        </div>
                     </div>
                              
-          </from>
+          </form>
 
 
                                 <!--/.row-->
