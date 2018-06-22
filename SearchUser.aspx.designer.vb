@@ -50,13 +50,13 @@ Partial Public Class SearchUser
     Protected WithEvents Text1 As Global.System.Web.UI.HtmlControls.HtmlInputText
 
     '''<summary>
-    '''txtSearch control.
+    '''ddlSearchU control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtSearch As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlSearchU As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''btnSearch control.

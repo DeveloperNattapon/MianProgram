@@ -12,30 +12,32 @@ Public Class SearchUser
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            'BindData()
+            BindData()
+            selectUser()
+
         End If
     End Sub
     Protected Sub BindData()
 
         ' Get data from CUSTOMER
-        Dim user = (From c In db.tblUsers Join b In db.Branches On b.BranchID Equals c.Branch
-                 Join s In db.Sides On c.Section Equals s.SideID
-                 Join d In db.Departments On d.DepartmentID Equals c.Dept
+        Dim user = From c In db.tblUsers
+                 Join b In db.Branches On b.BranchID Equals c.Branch And b.BranchName Equals c.Branch
+                 Join s In db.Sides On c.Section Equals s.SideID And s.SideName Equals c.Section
+                 Join d In db.Departments On d.DepartmentID Equals c.Dept And d.DepartmentName Equals c.Dept
                  Join p In db.Positions On p.PositionID Equals c.Position
-                                Select New With {
-                     c.UserId,
-                     c.Name_thai,
-                     c.Surname_thai,
-                     c.Email,
-                     s.SideName,
-                     d.DepartmentName,
-                     b.BranchName,
-                     p.PositionName
-                    }).ToList()
+                                Select
+                                        c.UserId,
+                                        c.Name_thai,
+                                        c.Surname_thai,
+                                        c.Email,
+                                        Branch = b.BranchName,
+                                        Second = s.SideName,
+                                        Dept = d.DepartmentName,Position = p.PositionName
+
 
         ' Assign to GridView
         If user.Count > 0 Then
-            Me.Repeater1.DataSource = user
+            Me.Repeater1.DataSource = User
             Me.Repeater1.DataBind()
         Else
             Me.Repeater1.DataSource = Nothing
@@ -43,40 +45,27 @@ Public Class SearchUser
         End If
 
     End Sub
-    Protected Sub btnSearch_Data(sender As Object, e As EventArgs) Handles btnSearch.Click
-
-        'Dim user = (From c In DB_EaglesInternalTestEntities Where db.tblUsers = txtSearch.tex)
-        Dim user = (From c In db.tblUsers Where c.UserId = txtSearch.Text.Trim
-        Select New With {
-                            c.UserId,
-                            c.Name_thai,
-                            c.Surname_thai,
-                            c.Email,
-                            c.Branch,
-                            c.Section,
-                            c.Dept,
-                            c.Position
-                               }).ToList
+ 
+    Private Sub selectUser()
+        Dim u = From us In db.tblUsers
+                Select
+                 us.UserId,
+                 Name = us.Name_thai + " " + us.Surname_thai
 
 
 
-        If user Is Nothing Then
-            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('ไม่พบข้อมูล User ที่ค้นหา')", True)
-            Exit Sub
-            'Else
-            '    lblName.Text = User.Prefix_thai & " " & User.Name_thai & " " & User.Surname_thai
-        End If
 
-        If user.Count > 0 Then
-            Me.Repeater1.DataSource = user
-            Me.Repeater1.DataBind()
+        ddlSearchU.DataSource = u.ToList
+        ddlSearchU.DataTextField = "Name"
+        ddlSearchU.DataValueField = "UserId"
+        ddlSearchU.DataBind()
+
+        If ddlSearchU.Items.Count > 1 Then
+            ddlSearchU.Enabled = True
         Else
-            Me.Repeater1.DataSource = Nothing
-            Me.Repeater1.DataBind()
+            ddlSearchU.Enabled = False
         End If
-
     End Sub
-
     '------------------------------------------------------------------------------------------------------------
 
     'Protected Sub BindDataSearch(SearchUser As String)
@@ -262,6 +251,41 @@ Public Class SearchUser
             End If
 
 
+        End If
+
+    End Sub
+
+    Protected Sub btnSearch_Click(sender As Object, e As EventArgs)
+
+
+        'Dim user = (From c In DB_EaglesInternalTestEntities Where db.tblUsers = txtSearch.tex)
+        Dim user = (From c In db.tblUsers Where c.UserId = ddlSearchU.Text
+        Select New With {
+                            c.UserId,
+                            c.Name_thai,
+                            c.Surname_thai,
+                            c.Email,
+                            c.Branch,
+                            c.Section,
+                            c.Dept,
+                            c.Position
+                               }).ToList
+
+
+
+        If user Is Nothing Then
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('ไม่พบข้อมูล User ที่ค้นหา')", True)
+            Exit Sub
+            'Else
+            '    lblName.Text = User.Prefix_thai & " " & User.Name_thai & " " & User.Surname_thai
+        End If
+
+        If user.Count > 0 Then
+            Me.Repeater1.DataSource = user
+            Me.Repeater1.DataBind()
+        Else
+            Me.Repeater1.DataSource = Nothing
+            Me.Repeater1.DataBind()
         End If
 
     End Sub

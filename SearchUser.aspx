@@ -1,8 +1,6 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="SearchUser.aspx.vb" Inherits="MainProgram.SearchUser" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="SearchUser.aspx.vb" Inherits="MainProgram.SearchUser" EnableEventValidation = "false" EnableViewState="true"%>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <form id="form1" runat="server">
@@ -50,15 +48,16 @@
                                 </div>
 
                                 <div class="col-xs-6">
-                                    <div class="controls ">
-                                        <%--<input id="txtSearch" class="form-control" placeholder="InputData" runat="server"  />--%>
-                                        <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" placeholder="InputData" autocomplete="off"></asp:TextBox>
+                                    <div class="controls">
+                                          <asp:DropDownList ID="ddlSearchU" runat="server" class="form-control select2" DataTextField = "Name" DataValueField = "UserId" AutoPostBack="true"></asp:DropDownList>
+                
+<%--                                        <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" placeholder="InputData"></asp:TextBox>--%>
                                     </div>
                                 </div>
 
                                 <div class="col-xs-3">
-                                    <div class="controls ">
-                                        <asp:Button ID="btnSearch" CssClass="btn btn-primary" runat="server" Text="Search" OnClick="btnSearch_Data" />
+                                    <div class="controls">
+                                        <asp:Button ID="btnSearch" CssClass="btn btn-primary" runat="server" Text="Search" OnClick="btnSearch_Click" EnableTheming="True"/>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +114,7 @@
                                     <tr>
 
                                         <td>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("UserId") %>'></asp:Label></td>
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("UserId")%>'></asp:Label></td>
                                         <td>
                                             <asp:Label ID="Label3" runat="server" Text='<%# Bind("Name_thai")%>'></asp:Label></td>
                                         <td>
@@ -133,7 +132,7 @@
                                       
                                         <td class="text-center">
 
-                                            <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="edituser" CommandArgument='<%# Eval("UserID")%>'><i class="fa fa-pencil"></i></asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="edituser" CommandArgument='<%# Eval("UserId")%>'><i class="fa fa-pencil"></i></asp:LinkButton>
                                         </td>
 
                                     </tr>
