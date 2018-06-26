@@ -19,7 +19,7 @@
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section class="centered">
             <div class="row">
                 <div class=" col-xs-12">
                     <!-- general form elements -->
