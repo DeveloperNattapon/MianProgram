@@ -12,7 +12,7 @@ Public Class SearchUser
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            'BindData()
+            BindData()
             selectUser()
 
         End If
@@ -20,19 +20,16 @@ Public Class SearchUser
     Protected Sub BindData()
 
         ' Get data from CUSTOMER
-        Dim user = From c In db.tblUsers
-                 Join b In db.Branches On b.BranchID Equals c.Branch
-                 Join s In db.Sides On c.Section Equals s.SideID
-                 Join d In db.Departments On d.DepartmentID Equals c.Dept
-                 Join p In db.Positions On p.PositionID Equals c.Position
-                                Select
-                                        c.UserId,
-                                        c.Name_thai,
-                                        c.Surname_thai,
-                                        c.Email,
-                                        Branch = b.BranchName,
-                                        Second = s.SideName,
-                                        Dept = d.DepartmentName, Position = p.PositionName
+        Dim user = (From c In db.tblUsers
+                                Select New With {
+                                c.UserId,
+                                c.Name_thai,
+                                c.Surname_thai,
+                                c.Email,
+                                c.Branch,
+                                c.Section,
+                                c.Dept,
+                                c.Position}).ToList
 
 
         ' Assign to GridView
