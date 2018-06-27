@@ -289,4 +289,8 @@ Public Class SearchUser
         End If
 
     End Sub
+
+    Protected Sub Repeater1_ItemDataBound(sender As Object, e As RepeaterItemEventArgs) Handles Repeater1.ItemDataBound
+
+    End Sub
 End Class
