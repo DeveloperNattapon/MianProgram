@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Menu.aspx.vb" Inherits="MainProgram.Menu" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Menu.aspx.vb" Inherits="MainProgram.Menu" EnableEventValidation="false" EnableViewState="true"%>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -10,7 +10,7 @@
         <section class="content-header">
             <h1>Menu</h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="UserProject.aspx"><i class="fa fa-home"></i>Home</a></li>
                 <li><a href="#">Menu</a></li>
             </ol>
         </section>

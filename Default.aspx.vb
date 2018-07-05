@@ -44,7 +44,7 @@ Public Class _Default1
                 Session("Surname_thai") = ds.Surname_thai
                 Session("Name_eng") = ds.Name_eng
                 'Response.Redirect(Request.Cookies("MainConfigPath").Value & "SearchUser.aspx")
-                Response.Redirect("SearchUser.aspx")
+                Response.Redirect("UserProject.aspx")
             Else
                 lblMsg.Text = "* You do not have access"
             End If

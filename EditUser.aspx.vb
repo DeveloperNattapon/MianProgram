@@ -3,8 +3,8 @@ Option Explicit On
 
 Public Class EditUser
     Inherits System.Web.UI.Page
-    'Dim db As New DB_EaglesInternalEntities
-    Dim db As New DB_EaglesInternalTestEntities
+    Dim db As New DB_EaglesInternalEntities
+    'Dim db As New DB_EaglesInternalTestEntities
 
     Private userClass As New User
 
@@ -40,17 +40,17 @@ Public Class EditUser
             txtSurnameEng.Value = user.u.Surname_eng
             txtEmaile.Value = user.u.Email
 
-            userClass.setBranch = user.u.Branch
-            ddlBranch.Text = userClass.setBranch
+            'userClass.setBranch = user.u.Branch
+            ddlBranch.Text = user.u.Branch
 
-            userClass.setSection = user.u.Section
-            ddlSection.Text = userClass.setSection
+            'userClass.setSection = user.u.Section
+            ddlSection.Text = user.u.Section
 
-            userClass.setDept = user.u.Dept
-            ddlDept.Text = userClass.setDept
+            'userClass.setDept = user.u.Dept
+            ddlDept.Text = user.u.Dept
 
-            userClass.setPosition = user.u.Position
-            ddlPosition.Text = userClass.setPosition
+            'userClass.setPosition = user.u.Position
+            ddlPosition.Text = user.u.Position
      
             lbApprove1.Value = user.u.Approve1
             lbApprove2.Value = user.u.Approve2
@@ -79,7 +79,7 @@ Public Class EditUser
         Try
             ddlBranch.DataSource = d.ToList
             ddlBranch.DataTextField = "BranchName"
-            ddlBranch.DataValueField = "BranchID"
+            ddlBranch.DataValueField = "BranchName"
             ddlBranch.DataBind()
             If ddlBranch.Items.Count > 1 Then
                 ddlBranch.Enabled = True
@@ -103,7 +103,7 @@ Public Class EditUser
         Try
             ddlSection.DataSource = d.ToList
             ddlSection.DataTextField = "SideName"
-            ddlSection.DataValueField = "SideID"
+            ddlSection.DataValueField = "SideName"
             ddlSection.DataBind()
             If ddlSection.Items.Count > 1 Then
                 ddlSection.Enabled = True
@@ -116,32 +116,32 @@ Public Class EditUser
         End Try
 
     End Sub
-    Private Sub showSideList(BranchID As String)
+    'Private Sub showSideList(BranchID As String)
 
-        ddlSection.Items.Clear()
-        ddlSection.Items.Add(New ListItem("--select Side--", ""))
-        ddlSection.AppendDataBoundItems = True
+    '    ddlSection.Items.Clear()
+    '    ddlSection.Items.Add(New ListItem("--select Side--", ""))
+    '    ddlSection.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Sides
-                Where ug.BranchID = BranchID
-                Order By ug.SideName Ascending
-                Select ug.SideID, ug.SideName
-        Try
-            ddlSection.DataSource = d.ToList
-            ddlSection.DataTextField = "SideName"
-            ddlSection.DataValueField = "SideID"
-            ddlSection.DataBind()
-            If ddlSection.Items.Count > 1 Then
-                ddlSection.Enabled = True
-            Else
-                ddlSection.Enabled = False
-            End If
+    '    Dim d = From ug In db.Sides
+    '            Where ug.BranchID = BranchID
+    '            Order By ug.SideName Ascending
+    '            Select ug.SideID, ug.SideName
+    '    Try
+    '        ddlSection.DataSource = d.ToList
+    '        ddlSection.DataTextField = "SideName"
+    '        ddlSection.DataValueField = "SideID"
+    '        ddlSection.DataBind()
+    '        If ddlSection.Items.Count > 1 Then
+    '            ddlSection.Enabled = True
+    '        Else
+    '            ddlSection.Enabled = False
+    '        End If
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
+    '    End Try
 
-    End Sub
+    'End Sub
     Private Sub showDepartment()
         'ddlDept.Items.Clear()
         'ddlDept.Items.Add(New ListItem("--select Position--", ""))
@@ -153,7 +153,7 @@ Public Class EditUser
         Try
             ddlDept.DataSource = d.ToList
             ddlDept.DataTextField = "DepartmentName"
-            ddlDept.DataValueField = "DepartmentID"
+            ddlDept.DataValueField = "DepartmentName"
             ddlDept.DataBind()
             If ddlDept.Items.Count > 1 Then
                 ddlDept.Enabled = True
@@ -167,69 +167,67 @@ Public Class EditUser
 
     End Sub
 
-    Private Sub showDepartmentList(SideID As String)
-        ddlDept.Items.Clear()
-        ddlDept.Items.Add(New ListItem("--select Position--", ""))
-        ddlDept.AppendDataBoundItems = True
+    'Private Sub showDepartmentList(SideID As String)
+    '    ddlDept.Items.Clear()
+    '    ddlDept.Items.Add(New ListItem("--select Position--", ""))
+    '    ddlDept.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Departments
-                Where ug.SideID = SideID
-                Order By ug.DepartmentName Ascending
-                Select ug.DepartmentID, ug.DepartmentName
-        Try
-            ddlDept.DataSource = d.ToList
-            ddlDept.DataTextField = "DepartmentName"
-            ddlDept.DataValueField = "DepartmentID"
-            ddlDept.DataBind()
-            If ddlDept.Items.Count > 1 Then
-                ddlDept.Enabled = True
-            Else
-                ddlDept.Enabled = False
-            End If
+    '    Dim d = From ug In db.Departments
+    '            Where ug.SideID = SideID
+    '            Order By ug.DepartmentName Ascending
+    '            Select ug.DepartmentID, ug.DepartmentName
+    '    Try
+    '        ddlDept.DataSource = d.ToList
+    '        ddlDept.DataTextField = "DepartmentName"
+    '        ddlDept.DataValueField = "DepartmentName"
+    '        ddlDept.DataBind()
+    '        If ddlDept.Items.Count > 1 Then
+    '            ddlDept.Enabled = True
+    '        Else
+    '            ddlDept.Enabled = False
+    '        End If
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
+    '    End Try
 
-    End Sub
-    Private Sub showPositionList(dept As String)
-        ddlPosition.Items.Clear()
-        ddlPosition.Items.Add(New ListItem("--select Position--", ""))
-        ddlPosition.AppendDataBoundItems = True
+    'End Sub
+    'Private Sub showPositionList(dept As String)
+    '    ddlPosition.Items.Clear()
+    '    ddlPosition.Items.Add(New ListItem("--select Position--", ""))
+    '    ddlPosition.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Positions
-                Where ug.DepartmentID = dept
-                Order By ug.PositionName Ascending
-                Select ug.PositionID, ug.PositionName
-        Try
-            ddlPosition.DataSource = d.ToList
-            ddlPosition.DataTextField = "PositionName"
-            ddlPosition.DataValueField = "PositionID"
-            ddlPosition.DataBind()
-            If ddlPosition.Items.Count > 1 Then
-                ddlPosition.Enabled = True
-            Else
-                ddlPosition.Enabled = False
-            End If
+    '    Dim d = From ug In db.Positions
+    '            Where ug.DepartmentID = dept
+    '            Order By ug.PositionName Ascending
+    '            Select ug.PositionID, ug.PositionName
+    '    Try
+    '        ddlPosition.DataSource = d.ToList
+    '        ddlPosition.DataTextField = "PositionName"
+    '        ddlPosition.DataValueField = "PositionName"
+    '        ddlPosition.DataBind()
+    '        If ddlPosition.Items.Count > 1 Then
+    '            ddlPosition.Enabled = True
+    '        Else
+    '            ddlPosition.Enabled = False
+    '        End If
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
+    '    End Try
 
-    End Sub
+    'End Sub
 
     Private Sub showPosition()
-        'ddlPosition.Items.Clear()
-        'ddlPosition.Items.Add(New ListItem("--select Position--", ""))
-        'ddlPosition.AppendDataBoundItems = True
+        Dim d = (From ug In db.Positions
+            Order By ug.PositionName Ascending
+            Group By PositionName = ug.PositionName
+            Into p = Group, Count())
 
-        Dim d = From ug In db.Positions
-                Order By ug.PositionName Ascending
-                Select ug.PositionID, ug.PositionName
         Try
             ddlPosition.DataSource = d.ToList
             ddlPosition.DataTextField = "PositionName"
-            ddlPosition.DataValueField = "PositionID"
+            ddlPosition.DataValueField = "PositionName"
             ddlPosition.DataBind()
             If ddlPosition.Items.Count > 1 Then
                 ddlPosition.Enabled = True
@@ -240,8 +238,9 @@ Public Class EditUser
         Catch ex As Exception
 
         End Try
-
     End Sub
+
+
     Private Sub showStatus()
         'ddlStatus.Items.Clear()
         'ddlStatus.Items.Add(New ListItem("--select Status--", ""))
@@ -267,18 +266,18 @@ Public Class EditUser
     End Sub
 
     Protected Sub ddlBranch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlBranch.SelectedIndexChanged
-        Dim BranchId As String = ddlBranch.Text
-        showSideList(BranchId)
+        'Dim BranchId As String = ddlBranch.Text
+        'showSideList(BranchId)
     End Sub
 
     Protected Sub ddlSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlSection.SelectedIndexChanged
-        Dim Section As String = ddlSection.Text
-        showDepartmentList(Section)
+        'Dim Section As String = ddlSection.Text
+        'showDepartmentList(Section)
     End Sub
 
     Protected Sub ddlDept_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlDept.SelectedIndexChanged
-        Dim dept As String = ddlDept.Text
-        showPositionList(dept)
+        'Dim dept As String = ddlDept.Text
+        'showPositionList(dept)
     End Sub
 
     Private Sub EditUser(Branch As String)
@@ -332,8 +331,8 @@ Public Class EditUser
         ddlDept.Text = ""
         ddlPosition.Text = ""
         ddlStatus.Text = ""
-        
+
     End Sub
 
-    
+
 End Class

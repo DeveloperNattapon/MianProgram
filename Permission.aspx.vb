@@ -5,8 +5,8 @@ Imports System.Linq
 
 Public Class Permission
     Inherits System.Web.UI.Page
-    Dim db As New DB_EaglesInternalTestEntities
-    'Dim db As New DB_EaglesInternalEntities
+    'Dim db As New DB_EaglesInternalTestEntities
+    Dim db As New DB_EaglesInternalEntities
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
