@@ -108,6 +108,7 @@
     <Content Include="Content\css\signin.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Default.aspx" />
+    <Content Include="EditPassword.aspx" />
     <Content Include="EditUser.aspx" />
     <Content Include="Homepage.aspx" />
     <Content Include="Images\accent.png" />
@@ -141,6 +142,7 @@
     <Content Include="Increase.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="Password.aspx" />
     <Content Include="Permission.aspx" />
     <Content Include="Scripts\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
     <Content Include="Scripts\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
@@ -6695,6 +6697,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="UserProject.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -6825,6 +6828,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="EditPassword.aspx.designer.vb">
+      <DependentUpon>EditPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPassword.aspx.vb">
+      <DependentUpon>EditPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="EditUser.aspx.designer.vb">
       <DependentUpon>EditUser.aspx</DependentUpon>
     </Compile>
@@ -6859,6 +6869,13 @@
     <Compile Include="Menu.aspx.vb">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Password.aspx.designer.vb">
+      <DependentUpon>Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Password.aspx.vb">
+      <DependentUpon>Password.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Permission.aspx.designer.vb">
       <DependentUpon>Permission.aspx</DependentUpon>
@@ -6899,6 +6916,13 @@
     <Compile Include="Site1.Master.vb">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProject.aspx.designer.vb">
+      <DependentUpon>UserProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProject.aspx.vb">
+      <DependentUpon>UserProject.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

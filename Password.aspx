@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="SearchUser.aspx.vb" Inherits="MainProgram.SearchUser" EnableEventValidation = "false" EnableViewState="true"%>
-
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Password.aspx.vb" Inherits="MainProgram.Password" MasterPageFile="~/Site1.Master"  EnableEventValidation="false" EnableViewState="true"%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -14,7 +13,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li><a href="UserProject.aspx"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#">SearchUser</a></li>
+                <li><a href="#">Password</a></li>
             </ol>
         </section>
 
@@ -26,18 +25,9 @@
                     <div class="box box-primary">
                         <!-- /.box-header -->
                     
-                            <div class="box-header">
-                                <div class="form-group">
-                                    <div class="col-xs-3 col-sm-1">
-                                       <%-- <asp:Button ID="btnAdd" CssClass="btn btn-success" runat="server" Text="Add User"/>--%>
-                                     
-                                        <button type="submit" runat="server" class="btn btn-primary" id="btnSave" title="btnSave" onserverclick="btnAdd_Click"><i class="fa fa-plus"></i> AddUser</button>
-                                    </div>
-                                </div>
-                                <%--<div style="text-align:right;" ">
-                                <   label>Search:<input type="search" class="form-control input-sm" placeholder="UserID" aria-controls="example1"/></label>
-                           </div>--%>
-                                <form class="form-horizontal">
+                        <div class="box-header">
+                               
+                       <form class="form-horizontal">
                             <div class="col-lg-6 col-md-12 col-md-offset-2">
                                  <div class="box-body">   
 
@@ -92,21 +82,15 @@
 
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                            <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand" OnItemDataBound="Repeater1_ItemDataBound">
                                 <HeaderTemplate>
                                     <table id="example1" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th>รหัสพนักงาน</th>
-                                                <th>ชื่อ</th>
-                                                <th>นามสกุล</th>
-                                                <th>อีเมล์</th>
-                                                <th>สาขา</th>
-                                                <th>ฝ่าย</th>
-                                                <th>แผนก</th>
-                                                <th>ตำแหน่ง</th>
+                                                <th>ชื่อ - นามสกุล</th>
+                                                <th>รหัสผ่าน</th>
                                                 <th>Edit</th>
-
                                             </tr>
                                         </thead>
                                 </HeaderTemplate>
@@ -118,23 +102,13 @@
                                         <td>
                                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("UserId")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("Name_thai")%>'></asp:Label></td>
+                                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("Name")%>'></asp:Label></td>
                                         <td>
-                                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("Surname_thai")%>'></asp:Label></td>
-                                        <td>
-                                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("Email") %>'></asp:Label></td>
-                                        <td>
-                                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("Branch")%>'></asp:Label></td>
-                                         <td>
-                                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("Section")%>'></asp:Label></td>
-                                          <td>
-                                            <asp:Label ID="Labelsec" runat="server" Text='<%# Bind("Dept")%>'></asp:Label></td>
-                                        <td>
-                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Position")%>'></asp:Label></td>
-                                      
+                                            <asp:Label ID="lblPassword" runat="server"></asp:Label></td>
+                                 
                                         <td class="text-center">
 
-                                            <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="edituser" CommandArgument='<%# Eval("UserId")%>'><i class="fa fa-pencil"></i></asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="editPass" CommandArgument='<%# Eval("UserId")%>'><i class="fa fa-pencil"></i></asp:LinkButton>
                                         </td>
 
                                     </tr>
@@ -145,14 +119,9 @@
                                 <FooterTemplate>
                                     <tfoot>
                                         <tr>
-                                               <th>รหัสพนักงาน</th>
-                                                <th>ชื่อ</th>
-                                                <th>นามสกุล</th>
-                                                <th>อีเมล์</th>
-                                                <th>สาขา</th>
-                                                <th>ฝ่าย</th>
-                                                <th>แผนก</th>
-                                                <th>ตำแหน่ง</th>
+                                                <th>รหัสพนักงาน</th>
+                                                <th>ชื่อ - นามสกุล</th>
+                                                <th>รหัสผ่าน</th>
                                                 <th>Edit</th>
                                         </tr>
                                     </tfoot>
@@ -173,12 +142,5 @@
 
 
     </form>
-    <script type='text/javascript'>
-        function openModal() {
-            $('#myModal').modal('show');
-        }
-        //Sys.Application.add_load(function () {
-        //    $('#myModal').modal('show');
-        //});
-    </script>
+    
 </asp:Content>

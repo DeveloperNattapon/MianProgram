@@ -10,11 +10,14 @@ Imports System.Security.Cryptography
 
 Public Class AddUser
     Inherits System.Web.UI.Page
-    Dim db As New DB_EaglesInternalTestEntities
-    'Dim db As New DB_EaglesInternalEntities
+    'Dim db As New DB_EaglesInternalTestEntities
+    Dim db As New DB_EaglesInternalEntities
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
             showBranch()
+            showDepartment()
+            showPosition()
+            showSide()
             showStatus()
 
         End If
@@ -30,7 +33,7 @@ Public Class AddUser
         Try
             ddlBranch.DataSource = d.ToList
             ddlBranch.DataTextField = "BranchName"
-            ddlBranch.DataValueField = "BranchID"
+            ddlBranch.DataValueField = "BranchName"
             ddlBranch.DataBind()
             If ddlBranch.Items.Count > 1 Then
                 ddlBranch.Enabled = True
@@ -43,20 +46,19 @@ Public Class AddUser
 
     End Sub
 
-    Private Sub showSide(BranchID As String)
+    Private Sub showSide()
 
         ddlSection.Items.Clear()
         ddlSection.Items.Add(New ListItem("--select Side--", ""))
         ddlSection.AppendDataBoundItems = True
 
         Dim d = From ug In db.Sides
-                Where ug.BranchID = BranchID
                 Order By ug.SideName Ascending
                 Select ug.SideID, ug.SideName
         Try
             ddlSection.DataSource = d.ToList
             ddlSection.DataTextField = "SideName"
-            ddlSection.DataValueField = "SideID"
+            ddlSection.DataValueField = "SideName"
             ddlSection.DataBind()
             If ddlSection.Items.Count > 1 Then
                 ddlSection.Enabled = True
@@ -69,13 +71,12 @@ Public Class AddUser
         End Try
 
     End Sub
-    Private Sub showDepartment(SideID As String)
+    Private Sub showDepartment()
         ddlDept.Items.Clear()
         ddlDept.Items.Add(New ListItem("--select Department--", ""))
         ddlDept.AppendDataBoundItems = True
 
         Dim d = From ug In db.Departments
-                Where ug.SideID = SideID
                 Order By ug.DepartmentName Ascending
                 Select ug.DepartmentID, ug.DepartmentName
         Try
@@ -94,19 +95,20 @@ Public Class AddUser
         End Try
 
     End Sub
-    Private Sub showPosition(dept As String)
+    Private Sub showPosition()
         ddlPosition.Items.Clear()
         ddlPosition.Items.Add(New ListItem("--select Position--", ""))
         ddlPosition.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Positions
-                Where ug.DepartmentID = dept
+        Dim d = (From ug In db.Positions
                 Order By ug.PositionName Ascending
-                Select ug.PositionID, ug.PositionName
+                Group By PositionName = ug.PositionName
+                Into p = Group, Count())
+
         Try
             ddlPosition.DataSource = d.ToList
             ddlPosition.DataTextField = "PositionName"
-            ddlPosition.DataValueField = "PositionID"
+            ddlPosition.DataValueField = "PositionName"
             ddlPosition.DataBind()
             If ddlPosition.Items.Count > 1 Then
                 ddlPosition.Enabled = True
@@ -130,7 +132,7 @@ Public Class AddUser
         Try
             ddlStatus.DataSource = d.ToList
             ddlStatus.DataTextField = "StatusName"
-            ddlStatus.DataValueField = "StatusID"
+            ddlStatus.DataValueField = "StatusName"
             ddlStatus.DataBind()
             If ddlStatus.Items.Count > 1 Then
                 ddlStatus.Enabled = True
@@ -215,17 +217,17 @@ Public Class AddUser
     End Sub
 
     Protected Sub ddlBranch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlBranch.SelectedIndexChanged
-        Dim BranchId As String = ddlBranch.Text
-        showSide(BranchId)
+        'Dim BranchId As String = ddlBranch.Text
+        'showSide(BranchId)
     End Sub
 
     Protected Sub ddlSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlSection.SelectedIndexChanged
-        Dim Section As String = ddlSection.Text
-        showDepartment(Section)
+        'Dim Section As String = ddlSection.Text
+        'showDepartment(Section)
     End Sub
 
     Protected Sub ddlDept_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlDept.SelectedIndexChanged
-        Dim dept As String = ddlDept.Text
-        showPosition(dept)
+        'Dim dept As String = ddlDept.Text
+        'showPosition(dept)
     End Sub
 End Class

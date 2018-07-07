@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Permission.aspx.vb" Inherits="MainProgram.Permission" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Permission.aspx.vb" Inherits="MainProgram.Permission" EnableEventValidation="false" EnableViewState="true" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
@@ -11,7 +11,7 @@
         <section class="content-header">
             <h1>Permission</h1>
             <ol class="breadcrumb">
-                <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="UserProject.aspx"><i class="fa fa-home"></i>Home</a></li>
                 <li><a class="active">Pro File</a></li>
                 <li>Permission</li>
             </ol>

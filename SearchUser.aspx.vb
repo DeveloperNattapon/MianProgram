@@ -5,13 +5,14 @@ Imports System.Linq
 
 Public Class SearchUser
     Inherits System.Web.UI.Page
-    'Private db As New DB_EaglesInternalEntities
-    Dim db As New DB_EaglesInternalTestEntities
+    Private db As New DB_EaglesInternalEntities
+    'Dim db As New DB_EaglesInternalTestEntities
 
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
+
             BindData()
             selectUser()
 
@@ -34,7 +35,7 @@ Public Class SearchUser
 
         ' Assign to GridView
         If user.Count > 0 Then
-            Me.Repeater1.DataSource = User
+            Me.Repeater1.DataSource = user
             Me.Repeater1.DataBind()
         Else
             Me.Repeater1.DataSource = Nothing
@@ -183,7 +184,7 @@ Public Class SearchUser
 
 
 
-    Protected Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Protected Sub btnAdd_Click(sender As Object, e As EventArgs)
 
         Dim menu As String = "User Management"
         Dim id As String = Session("UserID").ToString
@@ -253,10 +254,19 @@ Public Class SearchUser
     End Sub
 
     Protected Sub btnSearch_Click(sender As Object, e As EventArgs)
+        Dim Search As String = ddlSearchU.Text
+        SearchUser(Search)
+    End Sub
 
+    Protected Sub ddlSearchU_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlSearchU.SelectedIndexChanged
+        Dim Search As String = ddlSearchU.Text
+        SearchUser(Search)
+    End Sub
+
+    Private Sub SearchUser(SearchUser As String)
 
         'Dim user = (From c In DB_EaglesInternalTestEntities Where db.tblUsers = txtSearch.tex)
-        Dim user = (From c In db.tblUsers Where c.UserId = ddlSearchU.Text
+        Dim user = (From c In db.tblUsers Where c.UserId = SearchUser
         Select New With {
                             c.UserId,
                             c.Name_thai,
@@ -284,7 +294,6 @@ Public Class SearchUser
             Me.Repeater1.DataSource = Nothing
             Me.Repeater1.DataBind()
         End If
-
     End Sub
 
     Protected Sub Repeater1_ItemDataBound(sender As Object, e As RepeaterItemEventArgs) Handles Repeater1.ItemDataBound

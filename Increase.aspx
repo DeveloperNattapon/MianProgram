@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Increase.aspx.vb" Inherits="MainProgram.Increase" MasterPageFile="~/Site1.Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Increase.aspx.vb" Inherits="MainProgram.Increase" MasterPageFile="~/Site1.Master" EnableEventValidation="false" EnableViewState="true"%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -9,7 +9,7 @@
            <section class="content-header">
             <h1>Increase</h1>
             <ol class="breadcrumb">
-                <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="UserProject.aspx"><i class="fa fa-home"></i>Home</a></li>
                 <li>Increase</li>
             </ol>
         </section>

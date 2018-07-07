@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class SearchUser
+Partial Public Class Password
 
     '''<summary>
     '''form1 control.
@@ -30,15 +30,6 @@ Partial Public Class SearchUser
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-
-    '''<summary>
-    '''btnSave control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSave As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''Text1 control.

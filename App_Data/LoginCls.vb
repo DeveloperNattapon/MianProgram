@@ -16,8 +16,8 @@ Public Class LoginCls
 
 
     Public Shared Function chkUser(userid As String, password As String) As Boolean
-        Using db As New DB_EaglesInternalTestEntities
-            'Using db As New DB_EaglesInternalEntities
+        'Using db As New DB_EaglesInternalTestEntities
+        Using db As New DB_EaglesInternalEntities
             Dim PassEn As String = Encrypt(password, EncryptPass)
 
             Dim q = (From p In db.tblUsers _
