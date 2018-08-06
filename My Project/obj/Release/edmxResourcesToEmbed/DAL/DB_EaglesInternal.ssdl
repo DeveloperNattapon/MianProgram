@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_EaglesInternalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="BranchID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BranchName" Type="varchar" MaxLength="200" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="SideID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="PositionID" />
+    </Key>
+    <Property Name="PositionID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PositionName" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RunNo">
+    <Key>
+      <PropertyRef Name="NO" />
+    </Key>
+    <Property Name="NO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="RunNo" Type="int" />
+  </EntityType>
+  <EntityType Name="Side">
+    <Key>
+      <PropertyRef Name="SideID" />
+    </Key>
+    <Property Name="SideID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SideName" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="BranchID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblMenu">
+    <Key>
+      <PropertyRef Name="Menu" />
+    </Key>
+    <Property Name="Menu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="UserBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prefix_thai" Type="varchar" MaxLength="10" />
+    <Property Name="Name_thai" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname_thai" Type="varchar" MaxLength="50" />
+    <Property Name="Prefix_eng" Type="varchar" MaxLength="10" />
+    <Property Name="Name_eng" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname_eng" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Position" Type="varchar" MaxLength="50" />
+    <Property Name="Dept" Type="varchar" MaxLength="50" />
+    <Property Name="Section" Type="varchar" MaxLength="50" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" />
+    <Property Name="UserBy" Type="varchar" MaxLength="50" />
+    <Property Name="UserDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="NickName" Type="varchar" MaxLength="20" />
+    <Property Name="Approve1" Type="varchar" MaxLength="10" />
+    <Property Name="Approve2" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblUserGroup">
+    <Key>
+      <PropertyRef Name="UserGroupCode" />
+    </Key>
+    <Property Name="UserGroupCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserGroupName" Type="varchar" MaxLength="100" />
+    <Property Name="UserBy" Type="varchar" MaxLength="50" />
+    <Property Name="UpdateBy" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="tblUserMenu">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="Menu" />
+    </Key>
+    <Property Name="UserID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Menu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Read_" Type="int" />
+    <Property Name="Save_" Type="int" />
+    <Property Name="Edit_" Type="int" />
+    <Property Name="Delete_" Type="int" />
+    <Property Name="UserBy" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Department_Side">
+    <End Role="Side" Type="Self.Side" Multiplicity="0..1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Side">
+        <PropertyRef Name="SideID" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="SideID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Position_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Position" Type="Self.Position" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Position">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Side_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+    <End Role="Side" Type="Self.Side" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="Side">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_EaglesInternalModelStoreContainer">
+    <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RunNo" EntityType="Self.RunNo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Side" EntityType="Self.Side" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMenu" EntityType="Self.tblMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserMenu" EntityType="Self.tblUserMenu" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Department_Side" Association="Self.FK_Department_Side">
+      <End Role="Side" EntitySet="Side" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Position_Department" Association="Self.FK_Position_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Position" EntitySet="Position" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Side_Branch" Association="Self.FK_Side_Branch">
+      <End Role="Branch" EntitySet="Branch" />
+      <End Role="Side" EntitySet="Side" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

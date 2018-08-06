@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_EaglesInternalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prefix_thai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name_thai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname_thai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prefix_eng" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name_eng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname_eng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dept" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NickName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Approve1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Approve2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblUserGroup">
+    <Key>
+      <PropertyRef Name="UserGroupCode" />
+    </Key>
+    <Property Name="UserGroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserGroupName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateBy" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="tblUserMenu">
+    <Key>
+      <PropertyRef Name="Menu" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Menu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Read_" Type="Int32" />
+    <Property Name="Save_" Type="Int32" />
+    <Property Name="Edit_" Type="Int32" />
+    <Property Name="Delete_" Type="Int32" />
+    <Property Name="UserBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="DB_EaglesInternalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" />
+    <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" />
+    <EntitySet Name="tblUserMenu" EntityType="Self.tblUserMenu" />
+    <EntitySet Name="tblMenu" EntityType="DB_EaglesInternalModel.tblMenu" />
+    <EntitySet Name="Branch" EntityType="DB_EaglesInternalModel.Branch" />
+    <EntitySet Name="Department" EntityType="DB_EaglesInternalModel.Department" />
+    <EntitySet Name="Position" EntityType="DB_EaglesInternalModel.Position" />
+    <EntitySet Name="Side" EntityType="DB_EaglesInternalModel.Side" />
+    <AssociationSet Name="FK_Side_Branch" Association="DB_EaglesInternalModel.FK_Side_Branch">
+      <End Role="Branch" EntitySet="Branch" />
+      <End Role="Side" EntitySet="Side" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Department" Association="DB_EaglesInternalModel.FK_Department_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Department1" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Position_Department" Association="DB_EaglesInternalModel.FK_Position_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Position" EntitySet="Position" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Side" Association="DB_EaglesInternalModel.FK_Department_Side">
+      <End Role="Side" EntitySet="Side" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <EntitySet Name="RunNo" EntityType="DB_EaglesInternalModel.RunNo" />
+  </EntityContainer>
+  <EntityType Name="tblMenu">
+    <Key>
+      <PropertyRef Name="Menu" />
+    </Key>
+    <Property Name="Menu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="BranchID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Side" Relationship="DB_EaglesInternalModel.FK_Side_Branch" FromRole="Branch" ToRole="Side" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SideID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Department1" Relationship="DB_EaglesInternalModel.FK_Department_Department" FromRole="Department" ToRole="Department1" />
+    <NavigationProperty Name="Department2" Relationship="DB_EaglesInternalModel.FK_Department_Department" FromRole="Department1" ToRole="Department" />
+    <NavigationProperty Name="Position" Relationship="DB_EaglesInternalModel.FK_Position_Department" FromRole="Department" ToRole="Position" />
+    <NavigationProperty Name="Side" Relationship="DB_EaglesInternalModel.FK_Department_Side" FromRole="Department" ToRole="Side" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="PositionID" />
+    </Key>
+    <Property Name="PositionID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PositionName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Department" Relationship="DB_EaglesInternalModel.FK_Position_Department" FromRole="Position" ToRole="Department" />
+  </EntityType>
+  <EntityType Name="Side">
+    <Key>
+      <PropertyRef Name="SideID" />
+    </Key>
+    <Property Name="SideID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SideName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Branch" Relationship="DB_EaglesInternalModel.FK_Side_Branch" FromRole="Side" ToRole="Branch" />
+    <NavigationProperty Name="Department" Relationship="DB_EaglesInternalModel.FK_Department_Side" FromRole="Side" ToRole="Department" />
+  </EntityType>
+  <Association Name="FK_Side_Branch">
+    <End Type="DB_EaglesInternalModel.Branch" Role="Branch" Multiplicity="0..1" />
+    <End Type="DB_EaglesInternalModel.Side" Role="Side" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="Side">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Department">
+    <End Type="DB_EaglesInternalModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="DB_EaglesInternalModel.Department" Role="Department1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Department1">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Position_Department">
+    <End Type="DB_EaglesInternalModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="DB_EaglesInternalModel.Position" Role="Position" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Position">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Side">
+    <End Type="DB_EaglesInternalModel.Side" Role="Side" Multiplicity="0..1" />
+    <End Type="DB_EaglesInternalModel.Department" Role="Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Side">
+        <PropertyRef Name="SideID" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="SideID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RunNo">
+    <Key>
+      <PropertyRef Name="NO" />
+    </Key>
+    <Property Name="NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RunNo1" Type="Int32" />
+  </EntityType>
+</Schema>

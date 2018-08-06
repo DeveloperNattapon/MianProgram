@@ -1,6 +1,7 @@
 ﻿Public Class Increase
     Inherits System.Web.UI.Page
-    Dim db As New DB_EaglesInternalEntities
+    Dim db As New DB_EaglesIntemalEntities
+    'Dim db As New DB_EaglesInternalTestEntities
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
@@ -15,7 +16,7 @@
         ddlBranch.Items.Add(New ListItem("--select Branch--", ""))
         ddlBranch.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Branch
+        Dim d = From ug In db.Branches
                 Order By ug.BranchName Ascending
                 Select ug.BranchID, ug.BranchName
         Try
@@ -40,7 +41,7 @@
         ddlSide.Items.Add(New ListItem("--select Side--", ""))
         ddlSide.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Side
+        Dim d = From ug In db.Sides
                 Order By ug.SideName Ascending
                 Select ug.SideID, ug.SideName
         Try
@@ -64,7 +65,7 @@
         ddlPosition.Items.Add(New ListItem("--select Position--", ""))
         ddlPosition.AppendDataBoundItems = True
 
-        Dim d = From ug In db.Department
+        Dim d = From ug In db.Departments
                 Order By ug.DepartmentName Ascending
                 Select ug.DepartmentID, ug.DepartmentName
         Try
@@ -96,7 +97,7 @@
         'Dim type As String = ddlSide.Text
 
         key = Mid(CStr(Now.Year), 3) + (CStr(Format(Now.Date, "MM")))
-        Dim u = (From ci In db.RunNo
+        Dim u = (From ci In db.RunNoes
                  Where ci.Name = key Select ci).FirstOrDefault
         If Not u Is Nothing Then
             runno = CInt(u.RunNo1)
@@ -106,7 +107,7 @@
             upDateID(codeId, key)
             clear()
         Else
-            db.RunNo.Add(New RunNo With
+            db.RunNoes.Add(New RunNo With
                                      {
                                          .Name = key, _
                                          .RunNo1 = CType("0", Integer?) _
@@ -124,7 +125,7 @@
 
     End Sub
     Private Sub addBranch(BranID As String)
-        db.Branch.Add(New Branch With
+        db.Branches.Add(New Branch With
                         {.BranchID = BranID, _
                          .BranchName = txtBranch.Value
                        })
@@ -145,7 +146,7 @@
         Dim codeId As Integer
 
         key = "s-" + Mid(CStr(Now.Year), 3) + (CStr(Format(Now.Date, "MM")))
-        Dim u = (From ci In db.RunNo
+        Dim u = (From ci In db.RunNoes
                  Where ci.Name = key Select ci).FirstOrDefault
         If Not u Is Nothing Then
             runno = CInt(u.RunNo1)
@@ -155,7 +156,7 @@
             upDateID(codeId, key)
             clear()
         Else
-            db.RunNo.Add(New RunNo With
+            db.RunNoes.Add(New RunNo With
                                      {
                                          .Name = key, _
                                          .RunNo1 = CType("0", Integer?) _
@@ -174,13 +175,13 @@
     End Sub
     Private Sub addside(sideID As String)
 
-        Dim u = (From ci In db.Side
+        Dim u = (From ci In db.Sides
                  Where ci.SideID = sideID Select ci).FirstOrDefault
         If Not u Is Nothing Then
 
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertMessage", "alert('มีรหัสซ้ำ !');", True)
         Else
-            db.Side.Add(New Side With {
+            db.Sides.Add(New Side With {
                        .SideID = sideID, _
                       .SideName = txtside.Value, _
                       .CreateBy = CStr(Session("UserID")), _
@@ -207,7 +208,7 @@
 
         key = "d" + Mid(CStr(Now.Year), 3) + (CStr(Format(Now.Date, "MM")))
 
-        Dim u = (From ci In db.RunNo
+        Dim u = (From ci In db.RunNoes
                  Where ci.Name = key Select ci).FirstOrDefault
         If Not u Is Nothing Then
             runno = CInt(u.RunNo1)
@@ -217,7 +218,7 @@
             upDateID(codeId, key)
             clear()
         Else
-            db.RunNo.Add(New RunNo With
+            db.RunNoes.Add(New RunNo With
                                      {
                                          .Name = key, _
                                          .RunNo1 = CType("0", Integer?) _
@@ -236,7 +237,7 @@
     Private Sub addDepartment(departmentID As String)
         Try
 
-            db.Department.Add(New Department With {
+            db.Departments.Add(New Department With {
                                .DepartmentID = departmentID, _
                                .DepartmentName = txtdepartment.Value, _
                                 .CreateDate = Now, _
@@ -263,7 +264,7 @@
         Dim codeId As Integer
 
         key = "P" + Mid(CStr(Now.Year), 3) + (CStr(Format(Now.Date, "MM")))
-        Dim u = (From ci In db.RunNo
+        Dim u = (From ci In db.RunNoes
                  Where ci.Name = key Select ci).FirstOrDefault
         If Not u Is Nothing Then
             runno = CInt(u.RunNo1)
@@ -273,7 +274,7 @@
             upDateID(codeId, key)
             clear()
         Else
-            db.RunNo.Add(New RunNo With
+            db.RunNoes.Add(New RunNo With
                                      {
                                          .Name = key, _
                                          .RunNo1 = CType("0", Integer?) _
@@ -290,7 +291,7 @@
 
     End Sub
     Private Sub addPosition(position As String)
-        db.Position.Add(New Position With
+        db.Positions.Add(New Position With
                          {.PositionID = position, _
                             .PositionName = txtPosition.Value, _
                             .CreateBy = CStr(Session("userID")), _
@@ -306,7 +307,7 @@
     Private Sub upDateID(Id As Integer, key As String)
         Try
             db.Database.Connection.Open()
-            Dim update = (From c In db.RunNo Where c.Name = key
+            Dim update = (From c In db.RunNoes Where c.Name = key
                   Select c).First
             If update IsNot Nothing Then
                 update.RunNo1 = Id
@@ -325,20 +326,24 @@
     End Sub
 
     Private Sub showList()
-        Dim li = (From b In db.Branch Join s In db.Side
+        Dim li = (From b In db.Branches Join s In db.Sides
                     On b.BranchID Equals s.BranchID
-                    Join d In db.Department On d.SideID Equals s.SideID
-                    Join p In db.Position On p.DepartmentID Equals d.DepartmentID
+                    Join d In db.Departments On d.SideID Equals s.SideID
+                    Join p In db.Positions On p.DepartmentID Equals d.DepartmentID
                     Select b.BranchName, s.SideName, d.DepartmentName, p.PositionName
                     ).ToList
 
         If li.Count > 1 Then
-            Me.myGridView.DataSource = li
-            Me.myGridView.DataBind()
+            Me.Repeater1.DataSource = li
+            Me.Repeater1.DataBind()
         Else
-            Me.myGridView.DataSource = Nothing
-            Me.myGridView.DataBind()
+            Me.Repeater1.DataSource = Nothing
+            Me.Repeater1.DataBind()
         End If
+
+    End Sub
+
+    Protected Sub Repeater1_ItemCommand(source As Object, e As RepeaterCommandEventArgs) Handles Repeater1.ItemCommand
 
     End Sub
 End Class

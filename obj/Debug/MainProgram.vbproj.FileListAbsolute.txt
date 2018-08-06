@@ -1,94 +1,25 @@
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\MainProgram.dll.config
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\MainProgram.dll
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\MainProgram.pdb
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\MainProgram.xml
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\AjaxControlToolkit.dll
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\EntityFramework.dll
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\EntityFramework.SqlServer.dll
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\EntityFramework.xml
-D:\DevelopmentProjet\MainProgram\MainProgram\bin\EntityFramework.SqlServer.xml
-D:\DevelopmentProjet\MainProgram\MainProgram\obj\Debug\MainProgram.Resources.resources
-D:\DevelopmentProjet\MainProgram\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
-D:\DevelopmentProjet\MainProgram\MainProgram\obj\Debug\MainProgram.dll
-D:\DevelopmentProjet\MainProgram\MainProgram\obj\Debug\MainProgram.xml
-D:\DevelopmentProjet\MainProgram\MainProgram\obj\Debug\MainProgram.pdb
-D:\DevelopmentProjet\MainProgram\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
-D:\Project Asp.net\MainProgram\MainProgram\bin\MainProgram.dll.config
-D:\Project Asp.net\MainProgram\MainProgram\bin\MainProgram.dll
-D:\Project Asp.net\MainProgram\MainProgram\bin\MainProgram.pdb
-D:\Project Asp.net\MainProgram\MainProgram\bin\MainProgram.xml
-D:\Project Asp.net\MainProgram\MainProgram\bin\AjaxControlToolkit.dll
-D:\Project Asp.net\MainProgram\MainProgram\bin\EntityFramework.dll
-D:\Project Asp.net\MainProgram\MainProgram\bin\EntityFramework.SqlServer.dll
-D:\Project Asp.net\MainProgram\MainProgram\bin\EntityFramework.xml
-D:\Project Asp.net\MainProgram\MainProgram\bin\EntityFramework.SqlServer.xml
-D:\Project Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
-D:\Project Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.Resources.resources
-D:\Project Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
-D:\Project Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.dll
-D:\Project Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.xml
-D:\Project Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.pdb
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\MainProgram.dll.config
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\MainProgram.dll
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\MainProgram.pdb
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\MainProgram.xml
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\AjaxControlToolkit.dll
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\EntityFramework.dll
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\EntityFramework.SqlServer.dll
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\EntityFramework.xml
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\bin\EntityFramework.SqlServer.xml
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\obj\Debug\MainProgram.Resources.resources
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\obj\Debug\MainProgram.dll
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\obj\Debug\MainProgram.xml
-C:\Users\jarawee\Desktop\IDM\MainProgram\MainProgram\obj\Debug\MainProgram.pdb
-D:\Asp.net\MainProgram\MainProgram\bin\MainProgram.dll.config
-D:\Asp.net\MainProgram\MainProgram\bin\MainProgram.dll
-D:\Asp.net\MainProgram\MainProgram\bin\MainProgram.pdb
-D:\Asp.net\MainProgram\MainProgram\bin\MainProgram.xml
-D:\Asp.net\MainProgram\MainProgram\bin\AjaxControlToolkit.dll
-D:\Asp.net\MainProgram\MainProgram\bin\EntityFramework.dll
-D:\Asp.net\MainProgram\MainProgram\bin\EntityFramework.SqlServer.dll
-D:\Asp.net\MainProgram\MainProgram\bin\EntityFramework.xml
-D:\Asp.net\MainProgram\MainProgram\bin\EntityFramework.SqlServer.xml
-D:\Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
-D:\Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.Resources.resources
-D:\Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
-D:\Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.dll
-D:\Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.xml
-D:\Asp.net\MainProgram\MainProgram\obj\Debug\MainProgram.pdb
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\MainProgram.dll.config
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\MainProgram.dll
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\MainProgram.pdb
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\MainProgram.xml
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\AjaxControlToolkit.dll
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\EntityFramework.dll
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\EntityFramework.SqlServer.dll
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\EntityFramework.xml
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\bin\EntityFramework.SqlServer.xml
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\obj\Debug\MainProgram.Resources.resources
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\obj\Debug\MainProgram.dll
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\obj\Debug\MainProgram.xml
-D:\Asp.net\สำรอง\test\MainProgram\MainProgram\obj\Debug\MainProgram.pdb
-D:\Asp.net\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
-D:\Asp.net\MainProgram\obj\Debug\MainProgram.Resources.resources
-D:\Asp.net\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
-D:\Asp.net\MainProgram\obj\Debug\MainProgram.dll
-D:\Asp.net\MainProgram\obj\Debug\MainProgram.xml
-D:\Asp.net\MainProgram\obj\Debug\MainProgram.pdb
-D:\Asp.net\MainProgram\bin\MainProgram.dll.config
-D:\Asp.net\MainProgram\bin\MainProgram.dll
-D:\Asp.net\MainProgram\bin\MainProgram.pdb
-D:\Asp.net\MainProgram\bin\MainProgram.xml
-D:\Asp.net\MainProgram\bin\EntityFramework.xml
-D:\Asp.net\MainProgram\bin\EntityFramework.SqlServer.xml
+D:\MianProgram\bin\MainProgram.dll.config
+D:\MianProgram\bin\MainProgram.dll
+D:\MianProgram\bin\MainProgram.pdb
+D:\MianProgram\bin\MainProgram.xml
+D:\MianProgram\bin\AjaxControlToolkit.dll
+D:\MianProgram\bin\EntityFramework.dll
+D:\MianProgram\bin\EntityFramework.SqlServer.dll
+D:\MianProgram\bin\EntityFramework.xml
+D:\MianProgram\bin\EntityFramework.SqlServer.xml
+D:\MianProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
+D:\MianProgram\obj\Debug\MainProgram.Resources.resources
+D:\MianProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
+D:\MianProgram\obj\Debug\MainProgram.dll
+D:\MianProgram\obj\Debug\MainProgram.xml
+D:\MianProgram\obj\Debug\MainProgram.pdb
 \\192.168.2.81\wwwroot\MainProgram\bin\MainProgram.dll.config
 \\192.168.2.81\wwwroot\MainProgram\bin\MainProgram.dll
 \\192.168.2.81\wwwroot\MainProgram\bin\MainProgram.pdb
 \\192.168.2.81\wwwroot\MainProgram\bin\MainProgram.xml
+\\192.168.2.81\wwwroot\MainProgram\bin\AjaxControlToolkit.dll
+\\192.168.2.81\wwwroot\MainProgram\bin\EntityFramework.dll
+\\192.168.2.81\wwwroot\MainProgram\bin\EntityFramework.SqlServer.dll
 \\192.168.2.81\wwwroot\MainProgram\bin\EntityFramework.xml
 \\192.168.2.81\wwwroot\MainProgram\bin\EntityFramework.SqlServer.xml
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
@@ -97,15 +28,3 @@ D:\Asp.net\MainProgram\bin\EntityFramework.SqlServer.xml
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.dll
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.xml
 \\192.168.2.81\wwwroot\MainProgram\obj\Debug\MainProgram.pdb
-D:\ProjectDevelop\MainProgram\bin\MainProgram.dll.config
-D:\ProjectDevelop\MainProgram\bin\MainProgram.dll
-D:\ProjectDevelop\MainProgram\bin\MainProgram.pdb
-D:\ProjectDevelop\MainProgram\bin\MainProgram.xml
-D:\ProjectDevelop\MainProgram\bin\EntityFramework.xml
-D:\ProjectDevelop\MainProgram\bin\EntityFramework.SqlServer.xml
-D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.vbprojResolveAssemblyReference.cache
-D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.Resources.resources
-D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.vbproj.GenerateResource.Cache
-D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.dll
-D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.xml
-D:\ProjectDevelop\MainProgram\obj\Debug\MainProgram.pdb

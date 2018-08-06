@@ -32,13 +32,40 @@ Partial Public Class SearchUser
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''btnAdd control.
+    '''btnSave control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnSave As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Text1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Text1 As Global.System.Web.UI.HtmlControls.HtmlInputText
+
+    '''<summary>
+    '''ddlSearchU control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlSearchU As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''btnSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Repeater1 control.

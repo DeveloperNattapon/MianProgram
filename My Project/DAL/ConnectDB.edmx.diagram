@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec91fbdfcc49477b8dfb2fb8bb886fb9" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Branch" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Department" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Document" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.M_Document" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Position" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Referal_Doc" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.RunNo" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Side" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.sysdiagram" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblAbsent" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblBookingMessenger" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblCaseJob" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblFileIT" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblItJobDoc" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblMenu" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblMessenger" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblRunningNumber" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblUser" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblUserGroup" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblUserMenu" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblUsername" Width="1.5" PointX="6.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblAccessList" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblAccessListDetail" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblDivision" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.tblIDRecording" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_EaglesInternalTestModel.FK_Branch_tblUser" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EaglesInternalTestModel.FK_Side_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EaglesInternalTestModel.FK_Department_Side" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EaglesInternalTestModel.FK_Position_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EaglesInternalTestModel.FK_Document_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_EaglesInternalTestModel.FK_tblUser_tblUser" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_EaglesInternalTestModel.Status" Width="1.5" PointX="0.75" PointY="22.25" />
+        <AssociationConnector Association="DB_EaglesInternalTestModel.FK_tblUser_Status" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

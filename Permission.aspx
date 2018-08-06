@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Permission.aspx.vb" Inherits="MainProgram.Permission" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="Permission.aspx.vb" Inherits="MainProgram.Permission" EnableEventValidation="false" EnableViewState="true" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
@@ -9,12 +9,11 @@
         </asp:ScriptManager>
 
         <section class="content-header">
-            <h1>Add User
-            </h1>
+            <h1>Permission</h1>
             <ol class="breadcrumb">
-                <li><a href="SearchUser.aspx"><i class="fa fa-home"></i>Home</a></li>
-                <li><a class="active"><i class="fa fa-file"></i>Fro File</a></li>
-                <li><a href="MasterCode.aspx">Add User</a></li>
+                <li><a href="UserProject.aspx"><i class="fa fa-home"></i>Home</a></li>
+                <li><a class="active">Pro File</a></li>
+                <li>Permission</li>
             </ol>
         </section>
         <!-- Main content -->
@@ -27,12 +26,12 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add User FroFile</h3>
+                            <h3 class="box-title">Edit Permission</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="row">
 
-                            <from class="form-horizontal">
+                            <form class="form-horizontal">
                             <div class="col-lg-6 col-md-12 col-md-offset-3">
                                  <div class="box-body">   
 
@@ -67,14 +66,14 @@
                             
                          
                         </div>
-
+                        <div class="form-group text-center ">
+                <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
+            </div>
                     </div>
                     </div>              
             </div>
   
-            <div class="form-group text-center ">
-                <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
-            </div>
+            
             <div class="form-group col-md-12">
 
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="3" ForeColor="Black" Font-Size="Small" HorizontalAlign="Center" Width="673px" DataKeyNames="Menu"
@@ -122,7 +121,7 @@
                 </asp:GridView>
             </div>
                         </div>
-                        </from>
+                        </form>
 
                             <!--/.row-->
                     </div>
@@ -134,7 +133,7 @@
                 <!--/.box box-primary-->
             </div>
             <!--/.col-lg-12 -->
-     
+
             <!--/.col (right) -->
 
             <!-- /.row -->

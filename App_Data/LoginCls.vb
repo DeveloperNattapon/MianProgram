@@ -14,19 +14,22 @@ Public Class LoginCls
     Private Shared MD5 As New MD5CryptoServiceProvider
     Public Shared EncryptPass As String = "eagles"
 
+
     Public Shared Function chkUser(userid As String, password As String) As Boolean
-        Using db = New DB_EaglesInternalEntities
+        'Using db As New DB_EaglesInternalTestEntities
+        Using db As New DB_EaglesIntemalEntities
             Dim PassEn As String = Encrypt(password, EncryptPass)
 
-            Dim q = (From p In db.tblUser _
-               Where p.UserId.ToUpper() = userid And p.Password = PassEn
-               Select p).Count()
+            Dim q = (From p In db.tblUsers _
+           Where p.UserId.ToUpper() = userid And p.Password = PassEn
+           Select p).Count()
             If (q > 0) Then
                 Return True
             Else
                 Return False
             End If
         End Using
+
 
     End Function
 

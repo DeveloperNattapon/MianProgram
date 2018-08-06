@@ -5,6 +5,8 @@ Imports System.Linq
 
 Public Class Permission
     Inherits System.Web.UI.Page
+    'Dim db As New DB_EaglesInternalTestEntities
+    Dim db As New DB_EaglesIntemalEntities
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -14,83 +16,81 @@ Public Class Permission
 
     Protected Sub LoadCombo()
 
-        Using db = New DB_EaglesInternalEntities()
 
-            Dim ds = (From c In db.tblUser
-                        Select New With
-                               {
-                                   Key .name = c.Prefix_thai & " " & c.Name_thai & " " & c.Surname_thai,
-                                   c.UserId
-                               }).ToList()
 
-            ' Assign to GridView
-            If ds.Count > 0 Then
-                With ddlCopyUser
-                    .DataSource = ds
-                    .DataTextField = "name"
-                    .DataValueField = "UserId"
-                    .DataBind()
-                End With
+        Dim ds = (From c In db.tblUsers
+                    Select New With
+                           {
+                               Key .name = c.Prefix_thai & " " & c.Name_thai & " " & c.Surname_thai,
+                               c.UserId
+                           }).ToList()
 
-            End If
-        End Using
+        ' Assign to GridView
+        If ds.Count > 0 Then
+            With ddlCopyUser
+                .DataSource = ds
+                .DataTextField = "name"
+                .DataValueField = "UserId"
+                .DataBind()
+            End With
+
+        End If
+
     End Sub
 
     Protected Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        Using db = New DB_EaglesInternalEntities
-            Dim menu As String = "User Management"
-            Dim id As String = Session("UserID").ToString
-            Dim d3 = From c In db.tblUserMenu Where c.UserID = id And
-            c.Menu = menu And c.Save_ = 1
-            If Not d3.Any Then
-                ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
-                Exit Sub
-            End If
 
-            Dim ds1 = (From c In db.tblUser Where c.UserId = txtSearchUser.Text.Trim
-                ).FirstOrDefault
-            If ds1 Is Nothing Then
-                ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('ไม่พบข้อมูล User ที่ค้นหา')", True)
-                Exit Sub
-            Else
-                lblName.Text = ds1.Prefix_thai & " " & ds1.Name_thai & " " & ds1.Surname_thai
-            End If
+        Dim menu As String = "User Management"
+        Dim id As String = Session("UserID").ToString
+        Dim d3 = From c In db.tblUserMenus Where c.UserID = id And
+        c.Menu = menu And c.Save_ = 1
+        If Not d3.Any Then
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
+            Exit Sub
+        End If
 
-            Dim ds2 = (From c In db.tblUserMenu Where c.UserID = txtSearchUser.Text.Trim
-              ).FirstOrDefault
-            If ds2 IsNot Nothing Then
+        Dim ds1 = (From c In db.tblUsers Where c.UserId = txtSearchUser.Text.Trim
+            ).FirstOrDefault
+        If ds1 Is Nothing Then
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('ไม่พบข้อมูล User ที่ค้นหา')", True)
+            Exit Sub
+        Else
+            lblName.Text = ds1.Prefix_thai & " " & ds1.Name_thai & " " & ds1.Surname_thai
+        End If
+
+        Dim ds2 = (From c In db.tblUserMenus Where c.UserID = txtSearchUser.Text.Trim
+          ).FirstOrDefault
+        If ds2 IsNot Nothing Then
+            GridDatabind()
+        Else
+            Dim ds3 = (From c In db.tblMenus Select c).ToList
+            If ds3.Count > 0 Then
+
+                For Each item In ds3
+                    ' Insert
+                    db.tblUserMenus.Add(New tblUserMenu() With { _
+                             .UserID = txtSearchUser.Text.Trim, _
+                             .Menu = item.Menu, _
+                             .Status = "None", _
+                             .Read_ = 0, _
+                             .Save_ = 0, _
+                             .Edit_ = 0, _
+                             .Delete_ = 0, _
+                             .UserBy = Session("Name_eng").ToString, _
+                             .LastUpdate = Now _
+                               })
+                    db.SaveChanges()
+                Next
                 GridDatabind()
-            Else
-                Dim ds3 = (From c In db.tblMenu Select c).ToList
-                If ds3.Count > 0 Then
-
-                    For Each item In ds3
-                        ' Insert
-                        db.tblUserMenu.Add(New tblUserMenu() With { _
-                                 .UserID = txtSearchUser.Text.Trim, _
-                                 .Menu = item.Menu, _
-                                 .Status = "None", _
-                                 .Read_ = 0, _
-                                 .Save_ = 0, _
-                                 .Edit_ = 0, _
-                                 .Delete_ = 0, _
-                                 .UserBy = Session("Name_eng").ToString, _
-                                 .LastUpdate = Now _
-                                   })
-                        db.SaveChanges()
-                    Next
-                    GridDatabind()
-                End If
-
             End If
 
-        End Using
+        End If
+
     End Sub
     Protected Sub GridDatabind()
-        Using db = New DB_EaglesInternalEntities
-
-            Dim ds = (From c In db.tblMenu Group Join d In (
-                     From cc In db.tblUserMenu Where cc.UserID = txtSearchUser.Text.Trim
+   
+        Dim ds = (From c In db.tblMenus Group Join d In (
+                     From cc In db.tblUserMenus Where cc.UserID = txtSearchUser.Text.Trim
                      Select New With {cc})
                      On c.Menu Equals d.cc.Menu Into Group
                      From f In Group.DefaultIfEmpty() _
@@ -105,7 +105,6 @@ Public Class Permission
                 Me.GridView1.DataBind()
             End If
 
-        End Using
     End Sub
 
     Protected Sub GridView1_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GridView1.RowDataBound
@@ -156,95 +155,94 @@ Public Class Permission
         Dim sedit As Integer
         Dim sdelete As Integer
 
-        Using db As New DB_EaglesInternalEntities()
-            Dim cs = (From c In db.tblUserMenu Where c.Menu = Menu And c.UserID = UserID _
-                                        Select c).FirstOrDefault()
-            If cs IsNot Nothing Then
-                'cs.UserID = UserID.ToUpper
-                cs.Menu = Menu
-                cs.Status = Stattus
-                If Stattus = "None" Then
-                    cs.Read_ = 0
-                    cs.Save_ = 0
-                    cs.Edit_ = 0
-                    cs.Delete_ = 0
-                End If
-                If Stattus = "Read" Then
-                    cs.Read_ = 1
-                    cs.Save_ = 0
-                    cs.Edit_ = 0
-                    cs.Delete_ = 0
-                End If
-                If Stattus = "Save" Then
-                    cs.Read_ = 1
-                    cs.Save_ = 1
-                    cs.Edit_ = 0
-                    cs.Delete_ = 0
-                End If
-                If Stattus = "Edit" Then
-                    cs.Read_ = 1
-                    cs.Save_ = 1
-                    cs.Edit_ = 1
-                    cs.Delete_ = 0
-                End If
-                If Stattus = "Delete" Then
-                    cs.Read_ = 1
-                    cs.Save_ = 1
-                    cs.Edit_ = 1
-                    cs.Delete_ = 1
-                End If
-                cs.UserBy = Session("Name_eng").ToString.ToUpper
-                cs.LastUpdate = Now
-                db.SaveChanges()
-            Else
-               
-                If Stattus = "None" Then
-                    sread = 0
-                    ssave = 0
-                    sedit = 0
-                    sdelete = 0
-                End If
-                If Stattus = "Read" Then
-                    sread = 1
-                    ssave = 0
-                    sedit = 0
-                    sdelete = 0
-                End If
-                If Stattus = "Save" Then
-                    sread = 1
-                    ssave = 1
-                    sedit = 0
-                    sdelete = 0
-                End If
-                If Stattus = "Edit" Then
-                    sread = 1
-                    ssave = 1
-                    sedit = 1
-                    sdelete = 0
-                End If
-                If Stattus = "Delete" Then
-                    sread = 1
-                    ssave = 1
-                    sedit = 1
-                    sdelete = 1
-                End If
 
-                Dim ca = db.tblUserMenu.Add(New tblUserMenu() With { _
-                     .UserID = UserID, _
-                     .Menu = Menu, _
-                     .Status = Stattus, _
-                     .Read_ = sread, _
-                     .Save_ = ssave, _
-                     .Edit_ = sedit, _
-                     .Delete_ = sdelete, _
-                     .UserBy = Session("Name_eng").ToString.ToUpper, _
-                     .LastUpdate = Now
-                })
-                db.SaveChanges()
-
+        Dim cs = (From c In db.tblUserMenus Where c.Menu = Menu And c.UserID = UserID _
+                                    Select c).FirstOrDefault()
+        If cs IsNot Nothing Then
+            'cs.UserID = UserID.ToUpper
+            cs.Menu = Menu
+            cs.Status = Stattus
+            If Stattus = "None" Then
+                cs.Read_ = 0
+                cs.Save_ = 0
+                cs.Edit_ = 0
+                cs.Delete_ = 0
             End If
-        End Using
+            If Stattus = "Read" Then
+                cs.Read_ = 1
+                cs.Save_ = 0
+                cs.Edit_ = 0
+                cs.Delete_ = 0
+            End If
+            If Stattus = "Save" Then
+                cs.Read_ = 1
+                cs.Save_ = 1
+                cs.Edit_ = 0
+                cs.Delete_ = 0
+            End If
+            If Stattus = "Edit" Then
+                cs.Read_ = 1
+                cs.Save_ = 1
+                cs.Edit_ = 1
+                cs.Delete_ = 0
+            End If
+            If Stattus = "Delete" Then
+                cs.Read_ = 1
+                cs.Save_ = 1
+                cs.Edit_ = 1
+                cs.Delete_ = 1
+            End If
+            cs.UserBy = Session("Name_eng").ToString.ToUpper
+            cs.LastUpdate = Now
+            db.SaveChanges()
+        Else
 
+            If Stattus = "None" Then
+                sread = 0
+                ssave = 0
+                sedit = 0
+                sdelete = 0
+            End If
+            If Stattus = "Read" Then
+                sread = 1
+                ssave = 0
+                sedit = 0
+                sdelete = 0
+            End If
+            If Stattus = "Save" Then
+                sread = 1
+                ssave = 1
+                sedit = 0
+                sdelete = 0
+            End If
+            If Stattus = "Edit" Then
+                sread = 1
+                ssave = 1
+                sedit = 1
+                sdelete = 0
+            End If
+            If Stattus = "Delete" Then
+                sread = 1
+                ssave = 1
+                sedit = 1
+                sdelete = 1
+            End If
+
+            Dim ca = db.tblUserMenus.Add(New tblUserMenu() With { _
+                 .UserID = UserID, _
+                 .Menu = Menu, _
+                 .Status = Stattus, _
+                 .Read_ = sread, _
+                 .Save_ = ssave, _
+                 .Edit_ = sedit, _
+                 .Delete_ = sdelete, _
+                 .UserBy = Session("Name_eng").ToString.ToUpper, _
+                 .LastUpdate = Now
+            })
+            db.SaveChanges()
+
+        End If
+       
         GridView1.EditIndex = -1
         Me.GridDatabind()
 
@@ -256,30 +254,29 @@ Public Class Permission
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Using db As New DB_EaglesInternalEntities()
             Dim menu As String = "User Management"
             Dim id As String = Session("UserID").ToString
-            Dim ds2 = From c In db.tblUserMenu Where c.UserID = id And
+        Dim ds2 = From c In db.tblUserMenus Where c.UserID = id And
             c.Menu = menu And c.Save_ = 1
             If Not ds2.Any Then
                 ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('You do not have access')", True)
                 Exit Sub
             End If
 
-            Dim ds1 = (From c In db.tblUser Where c.UserId = ddlCopyUser.SelectedValue Select c).FirstOrDefault
+        Dim ds1 = (From c In db.tblUsers Where c.UserId = ddlCopyUser.SelectedValue Select c).FirstOrDefault
 
-            Dim ds = (From c In db.tblUserMenu Where c.UserID = ds1.UserId).ToList
+        Dim ds = (From c In db.tblUserMenus Where c.UserID = ds1.UserId).ToList
             If ds.Count > 0 Then
-                Dim del = (From c In db.tblUserMenu Where c.UserID = txtSearchUser.Text).ToList
+            Dim del = (From c In db.tblUserMenus Where c.UserID = txtSearchUser.Text).ToList
 
                 For Each c In del
-                    db.tblUserMenu.Remove(c)
+                db.tblUserMenus.Remove(c)
                 Next
                 db.SaveChanges()
 
                 For Each item In ds
                     ' Insert
-                    db.tblUserMenu.Add(New tblUserMenu() With { _
+                db.tblUserMenus.Add(New tblUserMenu() With { _
                              .UserID = txtSearchUser.Text.Trim.ToUpper, _
                              .Menu = item.Menu, _
                              .Status = item.Status, _
@@ -295,6 +292,6 @@ Public Class Permission
                 GridDatabind()
             End If
 
-        End Using
+
     End Sub
 End Class

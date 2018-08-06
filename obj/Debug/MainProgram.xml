@@ -6,7 +6,152 @@ MainProgram
 </name>
 </assembly>
 <members>
-<member name="F:MainProgram.HomePage.form1">
+<member name="F:MainProgram.Menu.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Menu.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Menu.btnAdd">
+	<summary>
+btnAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Menu.Repeater1">
+	<summary>
+Repeater1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Menu.UpdatePanel1">
+	<summary>
+UpdatePanel1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Menu.txtMenu">
+	<summary>
+txtMenu control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Menu.lblMsg">
+	<summary>
+lblMsg control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Menu.txtDescription">
+	<summary>
+txtDescription control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Menu.btnSaveChange">
+	<summary>
+btnSaveChange control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="P:MainProgram.My.MyWebExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:MainProgram.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:MainProgram.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:MainProgram.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:MainProgram.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="T:MainProgram.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:MainProgram.EditPassword.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.EditPassword.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.EditPassword.txtPass">
+	<summary>
+txtPass control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.EditPassword.txtPasswordeName">
+	<summary>
+txtPasswordeName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.EditPassword.btnEdit">
+	<summary>
+btnEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Logout.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.HomePage.form1">
 	<summary>
 form1 control.
 </summary>
@@ -150,6 +295,14 @@ Image10 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:MainProgram.HomePage.ImageAlert">
+	<summary>
+ImageAlert control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:MainProgram.Increase.form1">
 	<summary>
 form1 control.
@@ -262,48 +415,15 @@ btnPosition control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Increase.UpModal">
+</member><member name="F:MainProgram.Increase.Repeater1">
 	<summary>
-UpModal control.
+Repeater1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Increase.myGridView">
-	<summary>
-myGridView control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="P:MainProgram.My.MyWebExtension.Computer">
-	<summary>
- Returns information about the host computer.
- </summary>
-</member><member name="P:MainProgram.My.MyWebExtension.User">
-	<summary>
- Returns information for the current Web user.
- </summary>
-</member><member name="P:MainProgram.My.MyWebExtension.Request">
-	<summary>
- Returns Request object.
- </summary>
-</member><member name="P:MainProgram.My.MyWebExtension.Response">
-	<summary>
- Returns Response object.
- </summary>
-</member><member name="P:MainProgram.My.MyWebExtension.Log">
-	<summary>
- Returns the Asp log object.
- </summary>
-</member><member name="T:MainProgram.My.MyWebExtension">
-	<summary>
- Module used to define the properties that are available in the My Namespace for Web projects.
- </summary>
-	<remarks></remarks>
-</member><member name="F:MainProgram.Menu.form1">
+</member><member name="F:MainProgram.UserProject.form1">
 	<summary>
 form1 control.
 </summary>
@@ -311,7 +431,7 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Menu.ScriptManager1">
+</member><member name="F:MainProgram.UserProject.ScriptManager1">
 	<summary>
 ScriptManager1 control.
 </summary>
@@ -319,57 +439,145 @@ ScriptManager1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Menu.btnAdd">
+</member><member name="F:MainProgram.UserProject.txtprofilename">
 	<summary>
-btnAdd control.
+txtprofilename control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Menu.GridView1">
+</member><member name="F:MainProgram.UserProject.txtdeptname">
 	<summary>
-GridView1 control.
+txtdeptname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Menu.UpdatePanel1">
+</member><member name="F:MainProgram.UserProject.btnEdit">
 	<summary>
-UpdatePanel1 control.
+btnEdit control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Menu.txtMenu">
+</member><member name="F:MainProgram.UserProject.txtUser">
 	<summary>
-txtMenu control.
+txtUser control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Menu.lblMsg">
+</member><member name="F:MainProgram.UserProject.txtPrefix">
 	<summary>
-lblMsg control.
+txtPrefix control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Menu.txtDescription">
+</member><member name="F:MainProgram.UserProject.txtPrefix_Eng">
 	<summary>
-txtDescription control.
+txtPrefix_Eng control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Menu.btnSaveChange">
+</member><member name="F:MainProgram.UserProject.txtNameThai">
 	<summary>
-btnSaveChange control.
+txtNameThai control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtNameEng">
+	<summary>
+txtNameEng control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtSurnameThai">
+	<summary>
+txtSurnameThai control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtSurnameEng">
+	<summary>
+txtSurnameEng control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtEmaile">
+	<summary>
+txtEmaile control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtBranch">
+	<summary>
+txtBranch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtSection">
+	<summary>
+txtSection control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtDept">
+	<summary>
+txtDept control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtPosition">
+	<summary>
+txtPosition control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.lbApprove1">
+	<summary>
+lbApprove1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.lbApprove2">
+	<summary>
+lbApprove2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.UserProject.txtStatus">
+	<summary>
+txtStatus control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -415,14 +623,6 @@ btnSigIN control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.Logout.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:MainProgram.SearchUser.form1">
 	<summary>
 form1 control.
@@ -439,9 +639,33 @@ ScriptManager1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:MainProgram.SearchUser.btnAdd">
+</member><member name="F:MainProgram.SearchUser.btnSave">
 	<summary>
-btnAdd control.
+btnSave control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.SearchUser.Text1">
+	<summary>
+Text1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.SearchUser.ddlSearchU">
+	<summary>
+ddlSearchU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.SearchUser.btnSearch">
+	<summary>
+btnSearch control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -559,6 +783,14 @@ ddlPosition control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:MainProgram.AddUser.ddlStatus">
+	<summary>
+ddlStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:MainProgram.AddUser.txtPassworde">
 	<summary>
 txtPassworde control.
@@ -586,14 +818,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:MainProgram.EditUser.txtUser">
 	<summary>
 txtUser control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:MainProgram.EditUser.txtPassworde">
-	<summary>
-txtPassworde control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -703,6 +927,14 @@ lbApprove2 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:MainProgram.EditUser.ddlStatus">
+	<summary>
+ddlStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:MainProgram.EditUser.btnSave">
 	<summary>
 btnSave control.
@@ -762,6 +994,67 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:MainProgram.Permission.GridView1">
 	<summary>
 GridView1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="P:MainProgram.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:MainProgram.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:MainProgram.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:MainProgram.Password.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Password.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Password.Text1">
+	<summary>
+Text1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Password.ddlSearchU">
+	<summary>
+ddlSearchU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Password.btnSearch">
+	<summary>
+btnSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:MainProgram.Password.Repeater1">
+	<summary>
+Repeater1 control.
 </summary>
 	<remarks>
 Auto-generated field.

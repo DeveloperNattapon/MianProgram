@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditUser.aspx.vb" Inherits="MainProgram.EditUser" MasterPageFile="~/Site1.Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditUser.aspx.vb" Inherits="MainProgram.EditUser" MasterPageFile="~/Site1.Master" EnableEventValidation="false" EnableViewState="true" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -12,9 +12,9 @@
             <h1>Edit User
             </h1>
             <ol class="breadcrumb">
-                <li><a href="HomeMain.aspx"><i class="fa fa-home"></i>Home</a></li>
-                <li><a class="active"><i class="fa fa-file"></i>Fro File</a></li>
-                <li><a href="MasterCode.aspx">Edit User</a></li>
+                <li><a href="UserProject.aspx"><i class="fa fa-home"></i>Home</a></li>
+                <li><a class="active">Pro File</a></li>
+                <li><a href="EditUser.aspx"><i class="fa fa-edit"></i>Edit User</a></li>
             </ol>
         </section>
         <!-- Main content -->
@@ -27,12 +27,12 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Edit FroFile</h3>
+                            <h3 class="box-title">Edit ProFile</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="row">
 
-                            <from class="form-horizontal">
+                            <form class="form-horizontal">
                             <div class="col-lg-6 col-md-6 col-md-offset-3">
                                  <div class="box-body">   
                                             
@@ -40,13 +40,9 @@
                     <div class="col-xs-12">
                         <label class="control-label " for="txtUserId">UserId</label>
                         <div class="controls ">
-                            <input class="form-control" id="txtUser" runat="server" required="required" type="text" />
+                            <input class="form-control" id="txtUser" runat="server" required="required" type="text" disabled="disabled"/>
                         </div>
-                        <label class="control-label " for="txtPassword">รหัสผ่าน</label>
-                        <div class="controls ">
-                            <input class="form-control" id="txtPassworde" required="required" runat="server" type="password" />
-
-                        </div>
+                       
                     </div>
 
 
@@ -86,7 +82,7 @@
 
                         <label class="control-label" for="txtName_eng">First name</label>
                         <div class="controls ">
-                            <input class="form-control" id="txtNameEng" required="required" runat="server" type="text" />
+                            <input class="form-control" id="txtNameEng" runat="server" type="text" />
                         </div>
 
                     </div>
@@ -94,56 +90,60 @@
 
                         <label class="control-label" for="txtSurname_thai">นามสกุล</label>
                         <div class="controls ">
-
                             <input class="form-control" id="txtSurnameThai" required="required" runat="server" type="text" />
                         </div>
 
-
                         <label class="control-label" for="txtSurname_eng">Surname</label>
-                        <div class="controls ">
-
-                            <input class="form-control" id="txtSurnameEng" required="required" runat="server" type="text" />
+                        <div class="controls">
+                            <input class="form-control" id="txtSurnameEng"  runat="server" type="text" />
                         </div>
 
                     </div>
                     <div class="col-xs-12">
-                        <label class="control-label" for="txtEmail">อีเมล์</label>
+                        <label class="control-label" for="txtEmail">อีเมล</label>
                         <div class="controls ">
                             <input class="form-control" id="txtEmaile" runat="server" type="text" />
                         </div>
 
                         <label class="control-label" for="ddlBranch">สาขา</label>
                         <div class="controls dropdown ">
-                            <asp:DropDownList ID="ddlBranch" runat="server" class="form-control" DataTextField = "BranchName" DataValueField = "BranchID" AutoPostBack="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlBranch" runat="server" class="form-control select2" DataTextField = "BranchName" DataValueField = "BranchName"></asp:DropDownList>
                         </div>
                         <label class="control-label" for="txtDept">ฝ่าย</label>
                         <div class="controls ">
-                            <asp:DropDownList ID="ddlSection" runat="server" class="form-control"  DataTextField = "SideName" DataValueField = "SideID" AutoPostBack="true"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlSection" runat="server" class="form-control select2"  DataTextField = "SideName" DataValueField = "SideName"></asp:DropDownList>
                         </div>
 
                         <label class="control-label" for="txtDept">แผนก</label>
                         <div class="controls ">
-                            <asp:DropDownList ID="ddlDept" runat="server" class="form-control" DataTextField = "DepartmentName" DataValueField = "DepartmentID" AutoPostBack="true">
+                            <asp:DropDownList ID="ddlDept" runat="server" class="form-control select2" DataTextField = "DepartmentName" DataValueField = "DepartmentName">
                                
                             </asp:DropDownList>
                         </div>
 
                         <label class="control-label" for="txtPosition">ตำแหน่ง</label>
                         <div class="controls ">
-                            <asp:DropDownList ID="ddlPosition" runat="server" class="form-control" DataTextField = "PositionName" DataValueField = "PositionID">
-                                
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlPosition" runat="server" class="form-control select2" DataTextField = "PositionName" DataValueField = "PositionName"> </asp:DropDownList>
                         </div>
-                        <label class="control-label" for="lbApprove1">ผู้อนุมัต 1</label>
+                        <%--<div class="col-xs-12">--%>
+                        <label class="control-label" for="lbApprove1">ผู้อนุมัติ 1</label>
                         <div class="controls ">
-
-                            <input class="form-control" id="lbApprove1" required="required" runat="server" type="text" />
+                            <input class="form-control" id="lbApprove1" required="required" runat="server" type="text" disabled="disabled" />
                         </div>
-                        <label class="control-label" for="lbApprove2">ผู้อนุมัต 2</label>
+                    <%--    </div>--%>
+
+                        <%--<div class="col-xs-6">--%>
+                        <label class="control-label" for="lbApprove2">ผู้อนุมัติ 2</label>
                         <div class="controls ">
-
-                            <input class="form-control" id="lbApprove2" required="required" runat="server" type="text" />
+                            <input class="form-control" id="lbApprove2" required="required" runat="server" type="text" disabled="disabled" />
                         </div>
+                   <%--     </div>--%>
+
+                        <label class="control-label" for="txtPosition">สถานะ</label>
+                        <div class="controls ">
+                            <asp:DropDownList ID="ddlStatus" runat="server" class="form-control" DataTextField = "StatusName" DataValueField = "StatusID"> </asp:DropDownList>
+                        </div>
+
                     </div>
                 </div>
 
@@ -156,7 +156,7 @@
                                      
                 </div>
                             </div>
-                       </from>
+                       </form>
 
                             <!--/.row-->
                         </div>

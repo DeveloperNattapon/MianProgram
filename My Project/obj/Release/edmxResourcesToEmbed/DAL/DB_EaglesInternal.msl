@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_EaglesInternalModelStoreContainer" CdmEntityContainer="DB_EaglesInternalEntities">
+    <EntitySetMapping Name="tblUser">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="Approve2" ColumnName="Approve2" />
+          <ScalarProperty Name="Approve1" ColumnName="Approve1" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Prefix_thai" ColumnName="Prefix_thai" />
+          <ScalarProperty Name="Name_thai" ColumnName="Name_thai" />
+          <ScalarProperty Name="Surname_thai" ColumnName="Surname_thai" />
+          <ScalarProperty Name="Prefix_eng" ColumnName="Prefix_eng" />
+          <ScalarProperty Name="Name_eng" ColumnName="Name_eng" />
+          <ScalarProperty Name="Surname_eng" ColumnName="Surname_eng" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Dept" ColumnName="Dept" />
+          <ScalarProperty Name="Branch" ColumnName="Branch" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="UserDate" ColumnName="UserDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserGroup">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUserGroup">
+        <MappingFragment StoreEntitySet="tblUserGroup">
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="UserGroupCode" ColumnName="UserGroupCode" />
+          <ScalarProperty Name="UserGroupName" ColumnName="UserGroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserMenu">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblUserMenu">
+        <MappingFragment StoreEntitySet="tblUserMenu">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Menu" ColumnName="Menu" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Read_" ColumnName="Read_" />
+          <ScalarProperty Name="Save_" ColumnName="Save_" />
+          <ScalarProperty Name="Edit_" ColumnName="Edit_" />
+          <ScalarProperty Name="Delete_" ColumnName="Delete_" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMenu">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.tblMenu">
+        <MappingFragment StoreEntitySet="tblMenu">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UserBy" ColumnName="UserBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Menu" ColumnName="Menu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branch">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Branch">
+        <MappingFragment StoreEntitySet="Branch">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="SideID" ColumnName="SideID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Position">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Side">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.Side">
+        <MappingFragment StoreEntitySet="Side">
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="SideName" ColumnName="SideName" />
+          <ScalarProperty Name="SideID" ColumnName="SideID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunNo">
+      <EntityTypeMapping TypeName="DB_EaglesInternalModel.RunNo">
+        <MappingFragment StoreEntitySet="RunNo">
+          <ScalarProperty Name="RunNo1" ColumnName="RunNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

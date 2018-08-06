@@ -13,6 +13,19 @@
     <meta name="author" content="" />
     <title>Eagles Air&Sea</title>
 
+    <%---------------------------------------------------script dialog popup Alert-----------------------------------------------------------%>
+<%--  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+      $(function () {
+          $("#dialog").dialog({ width: 900 , height:350 });
+      });
+  </script>--%>
+
+
+
     <!-- Le styles -->
 
     <style type="text/css">
@@ -116,6 +129,12 @@
                 </tr>
             </table>
         </div>
+
+
+        <%--------------------------------------------------dialog popup alert pls change photo every time when server editing ---------------------------------------%>
+<%--        <div id="dialog" title="แจ้งเตือนด่วน!!!!" >
+            <asp:Image ID="ImageAlert" runat="server" ImageUrl="~/Images/photoalert2.png" />
+        </div>--%>
 
     </form>
     <p  style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;" class="auto-style4">
