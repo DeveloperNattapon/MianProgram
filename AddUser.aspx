@@ -120,7 +120,7 @@
 
                                                 <label class="control-label" for="txtDept">แผนก</label>
                                                 <div class="controls ">
-                                                    <asp:DropDownList ID="ddlDept" runat="server" CssClass="form-control select2" DataTextField="DepartmentName" DataValueField="DepartmentName" AutoPostBack="true">
+                                                    <asp:DropDownList ID="ddlDept" runat="server" CssClass="form-control select2" DataTextField="DepartmentName" DataValueField="DepartmentName">
                                                     </asp:DropDownList>
                                                 </div>
 

@@ -40,3 +40,6 @@ D:\MianProgram\obj\Release\MainProgram.pdb
 \\192.168.2.81\wwwroot\MainProgram\obj\Release\MainProgram.dll
 \\192.168.2.81\wwwroot\MainProgram\obj\Release\MainProgram.xml
 \\192.168.2.81\wwwroot\MainProgram\obj\Release\MainProgram.pdb
+D:\ProjectDevelop\MainProgram\bin\AjaxControlToolkit.dll
+D:\ProjectDevelop\MainProgram\bin\EntityFramework.dll
+D:\ProjectDevelop\MainProgram\bin\EntityFramework.SqlServer.dll
